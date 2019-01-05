@@ -4,6 +4,10 @@ Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
 
 ### Changelog
 
+**1.1.1**
+- Basic color values added to UI
+- Saturation slider implemented!
+
 **1.1.0**
 - Workbox PWA implemented (installable)
 - Manifest created

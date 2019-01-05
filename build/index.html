@@ -30,7 +30,31 @@
         below. This is a work in progress.</p>
     </section>
     <section>
-      <div id="iro-wrapper"></div>
+      <div class="flex-container">
+        <div id="iro-wrapper"></div>
+        <div class="colorControls">
+
+          <div class="flex-container">
+            <div>
+              <span class="title">Swatch:</span>
+              <div id="swatch"></div>
+            </div>
+            <div>
+              <span class="title">Values:</span>
+              <div id="values"></div>         
+            </div>
+          </div>
+          <div class="add-controls">
+            <label class="title" for="sSlider">Saturation <span id="sValue"></span></label>
+            <input name="sSlider" type="range" min="0" max="100" value="50" class="slider" id="sSlider">
+          </div>
+
+        </div>
+      </div>
+      <!-- <div class="flex-container">
+        <span class="title">CSS:</span>
+        <div id="css"></div>
+      </div> -->
 
     </section>
 

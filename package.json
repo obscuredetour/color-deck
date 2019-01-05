@@ -1,6 +1,6 @@
 {
   "name": "color-desk",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Color Desk is a color palette collector made for humans and is HSL driven.",
   "main": "index.js",
   "scripts": {

@@ -42,7 +42,7 @@ button, .button
   margin-top: -1rem
   
 
-@media screen and (min-width: 569px)
+@media screen and (min-width: 769px)
   .flex-container
     flex-direction: row
     > *
@@ -58,20 +58,16 @@ button, .button
 
 .demphasis
   color: $heather
-.emphasis
+.emphasis, .title
   font-weight: 500
   color: $light-gray
-  position: relative
-  z-index: 1
-  &:after
-    z-index: -1
-    content: ''
-    width: calc(100% + 2px)
-    position: absolute
-    top: 0.8rem
-    left: -1px
-    border-bottom: 6px solid transparentize($link-color, 0.5)
-    transition: all 0.2s ease-in-out
+  margin: 1rem 0
+#swatch, #values
+  margin-top: 1rem
+#swatch
+  width: 128px
+  height: 24px
+  border-radius: 2px
 
 .powered-by,
 .powered-by:first-of-type

@@ -12,3 +12,41 @@ main
 @media screen and (min-width: 569px)
   main
     margin-top: 1.25rem
+
+// hide iro default slider
+.iro__slider
+  display: none
+
+// The slider itself
+.slider 
+  -webkit-appearance: none // Override default CSS styles
+  appearance: none
+  width: 100% // Full-width
+  height: 5px // Specified height
+  border-radius: 3px
+  background: #d3d3d3 // Grey background
+  outline: none // Remove outline
+  opacity: 0.7 // Set transparency (for mouse-over effects on hover)
+  -webkit-transition: .2s // 0.2 seconds transition on hover
+  transition: opacity .2s
+
+// Mouse-over effects
+.slider:hover
+  opacity: 1 // Fully shown on mouse-over
+
+// The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look)
+.slider::-webkit-slider-thumb
+  -webkit-appearance: none // Override default look
+  appearance: none
+  border-radius: 100px
+  width: 25px // Set a specific slider handle width
+  height: 25px // Slider handle height
+  background: #4CAF50 // Green background
+  cursor: pointer // Cursor on hover
+
+.slider::-moz-range-thumb
+  width: 25px // Set a specific slider handle width
+  height: 25px // Slider handle height
+  background: #4CAF50 // Green background
+  border-radius: 100px
+  cursor: pointer // Cursor on hover
