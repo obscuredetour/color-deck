@@ -1,6 +1,7 @@
 @import '_variables'
 @import '_reset'
 @import '_reuseables'
+@import '_input'
 
 //--------- page -------//
 main
@@ -17,22 +18,27 @@ main
 .iro__slider
   display: none
 
+#hSlider
+  background: linear-gradient(to left, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1)) !important
+  background: -webkit-linear-gradient(to left, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1)) !important
+  background: -moz-linear-gradient(to left, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1)) !important
+
 // The slider itself
 .slider 
   -webkit-appearance: none // Override default CSS styles
   appearance: none
+  height: 25px
   width: 100% // Full-width
-  height: 5px // Specified height
-  border-radius: 3px
+  border-radius: 100px
   background: #d3d3d3 // Grey background
   outline: none // Remove outline
   opacity: 0.7 // Set transparency (for mouse-over effects on hover)
   -webkit-transition: .2s // 0.2 seconds transition on hover
-  transition: opacity .2s
+  transition: all .2s
 
 // Mouse-over effects
-.slider:hover
-  opacity: 1 // Fully shown on mouse-over
+// .slider:hover
+//   opacity: 1 // Fully shown on mouse-over
 
 // The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look)
 .slider::-webkit-slider-thumb
@@ -41,12 +47,14 @@ main
   border-radius: 100px
   width: 25px // Set a specific slider handle width
   height: 25px // Slider handle height
-  background: #4CAF50 // Green background
+  background: white // Green background
+  border: 2px solid white
   cursor: pointer // Cursor on hover
 
 .slider::-moz-range-thumb
   width: 25px // Set a specific slider handle width
   height: 25px // Slider handle height
-  background: #4CAF50 // Green background
+  background: white // Green background
+  border: 2px solid white
   border-radius: 100px
   cursor: pointer // Cursor on hover

@@ -16,14 +16,19 @@ const colorPicker = new iro.ColorPicker("#iro-wrapper", {
   anticlockwise: true,
   // Dynamic CSS guide: https://iro.js.org/guide.html#Dynamic-CSS
   css: {
-    "#swatch": {
+    "#swatch, .slider": {
       "background-color": "$color"
     }
   }
 });
+const hValue = document.getElementById("hValue");
+const hSlider = document.getElementById("hSlider");
+
 const sValue = document.getElementById("sValue");
 const sSlider = document.getElementById("sSlider");
-let sSliderValue = sSlider.value;
+
+const lValue = document.getElementById("lValue");
+const lSlider = document.getElementById("lSlider");
 
 
 const values = document.getElementById("values");
@@ -39,8 +44,12 @@ colorPicker.on("color:change", function(color) {
     "hsl: " + color.hslString,
   ].join("<br>");
 
+  let hue = colorPicker.color.hsl.h;
   let saturation = colorPicker.color.hsl.s;
-  sValue.innerHTML = saturation;
+  let lightness = colorPicker.color.hsl.l;
+  hValue.innerHTML = hue;
+  sValue.innerHTML = saturation + '%';
+  lValue.innerHTML = lightness + '%';
   
   // Get the dynamic stylesheet content and pretty-print it by replacing newlines and tabs with suitable html
   var cssText = colorPicker.stylesheet.cssText;
@@ -58,30 +67,38 @@ colorPicker.on("color:change", function(color, changes) {
   // If the "S" channel has changed, log the color's HSL (saturation) value too
 
   // changes to color picker change sliders
+  if(changes.h) {
+    hSlider.value = color.hsl.h;
+  }
   if(changes.s) {
-    // console.log(color.hsl.s);
     sSlider.value = color.hsl.s;
   }
+  if(changes.l) {
+    lSlider.value = color.hsl.l;
+  }
 
-  sSlider.addEventListener('change', () => {
+  const sliderChange = () => {
     // get color
     let currentColor = color.hsl;
     let newColor = currentColor;
 
+    newColor.h = Number(hSlider.value);
     newColor.s = Number(sSlider.value);
+    newColor.l = Number(lSlider.value);
 
     // set new color
     colorPicker.color.hsl = newColor;
-
-    // changes to sliders change color picker
-    // color.hsl.s = Number(sSlider.value);
   
+    hValue.innerHTML = hSlider.value;
     sValue.innerHTML = sSlider.value;
-  
-    // if(sSliderValue) {
-    //   colorPicker.color.hsl.s = sSliderValue;
-    // }
-  });
+    lValue.innerHTML = lSlider.value;
+  };
+
+  hSlider.addEventListener('change', sliderChange);
+  sSlider.addEventListener('change', sliderChange);
+  lSlider.addEventListener('change', sliderChange);
+
+
 
   
 });

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <link rel="manifest" href="manifest.json">
@@ -14,13 +15,14 @@
   <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Expanded:400,500,600,700" rel="stylesheet">
 
   <script src="js/iro.min.js"></script>
-  
+
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Document</title>
 
 </head>
+
 <body>
-  
+
   <main>
 
     <section>
@@ -41,12 +43,20 @@
             </div>
             <div>
               <span class="title">Values:</span>
-              <div id="values"></div>         
+              <div id="values"></div>
             </div>
           </div>
-          <div class="add-controls">
+          <div class="h-controls">
+            <label class="title" for="hSlider">Hue <span id="hValue"></span></label>
+            <input name="hSlider" type="range" min="0" max="360" value="50" class="slider" id="hSlider">
+          </div>
+          <div class="s-controls">
             <label class="title" for="sSlider">Saturation <span id="sValue"></span></label>
             <input name="sSlider" type="range" min="0" max="100" value="50" class="slider" id="sSlider">
+          </div>
+          <div class="l-controls">
+            <label class="title" for="lSlider">Lightness <span id="lValue"></span></label>
+            <input name="lSlider" type="range" min="0" max="100" value="50" class="slider" id="lSlider">
           </div>
 
         </div>
@@ -74,4 +84,5 @@
   </script>
 
 </body>
+
 </html>
