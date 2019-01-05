@@ -1,0 +1,81 @@
+//--------- reuseables -------//    
+button, .button
+  background: $accent
+  color: $gray
+  font-weight: bold
+  border: 0
+  border-radius: 20px
+  font-size: 1rem
+  margin: 0 0.15rem
+  padding: 0.3rem 0.75rem
+  cursor: pointer
+  transition: all 0.2s ease-in-out
+  &:hover
+    background: $accent-light
+    color: $darkest
+.flex-container
+  display: flex
+  flex-direction: column
+  > *
+    flex: 1 1/2 100%
+    margin: 0 0 1rem 0
+    &:last-child
+      margin-bottom: 0
+  &.alt
+    flex-direction: row
+.box
+  display: block
+  max-width: 50rem
+  padding: 2rem 1rem 1rem
+  margin: 0 1rem 1rem 1rem
+  background: $dark
+  border-radius: 8px
+  &.alt
+    background: transparent
+    border: 2px solid $darker
+    padding: 1rem 0.75rem 1rem
+    margin: 1rem 1rem 0 0
+    p
+      margin-bottom: 0
+.mt-1,
+.mt-1:first-of-type
+  margin-top: -1rem
+  
+
+@media screen and (min-width: 569px)
+  .flex-container
+    flex-direction: row
+    > *
+      margin-right: 1rem
+      margin-bottom: 0
+      &:last-child
+        margin-right: 0
+    &.alt
+      flex-direction: column
+      > *
+        margin-right: 0
+
+
+.demphasis
+  color: $heather
+.emphasis
+  font-weight: 500
+  color: $light-gray
+  position: relative
+  z-index: 1
+  &:after
+    z-index: -1
+    content: ''
+    width: calc(100% + 2px)
+    position: absolute
+    top: 0.8rem
+    left: -1px
+    border-bottom: 6px solid transparentize($link-color, 0.5)
+    transition: all 0.2s ease-in-out
+
+.powered-by,
+.powered-by:first-of-type
+  margin: 7rem auto 1rem
+  font-size: 0.8125rem
+  color: $darkish
+  text-align: center
