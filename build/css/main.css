@@ -41,7 +41,7 @@ html, body {
   font-size: 17px; }
 
 body, input, select, textarea {
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Encode Sans Semi Expanded", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   color: #e5e8eb;
   font-weight: 400;
   line-height: 1.5; }
@@ -75,7 +75,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #e5e8eb;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Encode Sans Semi Expanded", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   font-weight: 700;
   margin-left: auto;
   margin-right: auto; }

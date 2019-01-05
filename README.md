@@ -1,12 +1,20 @@
 # Color Desk
-Color Desk is a color palette collector made for humans and is HSL driven.
+Color Desk is a color palette collector made for humans. Which makes this all about HSL!
 Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
+
+### Changelog
+
+**1.1.0**
+- Workbox PWA implemented (installable)
+- Manifest created
+- favicon/app icon
+- font cached
 
 ## Goals
 
 [x] Implement Color wheel picker
 [ ] Implement HSL controls
-[ ] Offline use - PWA
+[x] Offline use - PWA
 [ ] Save series of colors in palettes
 [ ] Click to copy (text) of various color formats
 [ ] Implement color groups within palettes
