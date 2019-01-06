@@ -1,18 +1,4 @@
 //--------- reuseables -------//    
-button, .button
-  background: $accent
-  color: $gray
-  font-weight: bold
-  border: 0
-  border-radius: 20px
-  font-size: 1rem
-  margin: 0 0.15rem
-  padding: 0.3rem 0.75rem
-  cursor: pointer
-  transition: all 0.2s ease-in-out
-  &:hover
-    background: $accent-light
-    color: $darkest
 .flex-container
   display: flex
   flex-direction: column
@@ -40,7 +26,8 @@ button, .button
 .mt-1,
 .mt-1:first-of-type
   margin-top: -1rem
-  
+.i-blk
+  display: inline-block
 
 @media screen and (min-width: 769px)
   .flex-container
@@ -55,21 +42,26 @@ button, .button
       > *
         margin-right: 0
 
-
+button, .button
+  background: $accent
+  color: $gray
+  font-weight: bold
+  border: 0
+  border-radius: 20px
+  font-size: 1rem
+  margin: 0 0.15rem
+  padding: 0.3rem 0.75rem
+  cursor: pointer
+  transition: all 0.2s ease-in-out
+  &:hover
+    background: $accent-light
+    color: $darkest
 .demphasis
   color: $heather
 .emphasis, .title
   font-weight: 500
   color: $light-gray
   margin: 1rem 0
-#swatch, #values
-  margin-top: 1rem
-#values
-  min-width: 200px
-#swatch
-  width: 128px
-  height: 128px
-  border-radius: 8px
 
 .powered-by,
 .powered-by:first-of-type

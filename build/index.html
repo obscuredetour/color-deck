@@ -32,26 +32,33 @@
         below. This is a work in progress.</p>
     </section>
     <section>
-      <div class="flex-container">
-        <div id="iro-wrapper"></div>
-        <div class="color-controls">
-
-          <div class="h-controls">
-            <label class="title" for="hSlider">Hue <span id="hValue"></span></label>
-            <input name="hSlider" type="range" min="0" max="360" value="50" class="slider" id="hSlider">
-          </div>
-          <div class="s-controls">
-            <label class="title" for="sSlider">Saturation <span id="sValue"></span></label>
-            <div class="s-controls__slider">
-              <input name="sSlider" type="range" min="0" max="100" value="50" class="slider" id="sSlider">
+    <div class="flex-container">
+      <div id="iro-wrapper"></div>
+        <div class="color-controls mt-1">
+          <div class="h-controls__wrapper">
+            <input type="text" name="hue" id="hInput">
+            <div class="h-controls">
+              <label class="title" for="hSlider">Hue <span id="hValue"></span></label>
+              <input name="hSlider" type="range" min="0" max="360" value="50" class="slider" id="hSlider">
             </div>
           </div>
-
-          <div class="l-controls">
-            <label class="title" for="lSlider">Lightness <span id="lValue"></span></label>
-            <div class="l-controls__slider">
-              <input name="lSlider" type="range" min="0" max="100" value="50" class="slider" id="lSlider">
+          <div class="s-controls__wrapper">
+            <input type="text" name="saturation" id="sInput">
+            <div class="s-controls">
+              <label class="title" for="sSlider">Saturation <span id="sValue"></span></label>
+              <div class="s-controls__slider">
+                <input name="sSlider" type="range" min="0" max="100" value="50" class="slider" id="sSlider">
+              </div>
+            </div>
           </div>
+          <div class="l-controls__wrapper">
+            <input type="text" name="lightness" id="lInput">
+            <div class="l-controls">
+              <label class="title" for="lSlider">Lightness <span id="lValue"></span></label>
+              <div class="l-controls__slider">
+                <input name="lSlider" type="range" min="0" max="100" value="50" class="slider" id="lSlider">
+              </div>
+            </div>
           </div>
 
         </div>
@@ -62,6 +69,7 @@
         </div>
         <div>
           <div id="values"></div>
+
         </div>
       </div>
       <!-- <div class="flex-container">

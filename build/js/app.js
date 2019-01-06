@@ -31,12 +31,15 @@ const colorPicker = new iro.ColorPicker("#iro-wrapper", {
     }
   }
 });
+const hInput = document.getElementById("hInput");
 const hValue = document.getElementById("hValue");
 const hSlider = document.getElementById("hSlider");
 
+const sInput = document.getElementById("sInput");
 const sValue = document.getElementById("sValue");
 const sSlider = document.getElementById("sSlider");
 
+const lInput = document.getElementById("lInput");
 const lValue = document.getElementById("lValue");
 const lSlider = document.getElementById("lSlider");
 
@@ -54,12 +57,20 @@ colorPicker.on("color:change", function(color) {
     "hsl: " + color.hslString,
   ].join("<br>");
 
+  // get current channels
   let hue = colorPicker.color.hsl.h;
   let saturation = colorPicker.color.hsl.s;
   let lightness = colorPicker.color.hsl.l;
+
+  // set color channels
   hValue.innerHTML = hue;
+  hInput.value = hue;
+
   sValue.innerHTML = saturation + '%';
+  sInput.value = saturation;
+
   lValue.innerHTML = lightness + '%';
+  lInput.value = lightness;
   
   // Get the dynamic stylesheet content and pretty-print it by replacing newlines and tabs with suitable html
   var cssText = colorPicker.stylesheet.cssText;
@@ -110,21 +121,29 @@ colorPicker.on("color:change", function(color, changes) {
     sValue.innerHTML = sSlider.value + "%";
     lValue.innerHTML = lSlider.value + "%";
   };
+  const inputChange = () => {
+
+    // create new color object
+    let newColor = currentColor;
+    // replace new colors with slider values (chg to #)
+    newColor.h = Number(hInput.value);
+    newColor.s = Number(sInput.value);
+    newColor.l = Number(lInput.value);
+    // set new color
+    colorPicker.color.hsl = newColor;
+  
+    hValue.innerHTML = hInput.value;
+    sValue.innerHTML = sInput.value + "%";
+    lValue.innerHTML = lInput.value + "%";
+  };
 
   hSlider.addEventListener('change', sliderChange);
   sSlider.addEventListener('change', sliderChange);
   lSlider.addEventListener('change', sliderChange);
 
+  hInput.addEventListener('change', inputChange);
+  sInput.addEventListener('change', inputChange);
+  lInput.addEventListener('change', inputChange);
+
 });
 
-// lSlider.addEventListener('mouseleave', () => {
-//   const lControlSlider = document.querySelector('.l-controls__slider');
-
-//   lControlSlider.classList.toggle('l-overlay');
-// });
-
-
-
-
-
-// eHSL.innerHTML = hsl;

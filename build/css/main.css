@@ -121,21 +121,6 @@ hr {
     margin: 3rem auto;
     border-bottom: solid 3px rgba(123, 147, 219, 0.5); }
 
-button, .button {
-  background: #4e64b7;
-  color: #cad1d8;
-  font-weight: bold;
-  border: 0;
-  border-radius: 20px;
-  font-size: 1rem;
-  margin: 0 0.15rem;
-  padding: 0.3rem 0.75rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out; }
-  button:hover, .button:hover {
-    background: #7b93db;
-    color: #212121; }
-
 .flex-container {
   display: flex;
   flex-direction: column; }
@@ -166,6 +151,9 @@ button, .button {
 .mt-1:first-of-type {
   margin-top: -1rem; }
 
+.i-blk {
+  display: inline-block; }
+
 @media screen and (min-width: 769px) {
   .flex-container {
     flex-direction: row; }
@@ -179,6 +167,21 @@ button, .button {
       .flex-container.alt > * {
         margin-right: 0; } }
 
+button, .button {
+  background: #4e64b7;
+  color: #cad1d8;
+  font-weight: bold;
+  border: 0;
+  border-radius: 20px;
+  font-size: 1rem;
+  margin: 0 0.15rem;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out; }
+  button:hover, .button:hover {
+    background: #7b93db;
+    color: #212121; }
+
 .demphasis {
   color: #9e9e9e; }
 
@@ -186,17 +189,6 @@ button, .button {
   font-weight: 500;
   color: #e5e8eb;
   margin: 1rem 0; }
-
-#swatch, #values {
-  margin-top: 1rem; }
-
-#values {
-  min-width: 200px; }
-
-#swatch {
-  width: 128px;
-  height: 128px;
-  border-radius: 8px; }
 
 .powered-by,
 .powered-by:first-of-type {
@@ -333,6 +325,9 @@ main {
   main {
     margin-top: 1.25rem; } }
 
+#iro-wrapper {
+  margin-left: -2rem; }
+
 .iro__slider {
   display: none; }
 
@@ -340,6 +335,20 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1; }
+
+.h-controls__wrapper, .s-controls__wrapper, .l-controls__wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%; }
+
+.h-controls, .s-controls, .l-controls {
+  flex: 1; }
+
+#lInput, #sInput, #hInput {
+  margin: 0 1rem;
+  width: 5rem;
+  display: block;
+  align-self: flex-end; }
 
 .l-controls__slider, .s-controls__slider {
   position: relative;
@@ -388,3 +397,14 @@ main {
   border-radius: 100px;
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.2); }
+
+#swatch, #values {
+  margin-top: 1rem; }
+
+#values {
+  min-width: 200px; }
+
+#swatch {
+  width: 128px;
+  height: 128px;
+  border-radius: 8px; }

@@ -14,6 +14,9 @@ main
   main
     margin-top: 1.25rem
 
+
+#iro-wrapper
+  margin-left: -2rem
 // hide iro default slider
 .iro__slider
   display: none
@@ -23,6 +26,18 @@ main
   display: flex
   flex-direction: column
   flex: 1
+
+.h-controls__wrapper, .s-controls__wrapper, .l-controls__wrapper
+  display: flex
+  align-items: center
+  width: 100%
+.h-controls, .s-controls, .l-controls
+  flex: 1
+#lInput, #sInput, #hInput
+  margin: 0 1rem
+  width: 5rem
+  display: block
+  align-self: flex-end
 
 .l-controls__slider, .s-controls__slider
   position: relative
@@ -53,11 +68,6 @@ main
   -webkit-transition: .2s // 0.2 seconds transition on hover
   transition: all .2s
 
-// Mouse-over effects
-// .slider:hover
-//   opacity: 1 // Fully shown on mouse-over
-
-// The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look)
 .slider::-webkit-slider-thumb
   -webkit-appearance: none // Override default look
   appearance: none
@@ -77,3 +87,12 @@ main
   border-radius: 100px
   cursor: pointer // Cursor on hover
   box-shadow: 0 10px 20px hsla(0,0%,0%,.35), 0 3px 6px hsla(0,0%,0%,.20)
+
+#swatch, #values
+  margin-top: 1rem
+#values
+  min-width: 200px
+#swatch
+  width: 128px
+  height: 128px
+  border-radius: 8px
