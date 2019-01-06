@@ -61,19 +61,21 @@ colorPicker.on("color:change", function(color) {
   // ].join("<br>");
 
   // get current color channels
-  let hex = colorPicker.color.hexString;
-  let rgb = colorPicker.color.rgbString;
-  let hsl = colorPicker.color.hslString;
-  let hue = colorPicker.color.hsl.h;
-  let saturation = colorPicker.color.hsl.s;
-  let lightness = colorPicker.color.hsl.l;
+  let hex = colorPicker.color.hexString,
+    rgb = colorPicker.color.rgbString,
+    hsl = colorPicker.color.hslString,
+    hue = colorPicker.color.hsl.h,
+    saturation = colorPicker.color.hsl.s,
+    lightness = colorPicker.color.hsl.l;
 
-  // set color channels
-  hValue.innerHTML = hue;
-  hInput.value = hue;
+  // SET COLOR
+  // whole inputs
   hslInput.value = hsl;
   hexInput.value = hex;
   rgbInput.value = rgb;
+  // single HSL inputs
+  hValue.innerHTML = hue;
+  hInput.value = hue;
 
   sValue.innerHTML = saturation + '%';
   sInput.value = saturation;
@@ -87,10 +89,16 @@ colorPicker.on("color:change", function(color) {
 colorPicker.on("color:change", function(color, changes) {
   
   // get current color
-  let currentColor = color.hsl;
-  let hslString = color.hslString;
-  let hexString = color.hexString;
-  let rgbString = color.rgbString;
+  let currentColor = color.hsl,
+    hslString = color.hslString,
+    hexString = color.hexString,
+    rgbString = color.rgbString;
+
+  // create new color object & string
+  let newColor = currentColor,
+    newHslString = hslString,
+    newHexString = hexString,
+    newRgbString = rgbString;
 
    // changes to color picker change sliders
   if(changes.h) {
@@ -102,23 +110,19 @@ colorPicker.on("color:change", function(color, changes) {
   if(changes.s || changes.v) {
     lSlider.value = color.hsl.l;
   }
+  // if(changes) {
+  //   hslInput.value = iro.Color.hsl2Str(currentColor)
+  // }
   // does not work
   // if(changes.l) {
   //   lSlider.value = color.hsl.l;
   // }
   // console.log(changes.l); //undefined
 
-  const sliderChange = () => {
+  ///////// SLIDERS ////////////
 
-    // create new color object & string
-    let newColor = currentColor,
-      newHslString = hslString,
-      newHexString = hexString,
-      newRgbString = rgbString;
-    // replace new colors with slider values (chg to #)
-    newColor.h = Number(hSlider.value);
-    newColor.s = Number(sSlider.value);
-    newColor.l = Number(lSlider.value);
+  // change slider values
+  const sliderChange = () => {
     // set new color
     colorPicker.color.hsl = newColor;
   
@@ -126,21 +130,71 @@ colorPicker.on("color:change", function(color, changes) {
     sValue.innerHTML = sSlider.value + "%";
     lValue.innerHTML = lSlider.value + "%";
   };
-  const inputChange = () => {
+  // update slider UI
+  const sliderUIUpdate = () => {
+    // replace new colors with slider values (chg to #)
+    newColor.h = Number(hSlider.value);
+    newColor.s = Number(sSlider.value);
+    newColor.l = Number(lSlider.value);
 
-    // create new color object & string
-    let newColor = currentColor,
-      newHslString = hslString,
-      newHexString = hexString,
-      newRgbString = rgbString;
+    sliderChange();
+  };// change slider values
+
+  // update hsl input (values) UI
+  const inputHslChange = () => {
+    // set new color
+    colorPicker.color.hsl = newColor;
+
+    // UI has been updated
+    hValue.innerHTML = hInput.value;
+    sValue.innerHTML = sInput.value + "%";
+    lValue.innerHTML = lInput.value + "%";
+    
+  };
+  const inputHslUpdate = () => {
 
     // replace new colors with slider values (chg to #)
     newColor.h = Number(hInput.value);
     newColor.s = Number(sInput.value);
     newColor.l = Number(lInput.value);
-    newHslString = hslInput.value;
-    newHexString = hexInput.value;
-    newRgbString = rgbInput.value;
+
+    inputHslChange();
+  };
+
+  ///////// Whole color inputs ////////////
+  // change whole hsl input values
+  const hslChange = () => {
+    // set new color
+    colorPicker.color.hsl = newColor;
+    newHslString = iro.Color.parseHslStr(newColor);
+  
+    hslInput.value = newHslString;
+
+    hslUIUpdate();
+  };
+
+  const hslUIUpdate = () => {
+
+    // set new color
+    colorPicker.color.hsl = newColor;
+    newHslString = iro.Color.parseHslStr(newColor);
+
+    hslInput.value = newHslString;
+
+    // update sliders UI
+    sliderUIUpdate();
+    // sliderChange is called in sliderUIUpdate
+  };
+
+  const inputChange = () => {
+
+    // replace new colors with slider values (chg to #)
+    newColor.h = Number(hInput.value);
+    newColor.s = Number(sInput.value);
+    newColor.l = Number(lInput.value);
+    // newHslString = hslInput.value;
+    // newHexString = hexInput.value;
+    // newRgbString = rgbInput.value;
 
     // set new color
     colorPicker.color.hsl = newColor;
@@ -151,6 +205,7 @@ colorPicker.on("color:change", function(color, changes) {
     // colorPicker.color.hex = hex;
     // colorPicker.color.rgb = rgb;
   
+    // update UI
     hValue.innerHTML = hInput.value;
     sValue.innerHTML = sInput.value + "%";
     lValue.innerHTML = lInput.value + "%";
@@ -160,14 +215,16 @@ colorPicker.on("color:change", function(color, changes) {
     // rgbInput.value = newRgbString;
   };
 
-  hSlider.addEventListener('change', sliderChange);
-  sSlider.addEventListener('change', sliderChange);
-  lSlider.addEventListener('change', sliderChange);
+  // Event Listeners
+
+  hSlider.addEventListener('change', sliderUIUpdate);
+  sSlider.addEventListener('change', sliderUIUpdate);
+  lSlider.addEventListener('change', sliderUIUpdate);
 
   // hexInput.addEventListener('change', inputChange);
   // rgbInput.addEventListener('change', inputChange);
-  // hslInput.addEventListener('change', inputChange);
-  hInput.addEventListener('change', inputChange);
+  hslInput.addEventListener('change', hslChange);
+  hInput.addEventListener('change', inputHslUpdate);
   sInput.addEventListener('change', inputChange);
   lInput.addEventListener('change', inputChange);
 
