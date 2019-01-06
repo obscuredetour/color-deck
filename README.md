@@ -4,6 +4,9 @@ Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
 
 ### Changelog
 
+**1.1.5**
+- Whole inputs implemented
+
 **1.1.4**
 - HSL inputs finished!
 

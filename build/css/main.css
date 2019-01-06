@@ -339,7 +339,8 @@ main {
 .h-controls__wrapper, .s-controls__wrapper, .l-controls__wrapper {
   display: flex;
   align-items: center;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 0.5rem; }
 
 .h-controls, .s-controls, .l-controls {
   flex: 1; }
@@ -349,6 +350,9 @@ main {
   width: 5rem;
   display: block;
   align-self: flex-end; }
+
+#hValue, #sValue, #lValue {
+  margin-left: 0.5rem; }
 
 .l-controls__slider, .s-controls__slider {
   position: relative;

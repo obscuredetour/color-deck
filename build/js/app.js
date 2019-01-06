@@ -31,6 +31,9 @@ const colorPicker = new iro.ColorPicker("#iro-wrapper", {
     }
   }
 });
+const hexInput = document.getElementById("hexInput");
+const rgbInput = document.getElementById("rgbInput");
+const hslInput = document.getElementById("hslInput");
 const hInput = document.getElementById("hInput");
 const hValue = document.getElementById("hValue");
 const hSlider = document.getElementById("hSlider");
@@ -44,20 +47,23 @@ const lValue = document.getElementById("lValue");
 const lSlider = document.getElementById("lSlider");
 
 
-const values = document.getElementById("values");
-const css = document.getElementById("css");
+// const values = document.getElementById("values");
+// const css = document.getElementById("css");
 
 // https://iro.js.org/guide.html#color-change
 colorPicker.on("color:change", function(color) {
   // Show the current color in different formats
   // Using the selected color: https://iro.js.org/guide.html#Using-the-Selected-Color
-  values.innerHTML = [
-    "hex: " + color.hexString,
-    "rgb: " + color.rgbString,
-    "hsl: " + color.hslString,
-  ].join("<br>");
+  // values.innerHTML = [
+  //   "hex: " + color.hexString,
+  //   "rgb: " + color.rgbString,
+  //   "hsl: " + color.hslString,
+  // ].join("<br>");
 
-  // get current channels
+  // get current color channels
+  let hex = colorPicker.color.hexString;
+  let rgb = colorPicker.color.rgbString;
+  let hsl = colorPicker.color.hslString;
   let hue = colorPicker.color.hsl.h;
   let saturation = colorPicker.color.hsl.s;
   let lightness = colorPicker.color.hsl.l;
@@ -65,6 +71,9 @@ colorPicker.on("color:change", function(color) {
   // set color channels
   hValue.innerHTML = hue;
   hInput.value = hue;
+  hslInput.value = hsl;
+  hexInput.value = hex;
+  rgbInput.value = rgb;
 
   sValue.innerHTML = saturation + '%';
   sInput.value = saturation;
@@ -72,25 +81,18 @@ colorPicker.on("color:change", function(color) {
   lValue.innerHTML = lightness + '%';
   lInput.value = lightness;
   
-  // Get the dynamic stylesheet content and pretty-print it by replacing newlines and tabs with suitable html
-  var cssText = colorPicker.stylesheet.cssText;
-  // css.innerHTML = cssText.replace(/([\n\t])/g, function($1){
-  //   switch($1) {
-  //     case "\n": return "<br>";
-  //     case "\t": return "&nbsp;&nbsp;";
-  //   }
-  // });
+  
 });
 
 colorPicker.on("color:change", function(color, changes) {
   
   // get current color
   let currentColor = color.hsl;
+  let hslString = color.hslString;
+  let hexString = color.hexString;
+  let rgbString = color.rgbString;
 
-  // console.log(color.hslString);
-  // If the "S" channel has changed, log the color's HSL (saturation) value too
-
-  // changes to color picker change sliders
+   // changes to color picker change sliders
   if(changes.h) {
     hSlider.value = color.hsl.h;
   }
@@ -108,8 +110,11 @@ colorPicker.on("color:change", function(color, changes) {
 
   const sliderChange = () => {
 
-    // create new color object
-    let newColor = currentColor;
+    // create new color object & string
+    let newColor = currentColor,
+      newHslString = hslString,
+      newHexString = hexString,
+      newRgbString = rgbString;
     // replace new colors with slider values (chg to #)
     newColor.h = Number(hSlider.value);
     newColor.s = Number(sSlider.value);
@@ -123,24 +128,45 @@ colorPicker.on("color:change", function(color, changes) {
   };
   const inputChange = () => {
 
-    // create new color object
-    let newColor = currentColor;
+    // create new color object & string
+    let newColor = currentColor,
+      newHslString = hslString,
+      newHexString = hexString,
+      newRgbString = rgbString;
+
     // replace new colors with slider values (chg to #)
     newColor.h = Number(hInput.value);
     newColor.s = Number(sInput.value);
     newColor.l = Number(lInput.value);
+    newHslString = hslInput.value;
+    newHexString = hexInput.value;
+    newRgbString = rgbInput.value;
+
     // set new color
     colorPicker.color.hsl = newColor;
+    // let hsl = iro.Color.parseHslStr(newHslString);
+    // let hex = iro.Color.parseHexStr(newHexString);
+    // let rgb = iro.Color.parseRgbStr(newRgbString);
+    // colorPicker.color.hsl = hsl;
+    // colorPicker.color.hex = hex;
+    // colorPicker.color.rgb = rgb;
   
     hValue.innerHTML = hInput.value;
     sValue.innerHTML = sInput.value + "%";
     lValue.innerHTML = lInput.value + "%";
+
+    // hslInput.value = newHslString;
+    // hexInput.value = newHexString;
+    // rgbInput.value = newRgbString;
   };
 
   hSlider.addEventListener('change', sliderChange);
   sSlider.addEventListener('change', sliderChange);
   lSlider.addEventListener('change', sliderChange);
 
+  // hexInput.addEventListener('change', inputChange);
+  // rgbInput.addEventListener('change', inputChange);
+  // hslInput.addEventListener('change', inputChange);
   hInput.addEventListener('change', inputChange);
   sInput.addEventListener('change', inputChange);
   lInput.addEventListener('change', inputChange);
