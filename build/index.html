@@ -27,38 +27,41 @@
 
     <section>
       <h1>Welcome!</h1>
-      <h3>Color Desk is a color palette collector made for humans. Which makes this all about HSL!</h3>
+      <h3>Color Desk is a color palette collector made for humans.</h3>
       <p class="mt-1">For more information check out the <a href="#examples">example</a>
         below. This is a work in progress.</p>
     </section>
     <section>
       <div class="flex-container">
         <div id="iro-wrapper"></div>
-        <div class="colorControls">
+        <div class="color-controls">
 
-          <div class="flex-container">
-            <div>
-              <span class="title">Swatch:</span>
-              <div id="swatch"></div>
-            </div>
-            <div>
-              <span class="title">Values:</span>
-              <div id="values"></div>
-            </div>
-          </div>
           <div class="h-controls">
             <label class="title" for="hSlider">Hue <span id="hValue"></span></label>
             <input name="hSlider" type="range" min="0" max="360" value="50" class="slider" id="hSlider">
           </div>
           <div class="s-controls">
             <label class="title" for="sSlider">Saturation <span id="sValue"></span></label>
-            <input name="sSlider" type="range" min="0" max="100" value="50" class="slider" id="sSlider">
-          </div>
-          <div class="l-controls">
-            <label class="title" for="lSlider">Lightness <span id="lValue"></span></label>
-            <input name="lSlider" type="range" min="0" max="100" value="50" class="slider" id="lSlider">
+            <div class="s-controls__slider">
+              <input name="sSlider" type="range" min="0" max="100" value="50" class="slider" id="sSlider">
+            </div>
           </div>
 
+          <div class="l-controls">
+            <label class="title" for="lSlider">Lightness <span id="lValue"></span></label>
+            <div class="l-controls__slider">
+              <input name="lSlider" type="range" min="0" max="100" value="50" class="slider" id="lSlider">
+          </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="flex-container">
+        <div>
+          <div id="swatch"></div>
+        </div>
+        <div>
+          <div id="values"></div>
         </div>
       </div>
       <!-- <div class="flex-container">

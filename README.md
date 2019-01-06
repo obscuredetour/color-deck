@@ -4,6 +4,10 @@ Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
 
 ### Changelog
 
+**1.1.3**
+- HSL sliders finished
+- Random start color, thanks [stackoverflow](https://stackoverflow.com/questions/1484506/random-color-generator)
+
 **1.1.1**
 - Basic color values added to UI
 - Saturation slider implemented!
@@ -17,7 +21,7 @@ Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
 ## Goals
 
 [x] Implement Color wheel picker
-[ ] Implement HSL controls
+[x] Implement HSL controls
 [x] Offline use - PWA
 [ ] Save series of colors in palettes
 [ ] Click to copy (text) of various color formats

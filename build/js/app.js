@@ -1,22 +1,32 @@
+// thanks stackoverflow
+function getStartColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
-// DOM components
-const eHSL = document.getElementById('hsl');
 
 // initial color picker
 const colorPicker = new iro.ColorPicker("#iro-wrapper", {
   width: 320,
   height: 320,
-  color: {r: 252, g: 11, b: 23},
+  color: getStartColor(),
   markerRadius: 8,
   padding: 4,
   sliderMargin: 24,
   sliderHeight: 36,
-  borderWidth: 1,
-  borderColor: "#eee",
+  borderWidth: 3,
+  borderColor: "#1d1d1d",
   anticlockwise: true,
   // Dynamic CSS guide: https://iro.js.org/guide.html#Dynamic-CSS
   css: {
     "#swatch, .slider": {
+      "background-color": "$color"
+    },
+    ".s-controls__slider, .l-controls__slider": {
       "background-color": "$color"
     }
   }
@@ -62,7 +72,10 @@ colorPicker.on("color:change", function(color) {
 });
 
 colorPicker.on("color:change", function(color, changes) {
-  // Log the color's hex RGB value to the dev console
+  
+  // get current color
+  let currentColor = color.hsl;
+
   // console.log(color.hslString);
   // If the "S" channel has changed, log the color's HSL (saturation) value too
 
@@ -73,35 +86,42 @@ colorPicker.on("color:change", function(color, changes) {
   if(changes.s) {
     sSlider.value = color.hsl.s;
   }
-  if(changes.l) {
+  if(changes.s || changes.v) {
     lSlider.value = color.hsl.l;
   }
+  // does not work
+  // if(changes.l) {
+  //   lSlider.value = color.hsl.l;
+  // }
+  // console.log(changes.l); //undefined
 
   const sliderChange = () => {
-    // get color
-    let currentColor = color.hsl;
-    let newColor = currentColor;
 
+    // create new color object
+    let newColor = currentColor;
+    // replace new colors with slider values (chg to #)
     newColor.h = Number(hSlider.value);
     newColor.s = Number(sSlider.value);
     newColor.l = Number(lSlider.value);
-
     // set new color
     colorPicker.color.hsl = newColor;
   
     hValue.innerHTML = hSlider.value;
-    sValue.innerHTML = sSlider.value;
-    lValue.innerHTML = lSlider.value;
+    sValue.innerHTML = sSlider.value + "%";
+    lValue.innerHTML = lSlider.value + "%";
   };
 
   hSlider.addEventListener('change', sliderChange);
   sSlider.addEventListener('change', sliderChange);
   lSlider.addEventListener('change', sliderChange);
 
-
-
-  
 });
+
+// lSlider.addEventListener('mouseleave', () => {
+//   const lControlSlider = document.querySelector('.l-controls__slider');
+
+//   lControlSlider.classList.toggle('l-overlay');
+// });
 
 
 

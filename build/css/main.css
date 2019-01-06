@@ -195,8 +195,8 @@ button, .button {
 
 #swatch {
   width: 128px;
-  height: 24px;
-  border-radius: 2px; }
+  height: 128px;
+  border-radius: 8px; }
 
 .powered-by,
 .powered-by:first-of-type {
@@ -204,6 +204,9 @@ button, .button {
   font-size: 0.8125rem;
   color: #7d7d7d;
   text-align: center; }
+
+input[type="range"] {
+  margin: 0; }
 
 form {
   margin: 2rem 0; }
@@ -333,10 +336,27 @@ main {
 .iro__slider {
   display: none; }
 
+.color-controls {
+  display: flex;
+  flex-direction: column;
+  flex: 1; }
+
+.l-controls__slider, .s-controls__slider {
+  position: relative;
+  height: 25px;
+  width: 100%;
+  border-radius: 100px; }
+
+#sSlider {
+  background: linear-gradient(to right, #878787, rgba(135, 135, 135, 0.8), rgba(135, 135, 135, 0.6), rgba(135, 135, 135, 0), rgba(135, 135, 135, 0), rgba(135, 135, 135, 0), rgba(135, 135, 135, 0)); }
+
+#lSlider {
+  background: linear-gradient(to right, black, rgba(51, 51, 51, 0.8), rgba(102, 102, 102, 0), rgba(128, 128, 128, 0), rgba(153, 153, 153, 0), rgba(204, 204, 204, 0.8), white); }
+
 #hSlider {
-  background: linear-gradient(to left, #e00000, #e02500, #e04b00, #e07000, #e09600, #e0bb00, #e0e000, #bbe000, #96e000, #70e000, #4be000, #25e000, #00e000, #00e025, #00e04b, #00e070, #00e096, #00e0bb, #00e0e0, #00bbe0, #0096e0, #0070e0, #004be0, #0025e0, #0000e0, #2500e0, #4b00e0, #7000e0, #9600e0, #bb00e0, #e000e0, #e000bb, #e00096, #e00070, #e0004b, #e00025, #e00000) !important;
-  background: -webkit-linear-gradient(to left, #e00000, #e02500, #e04b00, #e07000, #e09600, #e0bb00, #e0e000, #bbe000, #96e000, #70e000, #4be000, #25e000, #00e000, #00e025, #00e04b, #00e070, #00e096, #00e0bb, #00e0e0, #00bbe0, #0096e0, #0070e0, #004be0, #0025e0, #0000e0, #2500e0, #4b00e0, #7000e0, #9600e0, #bb00e0, #e000e0, #e000bb, #e00096, #e00070, #e0004b, #e00025, #e00000) !important;
-  background: -moz-linear-gradient(to left, #e00000, #e02500, #e04b00, #e07000, #e09600, #e0bb00, #e0e000, #bbe000, #96e000, #70e000, #4be000, #25e000, #00e000, #00e025, #00e04b, #00e070, #00e096, #00e0bb, #00e0e0, #00bbe0, #0096e0, #0070e0, #004be0, #0025e0, #0000e0, #2500e0, #4b00e0, #7000e0, #9600e0, #bb00e0, #e000e0, #e000bb, #e00096, #e00070, #e0004b, #e00025, #e00000) !important; }
+  background: linear-gradient(to right, #e00000, #e02500, #e04b00, #e07000, #e09600, #e0bb00, #e0e000, #bbe000, #96e000, #70e000, #4be000, #25e000, #00e000, #00e025, #00e04b, #00e070, #00e096, #00e0bb, #00e0e0, #00bbe0, #0096e0, #0070e0, #004be0, #0025e0, #0000e0, #2500e0, #4b00e0, #7000e0, #9600e0, #bb00e0, #e000e0, #e000bb, #e00096, #e00070, #e0004b, #e00025, #e00000);
+  background: -webkit-linear-gradient(to right, #e00000, #e02500, #e04b00, #e07000, #e09600, #e0bb00, #e0e000, #bbe000, #96e000, #70e000, #4be000, #25e000, #00e000, #00e025, #00e04b, #00e070, #00e096, #00e0bb, #00e0e0, #00bbe0, #0096e0, #0070e0, #004be0, #0025e0, #0000e0, #2500e0, #4b00e0, #7000e0, #9600e0, #bb00e0, #e000e0, #e000bb, #e00096, #e00070, #e0004b, #e00025, #e00000);
+  background: -moz-linear-gradient(to right, #e00000, #e02500, #e04b00, #e07000, #e09600, #e0bb00, #e0e000, #bbe000, #96e000, #70e000, #4be000, #25e000, #00e000, #00e025, #00e04b, #00e070, #00e096, #00e0bb, #00e0e0, #00bbe0, #0096e0, #0070e0, #004be0, #0025e0, #0000e0, #2500e0, #4b00e0, #7000e0, #9600e0, #bb00e0, #e000e0, #e000bb, #e00096, #e00070, #e0004b, #e00025, #e00000); }
 
 .slider {
   -webkit-appearance: none;
@@ -346,7 +366,6 @@ main {
   border-radius: 100px;
   background: #d3d3d3;
   outline: none;
-  opacity: 0.7;
   -webkit-transition: .2s;
   transition: all .2s; }
 
@@ -358,7 +377,8 @@ main {
   height: 25px;
   background: white;
   border: 2px solid white;
-  cursor: pointer; }
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.2); }
 
 .slider::-moz-range-thumb {
   width: 25px;
@@ -366,4 +386,5 @@ main {
   background: white;
   border: 2px solid white;
   border-radius: 100px;
-  cursor: pointer; }
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.2); }
