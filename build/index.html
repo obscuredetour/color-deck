@@ -66,29 +66,59 @@
       <div class="flex-container">
         <div id="swatch"></div>
         <!-- <div id="values"></div> -->
-        <div class="hsl-input-copy">
+        <div class="hsl-copy">
           <label class="title" for="hslInput"><h4>HSL</h4></label>
-          <input type="text" name="hsl" id="hslInput">
-          <!-- <button><svg viewBox="0 0 20 20">
-              <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
-            </svg>
-          </button> -->
+          <!-- <input type="text" name="hsl" id="hslInput"> -->
+          <p class="demphasis">
+            <span class="hsl-copy-text"></span>
+          </p>
+          <button class="hsl-copy-button" data-clipboard-text="">
+            <span>
+              <svg viewBox="0 0 20 20" width="16" height="16">
+                <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
+              </svg>
+            </span>
+            Copy
+          </button>
+          <div class="tooltip hsl-tip">
+            <span class="tooltip-text">Copied!</span>
+          </div>
         </div>
-        <div class="hex-input-copy">
+        <div class="hex-copy">
           <label class="title" for="hexInput"><h4>HEX</h4></label>
-          <input type="text" name="hex" id="hexInput">
-          <!-- <button><svg viewBox="0 0 20 20">
-              <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
-            </svg>
-          </button> -->
+          <!-- <input type="text" name="hex" id="hexInput"> -->
+          <p class="demphasis">
+            <span class="hex-copy-text"></span>
+          </p>
+          <button class="hex-copy-button" data-clipboard-text="">
+            <span>
+              <svg viewBox="0 0 20 20" width="16" height="16">
+                <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
+              </svg>
+            </span>
+            Copy
+          </button>
+          <div class="tooltip hex-tip">
+            <span class="tooltip-text">Copied!</span>
+          </div>
         </div>
-        <div class="rgb-input-copy">
+        <div class="rgb-copy">
           <label class="title" for="rgbInput"><h4>RGB</h4></label>
-          <input type="text" name="rgb" id="rgbInput">
-          <!-- <button><svg viewBox="0 0 20 20">
-              <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
-            </svg>
-          </button> -->
+          <!-- <input type="text" name="rgb" id="rgbInput"> -->
+          <p class="demphasis">
+            <span class="rgb-copy-text"></span>
+          </p>
+          <button class="rgb-copy-button" data-clipboard-text="">
+            <span>
+              <svg viewBox="0 0 20 20" width="16" height="16">
+                <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
+              </svg>
+            </span>
+            Copy
+          </button>
+          <div class="tooltip rgb-tip">
+            <span class="tooltip-text">Copied!</span>
+          </div>
         </div>
       </div>
       <!-- <div class="flex-container">
@@ -112,6 +142,7 @@
       });
     }
   </script>
+  <script src="js/clipboard.min.js"></script>
 
 </body>
 

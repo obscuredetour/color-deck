@@ -4,6 +4,10 @@ Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
 
 ### Changelog
 
+**1.1.7**
+- Rewrote a few methods
+- Implemented click to copy buttons for each color value
+
 **1.1.6**
 - Began rewrite of methods
 

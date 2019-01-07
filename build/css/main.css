@@ -169,8 +169,8 @@ hr {
 
 button, .button {
   background: #4e64b7;
-  color: #cad1d8;
-  font-weight: bold;
+  color: #e5e8eb;
+  font-weight: 500;
   border: 0;
   border-radius: 20px;
   font-size: 1rem;
@@ -412,3 +412,61 @@ main {
   width: 128px;
   height: 128px;
   border-radius: 8px; }
+
+.hsl-copy, .hex-copy, .rgb-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 200px; }
+  .hsl-copy h4, .hex-copy h4, .rgb-copy h4 {
+    margin-bottom: 0; }
+
+.hsl-copy-button, .hex-copy-button, .rgb-copy-button {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.35rem 1rem .5rem;
+  transition: all 0.2s ease-in-out; }
+  .hsl-copy-button span, .hex-copy-button span, .rgb-copy-button span {
+    margin-right: 0.5rem;
+    margin-left: 0.25rem;
+    padding-top: 0.25rem; }
+    .hsl-copy-button span svg, .hex-copy-button span svg, .rgb-copy-button span svg {
+      max-width: 16px; }
+    .hsl-copy-button span svg path, .hex-copy-button span svg path, .rgb-copy-button span svg path {
+      fill: #e5e8eb; }
+  .hsl-copy-button:hover, .hex-copy-button:hover, .rgb-copy-button:hover {
+    color: #e5e8eb; }
+    .hsl-copy-button:hover span svg path, .hex-copy-button:hover span svg path, .rgb-copy-button:hover span svg path {
+      fill: #e5e8eb; }
+
+.tooltip {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #525252;
+  border-radius: 20px;
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.5rem;
+  max-width: 80px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; }
+  .tooltip:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #525252 transparent;
+    transition: opacity 0.3s ease-in-out; }
+  .tooltip.visible {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1; }
+
+.tooltip-text {
+  color: #f5f7fa; }
