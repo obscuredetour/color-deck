@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Expanded:400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sarabun:400,500,600,700" rel="stylesheet">
 
   <script src="js/iro.min.js"></script>
 
@@ -22,110 +22,147 @@
 </head>
 
 <body>
-
   <main>
-
-    <section>
+    <article>
       <h1>Welcome!</h1>
       <h3>Color Desk is a color palette collector made for humans.</h3>
       <p class="mt-1">For more information check out the <a href="#examples">example</a>
         below. This is a work in progress.</p>
-    </section>
+    </article>
     <section>
-    <div class="flex-container">
-      <div id="iro-wrapper"></div>
+      <div class="flex-container">
+        <div class="color-container">
+          <div id="iro-wrapper"></div>
+          <div class="current-color">
+            <div id="swatch">
+              <button class="save-color-button" data-color="">
+                <span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"></path></svg>
+                </span>
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="color-controls mt-1">
           <div class="h-controls__wrapper">
-            <input type="text" name="hue" id="hInput">
+            <input type="text" name="hue" class="h-input">
             <div class="h-controls">
-              <label class="title" for="hSlider">Hue <span id="hValue"></span></label>
-              <input name="hSlider" type="range" min="0" max="360" value="50" class="slider" id="hSlider">
+              <label class="title" for="h-slider">Hue <span class="h-value"></span></label>
+              <input name="h-slider" type="range" min="0" max="360" value="50" class="slider h-slider" >
             </div>
           </div>
           <div class="s-controls__wrapper">
-            <input type="text" name="saturation" id="sInput">
+            <input type="text" name="saturation" class="s-input">
             <div class="s-controls">
-              <label class="title" for="sSlider">Saturation <span id="sValue"></span></label>
+              <label class="title" for="s-slider">Saturation <span class="s-value"></span></label>
               <div class="s-controls__slider">
-                <input name="sSlider" type="range" min="0" max="100" value="50" class="slider" id="sSlider">
+                <input name="s-slider" type="range" min="0" max="100" value="50" class="slider s-slider">
               </div>
             </div>
           </div>
           <div class="l-controls__wrapper">
-            <input type="text" name="lightness" id="lInput">
+            <input type="text" name="lightness" class="l-input">
             <div class="l-controls">
-              <label class="title" for="lSlider">Lightness <span id="lValue"></span></label>
+              <label class="title" for="l-slider">Lightness <span class="l-value"></span></label>
               <div class="l-controls__slider">
-                <input name="lSlider" type="range" min="0" max="100" value="50" class="slider" id="lSlider">
+                <input name="l-slider" type="range" min="0" max="100" value="50" class="slider l-slider">
               </div>
             </div>
           </div>
-
+          <section class="color-values">
+            <div class="hsl-copy">
+              <h4 class="title">HSL</h4>
+              <p>
+                <span class="hsl-copy-text"></span>
+              </p>
+              <button class="hsl-copy-button" data-clipboard-text="">
+                <span>
+                  <svg viewBox="0 0 20 20" width="16" height="16">
+                    <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
+                  </svg>
+                </span>
+                Copy
+              </button>
+              <div class="tooltip hsl-tip">
+                <span class="tooltip-text">Copied!</span>
+              </div>
+            </div>
+            <div class="hex-copy">
+              <h4 class="title">HEX</h4>
+              <p>
+                <span class="hex-copy-text"></span>
+              </p>
+              <button class="hex-copy-button" data-clipboard-text="">
+                <span>
+                  <svg viewBox="0 0 20 20" width="16" height="16">
+                    <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
+                  </svg>
+                </span>
+                Copy
+              </button>
+              <div class="tooltip hex-tip">
+                <span class="tooltip-text">Copied!</span>
+              </div>
+            </div>
+            <div class="rgb-copy">
+              <h4 class="title">RGB</h4>
+              <p>
+                <span class="rgb-copy-text"></span>
+              </p>
+              <button class="rgb-copy-button" data-clipboard-text="">
+                <span>
+                  <svg viewBox="0 0 20 20" width="16" height="16">
+                    <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
+                  </svg>
+                </span>
+                Copy
+              </button>
+              <div class="tooltip rgb-tip">
+                <span class="tooltip-text">Copied!</span>
+              </div>
+            </div>
+        </section>
+      </div>
+    </section>
+    <!-- <section class="flex-container">
+      <article>
+        <h2>User Colors</h2>
+          <p class="mt-1">This is a work in progress. Some things are broken. Saved colors coming soon!</p>
+      </article>
+    </section> -->
+    <section class="user-colors">
+      <div class="color-form">
+        <label class="title" for="colorInput"><h5>Enter a color</h5></label>
+        <input type="text" name="colorInput" class="color-input">
+      </div>
+      <div class="saved-color">
+        <input type="text" class="saved-color-name" placeholder="color name">
+        <p><span class="saved-color-value"></span></p>
+        <div class="saved-color-copy">
+          <button class="saved-color-copy__hsl">HSL</button>
+          <button class="saved-color-copy__hex">HEX</button>
+          <button class="saved-color-copy__rgb">RGB</button>
         </div>
       </div>
-      <div class="flex-container">
-        <div id="swatch"></div>
-        <!-- <div id="values"></div> -->
-        <div class="hsl-copy">
-          <label class="title" for="hslInput"><h4>HSL</h4></label>
-          <!-- <input type="text" name="hsl" id="hslInput"> -->
-          <p class="demphasis">
-            <span class="hsl-copy-text"></span>
-          </p>
-          <button class="hsl-copy-button" data-clipboard-text="">
-            <span>
-              <svg viewBox="0 0 20 20" width="16" height="16">
-                <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
-              </svg>
-            </span>
-            Copy
-          </button>
-          <div class="tooltip hsl-tip">
-            <span class="tooltip-text">Copied!</span>
-          </div>
-        </div>
-        <div class="hex-copy">
-          <label class="title" for="hexInput"><h4>HEX</h4></label>
-          <!-- <input type="text" name="hex" id="hexInput"> -->
-          <p class="demphasis">
-            <span class="hex-copy-text"></span>
-          </p>
-          <button class="hex-copy-button" data-clipboard-text="">
-            <span>
-              <svg viewBox="0 0 20 20" width="16" height="16">
-                <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
-              </svg>
-            </span>
-            Copy
-          </button>
-          <div class="tooltip hex-tip">
-            <span class="tooltip-text">Copied!</span>
-          </div>
-        </div>
-        <div class="rgb-copy">
-          <label class="title" for="rgbInput"><h4>RGB</h4></label>
-          <!-- <input type="text" name="rgb" id="rgbInput"> -->
-          <p class="demphasis">
-            <span class="rgb-copy-text"></span>
-          </p>
-          <button class="rgb-copy-button" data-clipboard-text="">
-            <span>
-              <svg viewBox="0 0 20 20" width="16" height="16">
-                <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
-              </svg>
-            </span>
-            Copy
-          </button>
-          <div class="tooltip rgb-tip">
-            <span class="tooltip-text">Copied!</span>
-          </div>
+      <div class="saved-color">
+        <input type="text" class="saved-color-name" placeholder="color name">
+        <p><span class="saved-color-value"></span></p>
+        <div class="saved-color-copy">
+          <button class="saved-color-copy__hsl">HSL</button>
+          <button class="saved-color-copy__hex">HEX</button>
+          <button class="saved-color-copy__rgb">RGB</button>
         </div>
       </div>
-      <!-- <div class="flex-container">
-        <span class="title">CSS:</span>
-        <div id="css"></div>
-      </div> -->
-
+      <div class="saved-color">
+        <input type="text" class="saved-color-name" placeholder="color name">
+        <p><span class="saved-color-value"></span></p>
+        <div class="saved-color-copy">
+          <button class="saved-color-copy__hsl">HSL</button>
+          <button class="saved-color-copy__hex">HEX</button>
+          <button class="saved-color-copy__rgb">RGB</button>
+        </div>
+      </div>
     </section>
 
     <p class="powered-by">Powered by <a href="https://obscuredetour.com">obscure detour</a> &amp; <a href="https://iro.js.org">iro.js</a>.</p>

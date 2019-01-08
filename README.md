@@ -4,6 +4,11 @@ Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
 
 ### Changelog
 
+**1.1.8**
+- Color input from any format implemented
+- Click to copy tooltips
+- Initial saved color function implemented
+
 **1.1.7**
 - Rewrote a few methods
 - Implemented click to copy buttons for each color value

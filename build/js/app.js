@@ -37,7 +37,33 @@ new ClipboardJS('.hex-copy-button');
 new ClipboardJS('.rgb-copy-button');
 
 // DOM objects
-const hslCopyValue = document.querySelector(".hsl-copy-text"),
+const elements = {
+  colorControls: document.querySelector(".color-controls"),
+  colorInput: document.querySelector(".color-input"),
+  hslCopyValue: document.querySelector(".hsl-copy-text"),
+  hexCopyValue: document.querySelector(".hex-copy-text"),
+  rgbCopyValue: document.querySelector(".rgb-copy-text"),
+  hslCopyButton: document.querySelector(".hsl-copy-button"),
+  hexCopyButton: document.querySelector(".hex-copy-button"),
+  rgbCopyButton: document.querySelector(".rgb-copy-button"),
+  hslTooltip: document.querySelector(".hsl-tip"),
+  hexTooltip: document.querySelector(".hex-tip"),
+  rgbTooltip: document.querySelector(".rgb-tip"),
+  hInput: document.querySelector(".h-input"),
+  hValue: document.querySelector(".h-value"),
+  hSlider: document.querySelector(".h-slider"),
+  sInput: document.querySelector(".s-input"),
+  sValue: document.querySelector(".s-value"),
+  sSlider: document.querySelector(".s-slider"),
+  lInput: document.querySelector(".l-input"),
+  lValue: document.querySelector(".l-value"),
+  lSlider: document.querySelector(".l-slider"),
+  savedColorContainer: document.querySelector(".saved-color"),
+  saveColorButton: document.querySelector(".save-color-button")
+}
+
+const colorInput = document.querySelector(".color-input"),
+  hslCopyValue = document.querySelector(".hsl-copy-text"),
   hexCopyValue = document.querySelector(".hex-copy-text"),
   rgbCopyValue = document.querySelector(".rgb-copy-text"),
   hslCopyButton = document.querySelector(".hsl-copy-button"),
@@ -46,18 +72,16 @@ const hslCopyValue = document.querySelector(".hsl-copy-text"),
   hslTooltip = document.querySelector(".hsl-tip"),
   hexTooltip = document.querySelector(".hex-tip"),
   rgbTooltip = document.querySelector(".rgb-tip"),
-  // hexInput = document.getElementById("hexInput"),
-  // rgbInput = document.getElementById("rgbInput"),
-  // hslInput = document.getElementById("hslInput"),
-  hInput = document.getElementById("hInput"),
-  hValue = document.getElementById("hValue"),
-  hSlider = document.getElementById("hSlider"),
-  sInput = document.getElementById("sInput"),
-  sValue = document.getElementById("sValue"),
-  sSlider = document.getElementById("sSlider"),
-  lInput = document.getElementById("lInput"),
-  lValue = document.getElementById("lValue"),
-  lSlider = document.getElementById("lSlider");
+  hInput = document.querySelector(".h-input"),
+  hValue = document.querySelector(".h-value"),
+  hSlider = document.querySelector(".h-slider"),
+  sInput = document.querySelector(".s-input"),
+  sValue = document.querySelector(".s-value"),
+  sSlider = document.querySelector(".s-slider"),
+  lInput = document.querySelector(".l-input"),
+  lValue = document.querySelector(".l-value"),
+  lSlider = document.querySelector(".l-slider"),
+  saveColorButton = document.querySelector(".save-color-button");
 
 
 colorPicker.on("color:change", function(color) {
@@ -90,6 +114,8 @@ colorPicker.on("color:change", function(color) {
 
   lValue.innerHTML = lightness + '%';
   lInput.value = lightness;
+
+  colorInput.placeholder = hex;
   
 });
 
@@ -192,18 +218,40 @@ colorPicker.on("color:change", function(color, changes) {
     mainHslInputChange();
   };
 
-  // Event Listeners
+  const colorInputChange = (color) => {
+    newColor = colorInput.value;
 
-  hSlider.addEventListener('change', sliderUIUpdate);
-  sSlider.addEventListener('change', sliderUIUpdate);
-  lSlider.addEventListener('change', sliderUIUpdate);
+    if (newColor.includes('h')) {
+      //hsl
+      colorPicker.color.hslString = newColor;
+
+    } else if (newColor.length >= 3 && newColor.length <= 7) {
+      //hex
+      newColor.includes('#') ? colorPicker.color.hexString = newColor : colorPicker.color.hexString = '#' + newColor; 
+      colorInput.value = newColor;
+    } else {
+      //rgb
+      colorPicker.color.rgbString = newColor;
+      // colorPicker.color.rgbString = newColor;
+      console.log(newColor);
+
+      // colorInput.value = newColor;
+    }
+  }
+
+  // Handling color control changes
+  elements.hSlider.addEventListener('change', sliderUIUpdate);
+  elements.sSlider.addEventListener('change', sliderUIUpdate);
+  elements.lSlider.addEventListener('change', sliderUIUpdate);
 
   // hexInput.addEventListener('change', hexInputChange);
   // rgbInput.addEventListener('change', inputChange);
   // hslInput.addEventListener('change', hslInputChange);
-  hInput.addEventListener('change', mainHslInputChange);
-  sInput.addEventListener('change', mainHslInputChange);
-  lInput.addEventListener('change', mainHslInputChange);
+  elements.hInput.addEventListener('change', mainHslInputChange);
+  elements.sInput.addEventListener('change', mainHslInputChange);
+  elements.lInput.addEventListener('change', mainHslInputChange);
+
+  colorInput.addEventListener('change', colorInputChange);
 
 });
 
@@ -228,6 +276,51 @@ hexCopyButton.addEventListener('click', () => {
 rgbCopyButton.addEventListener('click', () => {
   showTooltip(el = rgbTooltip);
 });
+// saveColorButton.addEventListener('click', doThis());
+
+
+///// SAVE COLOR
+const saveColor = () => {
+  const markup = `
+    <div class="saved-color">
+
+    </div>
+  `;
+  let currentColor = elements.hslCopyValue.innerHTML;
+  let savedColor = new Colors(currentColor);
+
+  elements.savedColorContainer.style.background = savedColor.color;
+
+  console.log(savedColor.color);
+};
+class Colors {
+  constructor(color) {
+    this.color = color;
+  }
+}
+// class Colors {
+//   constructor() {
+//     this.colors = [];
+//   }
+
+//   addColor(color) {
+//     const savedColor = { color };
+//     this.colors.push(color);
+//     return savedColor;
+//   }
+
+//   deleteColor(color) {
+//     const index = this.colors.findIndex(el => el.color === color);
+//     this.colors.splice(index, 1);
+//   }
+
+//   getNumColors() {
+//     return this.colors.length;
+//   }
+// }
+
+// Handling button clicks
+elements.saveColorButton.addEventListener('click', saveColor);
 
 
 // hslCopyButton.addEventListener('click', copyText(str = hslCopyValue.innerHTML));
