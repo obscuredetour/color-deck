@@ -1,8 +1,8 @@
 {
-  "name": "Color Desk",
-  "short_name": "ColorDesk",
-  "theme_color": "#c65d21",
-  "background_color": "#222222",
+  "name": "Color Deck",
+  "short_name": "ColorDeck",
+  "theme_color": "#4e64b7",
+  "background_color": "#212121",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/",

@@ -25,9 +25,9 @@ const elements = {
   saveColorButton: document.querySelector(".save-color-button"),
   savedColorValue: document.querySelector(".saved-color-value"),
   savedColorName: document.querySelector(".saved-color-name"),
-  savedColorCopyHsl: document.querySelector(".saved-color-copy__hsl"),
-  savedColorCopyHex: document.querySelector(".saved-color-copy__hex"),
-  savedColorCopyRgb: document.querySelector(".saved-color-copy__rgb")
+  savedColorCopyHsl: document.querySelectorAll(".saved-color-copy__hsl"),
+  savedColorCopyHex: document.querySelectorAll(".saved-color-copy__hex"),
+  savedColorCopyRgb: document.querySelectorAll(".saved-color-copy__rgb")
 }
 
 // thanks stackoverflow
@@ -243,7 +243,10 @@ rgbCopyButton.addEventListener('click', () => {
 ///// SAVE COLOR Controller
 const saveColor = async () => {
   // Get saved color
-  let currentColor = elements.hexCopyValue.innerHTML;
+  let currentColor = elements.hexCopyValue.innerHTML,
+    hex = currentColor,
+    hsl = elements.hslCopyButton.dataset.clipboardText,
+    rgb = elements.rgbCopyButton.dataset.clipboardText;
   // Create new saved
   let savedColor = new Colors(currentColor, currentColor);
   createColors(savedColor);
@@ -257,22 +260,22 @@ const saveColor = async () => {
       <input type="text" class="saved-color-name" placeholder="color name" data-color="${currentColor}">
       <!-- <p><span class="saved-color-value">${currentColor}</span></p> -->
       <div class="saved-color-copy">
-        <button class="saved-color-copy__hsl" data-clipboard-text=${elements.hslCopyValue.innerHTML}>HSL</button>
-        <button class="saved-color-copy__hex" data-clipboard-text=${elements.hexCopyValue.innerHTML}>HEX</button>
-        <button class="saved-color-copy__rgb" data-clipboard-text=${elements.rgbCopyValue.innerHTML}>RGB</button>
+        <button class="saved-color-copy__hsl" data-clipboard-text="${hsl}">HSL</button>
+        <button class="saved-color-copy__hex" data-clipboard-text="${hex}">HEX</button>
+        <button class="saved-color-copy__rgb" data-clipboard-text="${rgb}">RGB</button>
       </div>
     </div>
   `;
 
   elements.userColors.insertAdjacentHTML('beforeend', markup);
   
-  elements.savedColorCopyHsl = document.querySelector(".saved-color-copy__hsl");
-  elements.savedColorCopyHex = document.querySelector(".saved-color-copy__hex");
-  elements.savedColorCopyRgb = document.querySelector(".saved-color-copy__rgb");
-  
-  new ClipboardJS(elements.savedColorCopyHsl);
-  new ClipboardJS(elements.savedColorCopyHex);
-  new ClipboardJS(elements.savedColorCopyRgb);
+  elements.savedColorCopyHsl = document.querySelectorAll(".saved-color-copy__hsl");
+  elements.savedColorCopyHex = document.querySelectorAll(".saved-color-copy__hex");
+  elements.savedColorCopyRgb = document.querySelectorAll(".saved-color-copy__rgb");
+
+  let savedColorHslButtons = new ClipboardJS(elements.savedColorCopyHsl);
+  let savedColorHexButtons = new ClipboardJS(elements.savedColorCopyHex);
+  let savedColorRgbButtons = new ClipboardJS(elements.savedColorCopyRgb);
 
 };
 class Colors {
@@ -288,34 +291,6 @@ createColors = (color) => {
   console.log(colors);
 };
 
-// const updateColorName = async () => {
-//  elements.savedColorName = document.querySelector(".saved-color-name");
-//   if (colors.color === elements.savedColorName.dataset.color) {
-//     colors.color = elements.savedColorName.value;
-//   }
-// };
-
-// class Colors {
-//   constructor() {
-//     this.colors = [];
-//   }
-
-//   addColor(color) {
-//     const savedColor = { color };
-//     this.colors.push(color);
-//     return savedColor;
-//   }
-
-//   deleteColor(color) {
-//     const index = this.colors.findIndex(el => el.color === color);
-//     this.colors.splice(index, 1);
-//   }
-
-//   getNumColors() {
-//     return this.colors.length;
-//   }
-// }
-
 // Handling button clicks
 elements.saveColorButton.addEventListener('click', saveColor);
-elements.savedColorName.addEventListener('click', updateColorName);
+// elements.savedColorName.addEventListener('click', updateColorName);

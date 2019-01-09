@@ -20,8 +20,8 @@ main
 .color
   display: flex
   justify-content: center
+  justify-content: space-evenly
   flex-wrap: wrap
-  margin-bottom: -1rem
 .color-wheel
   margin-bottom: -2rem
 @media screen and (min-width: 569px)
@@ -29,7 +29,7 @@ main
     margin-left: -2.5rem
 @media screen and (min-width: 769px)
   .color
-    margin-bottom: -2rem
+    margin-bottom: -1rem
 // hide iro default slider
 .iro__slider
   display: none
@@ -39,11 +39,18 @@ main
   border-radius: 8px
   position: relative
 
-.color-form input
-  max-width: 200px
+.color-form
+  .title
+    margin-top: 0
+  input
+    margin-bottom: 1rem
+    max-width: 200px
 
-// .color-current
-//   margin: 0 auto
+@media screen and (min-width: 536px)
+  .color-current
+    margin-left: -2rem
+  .color-values
+    margin-top: 0
 // .color-current
 //   align-items: center
 //   padding: 0
@@ -53,20 +60,22 @@ main
 //     margin: 2rem 0 0
 
 .save-color-button, .hsl-copy-button, .hex-copy-button,.rgb-copy-button
-  position: absolute
-  top: 1rem
-  right: 1rem
   display: flex
   align-items: center
   justify-content: center
+  position: absolute
+  right: 0
+  top: 0
   margin: 0
   padding: 0
-  width: 40px
-  height: 40px
+  width: 50px
+  height: 100%
   transition: all 0.2s ease-in-out
   color: $alto
   background: $titan
-  border-radius: 100px
+  border-radius: 30px
+  border-top-left-radius: 0
+  border-bottom-left-radius: 0
   span
     display: flex
     align-items: center
@@ -81,9 +90,17 @@ main
     span svg path
       fill: $alto
 
-.save-color-button span svg
-  width: 28px
-  height: 28px
+.save-color-button
+  height: 40px
+  width: 100%
+  top: unset
+  bottom: 0
+  border-radius: 8px
+  border-top-left-radius: 0
+  border-top-right-radius: 0
+  span svg
+    width: 28px
+    height: 28px
 
 .color-controls
   max-width: 45rem
@@ -175,45 +192,45 @@ input.l-input, input.s-input, input.h-input
 
 .color-values
   display: flex
-  flex-wrap: wrap
+  flex-direction: column
   justify-content: space-evenly
-  margin: 0
+  align-items: flex-start
+  margin: 1rem 0 0
 .hsl-copy, .hex-copy, .rgb-copy
+  width: 248px
   position: relative
   display: flex
-  flex-direction: column
-  width: 190px
-  height: 105px
+  align-items: center
   background: $darker
-  border-radius: 8px
+  border-radius: 30px
   margin-top: 1rem
-  padding: 0 1rem
-  h4
+  padding: 8px 0 8px 1rem
+  h4, h5
     color: $alabaster
   p
+    margin: 0
     color: $alto
+  &:first-of-type
+    margin-top: 0
 
 .tooltip
   display: flex
   justify-content: center
   align-items: center
-  position: relative
+  position: absolute
+  right: 55px
   background: $accent
   border-radius: 20px
   padding: 0.25rem 0.5rem
-  margin-left: 28px
-  margin-top: -83px
   max-width: 75px
-  min-height: 30px
+  height: 30px
   opacity: 0
   z-index: 2
   transition: opacity 0.3s ease-in-out
-  &:before
+  &:after
     content: ''
     display: block
-    position: absolute
-    bottom: 7px
-    right: -13px
+    margin-right: -22px
     border-width: 8px
     border-style: solid
     border-color: transparent transparent transparent $accent
@@ -223,7 +240,8 @@ input.l-input, input.s-input, input.h-input
     opacity: 1
     visibility: visible
 .tooltip-text
-  font-size: 0.85rem
+  padding-right: 10px
+  font-size: 15px
   color: $text-color-bright
 
 .user-colors
@@ -236,11 +254,11 @@ input.l-input, input.s-input, input.h-input
     display: flex
     justify-content: center
     flex-direction: column
-    width: 200px
+    min-width: 150px
     height: 150px
     background: $dark
     border-radius: 8px
-    margin: 1rem 1rem 0 0
+    margin: 1rem 0.5rem 0 0
     padding: 0 1rem
     &:hover p
       opacity: 1
@@ -281,12 +299,15 @@ input.saved-color-name
   display: flex
   transition: all 0.2s ease-in-out
   button
+    padding: 8px
     width: 100%
     margin: 0
     color: $alto
     background: transparentize($darkest, 0.7)
     &:hover, &:active, &:focus
       background: transparentize($darkest, 0.2)
+.saved-color-copy__hsl, .saved-color-copy__hex, .saved-color-copy__rgb
+  font-size: 15px
 .saved-color-copy__hsl
   border-radius: 0
   border-bottom-left-radius: 8px

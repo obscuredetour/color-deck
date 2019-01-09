@@ -1,8 +1,15 @@
-# Color Desk
-Color Desk is a color palette collector made for humans. Which makes this all about HSL!
+# Color Deck
+Color Deck is a color palette collector made for humans. Which makes this all about HSL!
 Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
 
+## Why
+There are quite a few color tools out there. However, none focus on HSL. It is arguably the easiest method for humans to view relationships between colors. Many color tools also arbitrarily decide how many colors should be in a palette or series. I set to fix these issues with Color Deck.
+
 ### Changelog
+
+**1.2.0**
+- Colors can be saved (not persistent, yet)
+- Name adjustment
 
 **1.1.8**
 - Color input from any format implemented
@@ -38,12 +45,12 @@ Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
 
 ## Goals
 
-[x] Implement Color wheel picker
-[x] Implement HSL controls
-[x] Offline use - PWA
-[ ] Save series of colors in palettes
-[ ] Click to copy (text) of various color formats
-[ ] Implement color groups within palettes
+- [x] Implement Color wheel picker
+- [x] Implement HSL controls
+- [x] Offline use - PWA
+- [x] Save series of colors in palettes
+- [x] Click to copy (text) of various color formats
+- [ ] Implement color groups within palettes
 
 <!-- ### Customizable
 
