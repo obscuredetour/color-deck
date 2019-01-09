@@ -318,12 +318,78 @@ main {
   margin: 2rem auto 0 auto; }
   main article, main section {
     padding: 1rem;
-    max-width: 60rem;
+    max-width: 50rem;
     margin: 0 auto; }
 
 @media screen and (min-width: 569px) {
   main {
-    margin-top: 1.25rem; } }
+    margin-top: 1rem; } }
+
+.color {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: -1rem; }
+
+.color-wheel {
+  margin-bottom: -2rem; }
+
+@media screen and (min-width: 569px) {
+  .color {
+    margin-left: -2.5rem; } }
+
+@media screen and (min-width: 769px) {
+  .color {
+    margin-bottom: -2rem; } }
+
+.iro__slider {
+  display: none; }
+
+#swatch {
+  width: 200px;
+  height: 140px;
+  border-radius: 8px;
+  position: relative; }
+
+.color-form input {
+  max-width: 200px; }
+
+.save-color-button, .hsl-copy-button, .hex-copy-button, .rgb-copy-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  transition: all 0.2s ease-in-out;
+  color: #cfcfcf;
+  background: #616161;
+  border-radius: 100px; }
+  .save-color-button span, .hsl-copy-button span, .hex-copy-button span, .rgb-copy-button span {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .save-color-button span svg, .hsl-copy-button span svg, .hex-copy-button span svg, .rgb-copy-button span svg {
+      width: 16px; }
+    .save-color-button span svg path, .hsl-copy-button span svg path, .hex-copy-button span svg path, .rgb-copy-button span svg path {
+      fill: #cfcfcf; }
+  .save-color-button:hover, .hsl-copy-button:hover, .hex-copy-button:hover, .rgb-copy-button:hover {
+    color: #cfcfcf;
+    background: #4e64b7; }
+    .save-color-button:hover span svg path, .hsl-copy-button:hover span svg path, .hex-copy-button:hover span svg path, .rgb-copy-button:hover span svg path {
+      fill: #cfcfcf; }
+
+.save-color-button span svg {
+  width: 28px;
+  height: 28px; }
+
+.color-controls {
+  max-width: 45rem;
+  margin: 0 auto; }
 
 #iro-wrapper {
   margin: -1rem auto -2rem; }
@@ -333,9 +399,6 @@ main {
     margin: 0 auto; }
   #iro-wrapper {
     margin-left: -2rem; } }
-
-.iro__slider {
-  display: none; }
 
 .color-controls {
   display: flex;
@@ -352,7 +415,7 @@ main {
   flex: 1; }
 
 input.l-input, input.s-input, input.h-input {
-  margin: 0 1rem;
+  margin: 0 1rem 0 0;
   width: 4rem;
   display: block;
   align-self: flex-end; }
@@ -411,93 +474,28 @@ input.l-input, input.s-input, input.h-input {
   background: -webkit-linear-gradient(to right, #e00000, #e02500, #e04b00, #e07000, #e09600, #e0bb00, #e0e000, #bbe000, #96e000, #70e000, #4be000, #25e000, #00e000, #00e025, #00e04b, #00e070, #00e096, #00e0bb, #00e0e0, #00bbe0, #0096e0, #0070e0, #004be0, #0025e0, #0000e0, #2500e0, #4b00e0, #7000e0, #9600e0, #bb00e0, #e000e0, #e000bb, #e00096, #e00070, #e0004b, #e00025, #e00000);
   background: -moz-linear-gradient(to right, #e00000, #e02500, #e04b00, #e07000, #e09600, #e0bb00, #e0e000, #bbe000, #96e000, #70e000, #4be000, #25e000, #00e000, #00e025, #00e04b, #00e070, #00e096, #00e0bb, #00e0e0, #00bbe0, #0096e0, #0070e0, #004be0, #0025e0, #0000e0, #2500e0, #4b00e0, #7000e0, #9600e0, #bb00e0, #e000e0, #e000bb, #e00096, #e00070, #e0004b, #e00025, #e00000); }
 
-#values {
-  min-width: 200px; }
-
-.color-form input {
-  max-width: 200px; }
-
 .color-values {
   display: flex;
-  flex: 1 1 225px;
   flex-wrap: wrap;
-  justify-content: flex-start; }
-  .color-values > div {
-    margin-right: 1rem; }
-  .color-values > div:last-of-type {
-    margin-right: 0; }
+  justify-content: space-evenly;
+  margin: 0; }
 
-.hsl-copy, .hex-copy, .rgb-copy, .current-color {
+.hsl-copy, .hex-copy, .rgb-copy {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 200px;
-  height: 150px;
+  width: 190px;
+  height: 105px;
   background: #3b3b3b;
   border-radius: 8px;
   margin-top: 1rem;
   padding: 0 1rem; }
-  .hsl-copy h4, .hex-copy h4, .rgb-copy h4, .current-color h4 {
+  .hsl-copy h4, .hex-copy h4, .rgb-copy h4 {
     color: #f7f7f7; }
-  .hsl-copy p, .hex-copy p, .rgb-copy p, .current-color p {
-    margin-bottom: 0;
+  .hsl-copy p, .hex-copy p, .rgb-copy p {
     color: #cfcfcf; }
 
-.color-container, .current-color {
-  margin: 0 auto; }
-
-.current-color {
-  align-items: center;
-  padding: 0;
-  margin-bottom: 1rem; }
-
-@media screen and (min-width: 769px) {
-  .current-color {
-    margin: 2rem 0 0; } }
-
-#swatch {
-  width: 200px;
-  height: 150px;
-  border-radius: 8px; }
-
-.save-color-button, .hsl-copy-button, .hex-copy-button, .rgb-copy-button {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0.7058823529411765rem;
-  font-size: 0.9rem;
-  transition: all 0.2s ease-in-out;
-  color: #cfcfcf;
-  background: #616161;
-  border-radius: 0;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px; }
-  .save-color-button span, .hsl-copy-button span, .hex-copy-button span, .rgb-copy-button span {
-    margin-right: 0.45rem;
-    max-width: 14px;
-    max-height: 14px; }
-    .save-color-button span svg, .hsl-copy-button span svg, .hex-copy-button span svg, .rgb-copy-button span svg {
-      max-width: 14px; }
-    .save-color-button span svg path, .hsl-copy-button span svg path, .hex-copy-button span svg path, .rgb-copy-button span svg path {
-      fill: #cfcfcf; }
-  .save-color-button:hover, .hsl-copy-button:hover, .hex-copy-button:hover, .rgb-copy-button:hover {
-    color: #cfcfcf;
-    background: #4e64b7; }
-    .save-color-button:hover span svg path, .hsl-copy-button:hover span svg path, .hex-copy-button:hover span svg path, .rgb-copy-button:hover span svg path {
-      fill: #cfcfcf; }
-
-.save-color-button span {
-  max-height: 24px; }
-  .save-color-button span svg {
-    max-width: 24px; }
-
 .tooltip {
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -505,9 +503,10 @@ input.l-input, input.s-input, input.h-input {
   background: #4e64b7;
   border-radius: 20px;
   padding: 0.25rem 0.5rem;
-  margin-top: 4rem;
-  margin-left: 50px;
+  margin-left: 28px;
+  margin-top: -83px;
   max-width: 75px;
+  min-height: 30px;
   opacity: 0;
   z-index: 2;
   transition: opacity 0.3s ease-in-out; }
@@ -515,16 +514,16 @@ input.l-input, input.s-input, input.h-input {
     content: '';
     display: block;
     position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -8px;
+    bottom: 7px;
+    right: -13px;
     border-width: 8px;
     border-style: solid;
-    border-color: transparent transparent #4e64b7 transparent;
+    border-color: transparent transparent transparent #4e64b7;
     transition: opacity 0.3s ease-in-out; }
   .tooltip.visible {
     transition: opacity 0.3s ease-in-out;
-    opacity: 1; }
+    opacity: 1;
+    visibility: visible; }
 
 .tooltip-text {
   font-size: 0.85rem;
@@ -533,12 +532,12 @@ input.l-input, input.s-input, input.h-input {
 .user-colors {
   margin-top: -2rem;
   display: flex;
-  flex: 1 1 225px;
   flex-wrap: wrap;
   justify-content: center; }
   .user-colors > div {
     position: relative;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     width: 200px;
     height: 150px;
@@ -546,19 +545,23 @@ input.l-input, input.s-input, input.h-input {
     border-radius: 8px;
     margin: 1rem 1rem 0 0;
     padding: 0 1rem; }
+    .user-colors > div:hover p {
+      opacity: 1; }
     .user-colors > div h4, .user-colors > div h5 {
       margin-bottom: 0;
       color: #f7f7f7; }
     .user-colors > div p {
       margin-bottom: 0;
-      color: #cfcfcf; }
+      color: #cfcfcf;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out; }
 
 .saved-color {
   position: relative; }
 
 input.saved-color-name {
   opacity: 0;
-  background: transparent;
+  background: rgba(33, 33, 33, 0.5);
   position: absolute;
   top: 0;
   left: 0;

@@ -37,8 +37,9 @@
           <div id="swatch">
             <button class="save-color-button" data-color="">
               <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"></path></svg>
               </span>
+              Save
             </button>
           </div>
           <div class="color-form">
@@ -88,6 +89,7 @@
                 <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
               </svg>
             </span>
+            Copy
           </button>
           <div class="tooltip hsl-tip">
             <span class="tooltip-text">Copied!</span>
@@ -104,6 +106,7 @@
                 <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
               </svg>
             </span>
+            Copy
           </button>
           <div class="tooltip hex-tip">
             <span class="tooltip-text">Copied!</span>
@@ -120,6 +123,7 @@
                 <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/>
               </svg>
             </span>
+            Copy
           </button>
           <div class="tooltip rgb-tip">
             <span class="tooltip-text">Copied!</span>
@@ -128,14 +132,14 @@
       </div>
     </section>
     
-    <section>
+    <section class="flex-container">
       <article>
         <h2>User Colors</h2>
           <p class="mt-1">This is a work in progress. Some things are broken. Saved colors coming soon!</p>
       </article>
     </section>
     <section class="user-colors">
-      <!-- <div class="saved-color">
+      <div class="saved-color">
         <input type="text" class="saved-color-name" placeholder="color name">
         <p><span class="saved-color-value"></span></p>
         <div class="saved-color-copy">
@@ -152,7 +156,16 @@
           <button class="saved-color-copy__hex">HEX</button>
           <button class="saved-color-copy__rgb">RGB</button>
         </div>
-      </div> -->
+      </div>
+      <div class="saved-color">
+        <input type="text" class="saved-color-name" placeholder="color name">
+        <p><span class="saved-color-value"></span></p>
+        <div class="saved-color-copy">
+          <button class="saved-color-copy__hsl">HSL</button>
+          <button class="saved-color-copy__hex">HEX</button>
+          <button class="saved-color-copy__rgb">RGB</button>
+        </div>
+      </div>
     </section>
 
     <p class="powered-by">Powered by <a href="https://obscuredetour.com">obscure detour</a> &amp; <a href="https://iro.js.org">iro.js</a>.</p>

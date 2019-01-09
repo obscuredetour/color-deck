@@ -1,42 +1,4 @@
-// thanks stackoverflow
-getStartColor = () => {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-
-// Start Color Picker
-const colorPicker = new iro.ColorPicker("#iro-wrapper", {
-  width: 320,
-  height: 320,
-  color: getStartColor(),
-  markerRadius: 8,
-  padding: 4,
-  sliderMargin: 24,
-  sliderHeight: 36,
-  borderWidth: 3,
-  borderColor: "#1d1d1d",
-  anticlockwise: true,
-  // Dynamic CSS guide: https://iro.js.org/guide.html#Dynamic-CSS
-  css: {
-    "#swatch, .slider": {
-      "background-color": "$color"
-    },
-    ".s-controls__slider, .l-controls__slider": {
-      "background-color": "$color"
-    }
-  }
-});
-
-// Start clipboard module
-new ClipboardJS('.hsl-copy-button');
-new ClipboardJS('.hex-copy-button');
-new ClipboardJS('.rgb-copy-button');
-
-// DOM objects
+// DOM elements
 const elements = {
   colorControls: document.querySelector(".color-controls"),
   colorInput: document.querySelector(".color-input"),
@@ -58,9 +20,50 @@ const elements = {
   lInput: document.querySelector(".l-input"),
   lValue: document.querySelector(".l-value"),
   lSlider: document.querySelector(".l-slider"),
-  savedColorContainer: document.querySelector(".saved-color"),
-  saveColorButton: document.querySelector(".save-color-button")
+  userColors: document.querySelector(".user-colors"),
+  savedColorContainer: document.querySelectorAll(".saved-color"),
+  saveColorButton: document.querySelector(".save-color-button"),
+  savedColorValue: document.querySelector(".saved-color-value"),
+  savedColorName: document.querySelector(".saved-color-name"),
+  savedColorCopyHsl: document.querySelector(".saved-color-copy__hsl"),
+  savedColorCopyHex: document.querySelector(".saved-color-copy__hex"),
+  savedColorCopyRgb: document.querySelector(".saved-color-copy__rgb")
 }
+
+// thanks stackoverflow
+getStartColor = () => {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+// Create and Display Color Picker
+const colorPicker = new iro.ColorPicker("#color-wheel", {
+  width: 320,
+  height: 320,
+  color: getStartColor(),
+  markerRadius: 8,
+  padding: 4,
+  sliderMargin: 24,
+  sliderHeight: 36,
+  borderWidth: 3,
+  borderColor: "#1d1d1d",
+  anticlockwise: true,
+  // Dynamic CSS guide: https://iro.js.org/guide.html#Dynamic-CSS
+  css: {
+    "#swatch, .slider, .s-controls__slider, .l-controls__slider": {
+      "background-color": "$color"
+    }
+  }
+});
+
+// Start clipboard module
+new ClipboardJS(elements.hslCopyButton);
+new ClipboardJS(elements.hexCopyButton);
+new ClipboardJS(elements.rgbCopyButton);
 
 const colorInput = document.querySelector(".color-input"),
   hslCopyValue = document.querySelector(".hsl-copy-text"),
@@ -144,8 +147,12 @@ colorPicker.on("color:change", function(color, changes) {
     lSlider.value = color.hsl.l;
   }
 
+  if(changes) {
+    elements.colorInput.placeholder = color.hexString;
+    elements.colorInput.value = color.hexString;
+  }
+
   ///////// SLIDERS ////////////
-  /////////////////////////////
   // change slider values
   const sliderChange = () => {
     // set new color
@@ -180,50 +187,13 @@ colorPicker.on("color:change", function(color, changes) {
     lValue.innerHTML = lInput.value + "%";
   };
 
-  ///////// WHOLE COLOR INPUTS ////////////
-  // change whole hsl input values
-  const hslInputChange = () => {
-
-    // replace new colors with slider values (chg to #)
-    // color.hsl = iro.Color.parseHslStr(hslInput.value);
-    // color.hslString = hslInput.value;
-
-    console.log(color.hsl);
-
-    console.log(color.hslString);
-    console.log(newColor);
-
-    // set new color
-    // colorPicker.color.hsl = newColor;
-
-    // update UI
-    //hValue.innerHTML = hInput.value;
-  
-    // hslInput.value = newHslString;
-    // hslUIUpdate();
-    sliderUIUpdate();
-  };
-  const hexInputChange = () => {
-
-    // replace new colors with slider values (chg to #)
-    // set new color
-    color.hex = newColor;
-
-    // update UI
-    // hValue.innerHTML = hInput.value;
-  
-    // hslInput.value = newHslString;
-    // hslUIUpdate();
-    sliderUIUpdate();
-    mainHslInputChange();
-  };
-
   const colorInputChange = (color) => {
     newColor = colorInput.value;
 
     if (newColor.includes('h')) {
       //hsl
       colorPicker.color.hslString = newColor;
+      elements.colorInput.value = newColor;
 
     } else if (newColor.length >= 3 && newColor.length <= 7) {
       //hex
@@ -232,10 +202,6 @@ colorPicker.on("color:change", function(color, changes) {
     } else {
       //rgb
       colorPicker.color.rgbString = newColor;
-      // colorPicker.color.rgbString = newColor;
-      console.log(newColor);
-
-      // colorInput.value = newColor;
     }
   }
 
@@ -243,15 +209,11 @@ colorPicker.on("color:change", function(color, changes) {
   elements.hSlider.addEventListener('change', sliderUIUpdate);
   elements.sSlider.addEventListener('change', sliderUIUpdate);
   elements.lSlider.addEventListener('change', sliderUIUpdate);
-
-  // hexInput.addEventListener('change', hexInputChange);
-  // rgbInput.addEventListener('change', inputChange);
-  // hslInput.addEventListener('change', hslInputChange);
   elements.hInput.addEventListener('change', mainHslInputChange);
   elements.sInput.addEventListener('change', mainHslInputChange);
   elements.lInput.addEventListener('change', mainHslInputChange);
 
-  colorInput.addEventListener('change', colorInputChange);
+  elements.colorInput.addEventListener('change', colorInputChange);
 
 });
 
@@ -276,28 +238,63 @@ hexCopyButton.addEventListener('click', () => {
 rgbCopyButton.addEventListener('click', () => {
   showTooltip(el = rgbTooltip);
 });
-// saveColorButton.addEventListener('click', doThis());
 
 
-///// SAVE COLOR
-const saveColor = () => {
+///// SAVE COLOR Controller
+const saveColor = async () => {
+  // Get saved color
+  let currentColor = elements.hexCopyValue.innerHTML;
+  // Create new saved
+  let savedColor = new Colors(currentColor, currentColor);
+  createColors(savedColor);
+
+  // log newly created object to console
+  console.log(savedColor);
+
+  // Create & Update UI
   const markup = `
-    <div class="saved-color">
-
+    <div class="saved-color" style="background-color: ${currentColor}">
+      <input type="text" class="saved-color-name" placeholder="color name" data-color="${currentColor}">
+      <!-- <p><span class="saved-color-value">${currentColor}</span></p> -->
+      <div class="saved-color-copy">
+        <button class="saved-color-copy__hsl" data-clipboard-text=${elements.hslCopyValue.innerHTML}>HSL</button>
+        <button class="saved-color-copy__hex" data-clipboard-text=${elements.hexCopyValue.innerHTML}>HEX</button>
+        <button class="saved-color-copy__rgb" data-clipboard-text=${elements.rgbCopyValue.innerHTML}>RGB</button>
+      </div>
     </div>
   `;
-  let currentColor = elements.hslCopyValue.innerHTML;
-  let savedColor = new Colors(currentColor);
 
-  elements.savedColorContainer.style.background = savedColor.color;
+  elements.userColors.insertAdjacentHTML('beforeend', markup);
+  
+  elements.savedColorCopyHsl = document.querySelector(".saved-color-copy__hsl");
+  elements.savedColorCopyHex = document.querySelector(".saved-color-copy__hex");
+  elements.savedColorCopyRgb = document.querySelector(".saved-color-copy__rgb");
+  
+  new ClipboardJS(elements.savedColorCopyHsl);
+  new ClipboardJS(elements.savedColorCopyHex);
+  new ClipboardJS(elements.savedColorCopyRgb);
 
-  console.log(savedColor.color);
 };
 class Colors {
-  constructor(color) {
+  constructor(name, color) {
+    this.name = name;
     this.color = color;
   }
-}
+};
+
+let colors = [];
+createColors = (color) => {
+  colors.push(color);
+  console.log(colors);
+};
+
+// const updateColorName = async () => {
+//  elements.savedColorName = document.querySelector(".saved-color-name");
+//   if (colors.color === elements.savedColorName.dataset.color) {
+//     colors.color = elements.savedColorName.value;
+//   }
+// };
+
 // class Colors {
 //   constructor() {
 //     this.colors = [];
@@ -321,41 +318,4 @@ class Colors {
 
 // Handling button clicks
 elements.saveColorButton.addEventListener('click', saveColor);
-
-
-// hslCopyButton.addEventListener('click', copyText(str = hslCopyValue.innerHTML));
-// hslCopyButton.addEventListener('click', () => {
-//   var copied;
-//   try {
-//     copied = window.clipbrd.copy(hslCopyValue.innerHTML);
-//   } catch (e) {}
-// });
-
-// const inputChange = () => {
-
-//   // replace new colors with slider values (chg to #)
-//   newColor.h = Number(hInput.value);
-//   newColor.s = Number(sInput.value);
-//   newColor.l = Number(lInput.value);
-//   // newHslString = hslInput.value;
-//   // newHexString = hexInput.value;
-//   // newRgbString = rgbInput.value;
-
-//   // set new color
-//   colorPicker.color.hsl = newColor;
-//   // let hsl = iro.Color.parseHslStr(newHslString);
-//   // let hex = iro.Color.parseHexStr(newHexString);
-//   // let rgb = iro.Color.parseRgbStr(newRgbString);
-//   // colorPicker.color.hsl = hsl;
-//   // colorPicker.color.hex = hex;
-//   // colorPicker.color.rgb = rgb;
-
-//   // update UI
-//   hValue.innerHTML = hInput.value;
-//   sValue.innerHTML = sInput.value + "%";
-//   lValue.innerHTML = lInput.value + "%";
-
-//   // hslInput.value = newHslString;
-//   // hexInput.value = newHexString;
-//   // rgbInput.value = newRgbString;
-// };
+elements.savedColorName.addEventListener('click', updateColorName);

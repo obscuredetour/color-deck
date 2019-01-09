@@ -8,11 +8,88 @@ main
   margin: 2rem auto 0 auto
   article, section
     padding: 1rem
-    max-width: 60rem
+    max-width: 50rem
     margin: 0 auto
 @media screen and (min-width: 569px)
   main
-    margin-top: 1.25rem
+    margin-top: 1rem
+
+// @media screen and (min-width: 769px)
+//   @supports (display: grid)
+
+.color
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  margin-bottom: -1rem
+.color-wheel
+  margin-bottom: -2rem
+@media screen and (min-width: 569px)
+  .color
+    margin-left: -2.5rem
+@media screen and (min-width: 769px)
+  .color
+    margin-bottom: -2rem
+// hide iro default slider
+.iro__slider
+  display: none
+#swatch
+  width: 200px
+  height: 140px
+  border-radius: 8px
+  position: relative
+
+.color-form input
+  max-width: 200px
+
+// .color-current
+//   margin: 0 auto
+// .color-current
+//   align-items: center
+//   padding: 0
+//   margin-bottom: 1rem
+// @media screen and (min-width: 769px)
+//   .color-current
+//     margin: 2rem 0 0
+
+.save-color-button, .hsl-copy-button, .hex-copy-button,.rgb-copy-button
+  position: absolute
+  top: 1rem
+  right: 1rem
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: 0
+  padding: 0
+  width: 40px
+  height: 40px
+  transition: all 0.2s ease-in-out
+  color: $alto
+  background: $titan
+  border-radius: 100px
+  span
+    display: flex
+    align-items: center
+    justify-content: center
+    svg
+      width: 16px
+    svg path
+      fill: $alto
+  &:hover
+    color: $alto
+    background: $accent
+    span svg path
+      fill: $alto
+
+.save-color-button span svg
+  width: 28px
+  height: 28px
+
+.color-controls
+  max-width: 45rem
+  margin: 0 auto
+
+////////////////////// OLD
 
 #iro-wrapper
   margin: -1rem auto -2rem
@@ -21,10 +98,6 @@ main
     margin: 0 auto
   #iro-wrapper
     margin-left: -2rem
-
-// hide iro default slider
-.iro__slider
-  display: none
 
 //color controls
 .color-controls
@@ -40,7 +113,7 @@ main
 .h-controls, .s-controls, .l-controls
   flex: 1
 input.l-input, input.s-input, input.h-input
-  margin: 0 1rem
+  margin: 0 1rem 0 0
   width: 4rem
   display: block
   align-self: flex-end
@@ -100,28 +173,17 @@ input.l-input, input.s-input, input.h-input
   background: -webkit-linear-gradient(to right, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1))
   background: -moz-linear-gradient(to right, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1))
 
-
-#values
-  min-width: 200px
-
-.color-form input
-  max-width: 200px
-
 .color-values
   display: flex
-  flex: 1 1 225px
   flex-wrap: wrap
-  justify-content: flex-start
-  > div
-    margin-right: 1rem
-  > div:last-of-type
-    margin-right: 0
-.hsl-copy, .hex-copy, .rgb-copy, .current-color
+  justify-content: space-evenly
+  margin: 0
+.hsl-copy, .hex-copy, .rgb-copy
   position: relative
   display: flex
   flex-direction: column
-  width: 200px
-  height: 150px
+  width: 190px
+  height: 105px
   background: $darker
   border-radius: 8px
   margin-top: 1rem
@@ -129,60 +191,9 @@ input.l-input, input.s-input, input.h-input
   h4
     color: $alabaster
   p
-    margin-bottom: 0
     color: $alto
-
-.color-container, .current-color
-  margin: 0 auto
-.current-color
-  align-items: center
-  padding: 0
-  margin-bottom: 1rem
-@media screen and (min-width: 769px)
-  .current-color
-    margin: 2rem 0 0
-#swatch
-  width: 200px
-  height: 150px
-  border-radius: 8px
-.save-color-button, .hsl-copy-button, .hex-copy-button,.rgb-copy-button
-  position: absolute
-  bottom: 0
-  left: 0
-  width: 100%
-  display: flex
-  align-items: center
-  justify-content: center
-  margin: 0
-  padding: 0.7058823529411765rem
-  font-size: 0.9rem
-  transition: all 0.2s ease-in-out
-  color: $alto
-  background: $titan
-  border-radius: 0
-  border-bottom-left-radius: 8px
-  border-bottom-right-radius: 8px
-  span
-    margin-right: 0.45rem
-    max-width: 14px
-    max-height: 14px
-    svg
-      max-width: 14px
-    svg path
-      fill: $alto
-  &:hover
-    color: $alto
-    background: $accent
-    span svg path
-      fill: $alto
-
-.save-color-button span
-  max-height: 24px
-  svg
-    max-width: 24px
 
 .tooltip
-  text-align: center
   display: flex
   justify-content: center
   align-items: center
@@ -190,9 +201,10 @@ input.l-input, input.s-input, input.h-input
   background: $accent
   border-radius: 20px
   padding: 0.25rem 0.5rem
-  margin-top: 4rem
-  margin-left: 50px
+  margin-left: 28px
+  margin-top: -83px
   max-width: 75px
+  min-height: 30px
   opacity: 0
   z-index: 2
   transition: opacity 0.3s ease-in-out
@@ -200,16 +212,16 @@ input.l-input, input.s-input, input.h-input
     content: ''
     display: block
     position: absolute
-    bottom: 100%
-    left: 50%
-    margin-left: -8px
+    bottom: 7px
+    right: -13px
     border-width: 8px
     border-style: solid
-    border-color: transparent transparent $accent transparent
+    border-color: transparent transparent transparent $accent
     transition: opacity 0.3s ease-in-out
   &.visible
     transition: opacity 0.3s ease-in-out
     opacity: 1
+    visibility: visible
 .tooltip-text
   font-size: 0.85rem
   color: $text-color-bright
@@ -217,12 +229,12 @@ input.l-input, input.s-input, input.h-input
 .user-colors
   margin-top: -2rem
   display: flex
-  flex: 1 1 225px
   flex-wrap: wrap
   justify-content: center
   > div
     position: relative
     display: flex
+    justify-content: center
     flex-direction: column
     width: 200px
     height: 150px
@@ -230,18 +242,22 @@ input.l-input, input.s-input, input.h-input
     border-radius: 8px
     margin: 1rem 1rem 0 0
     padding: 0 1rem
+    &:hover p
+      opacity: 1
     h4, h5
       margin-bottom: 0
       color: $alabaster
     p
       margin-bottom: 0
       color: $alto
+      opacity: 0
+      transition: opacity 0.2s ease-in-out
 
 .saved-color
   position: relative
 input.saved-color-name
   opacity: 0
-  background: transparent
+  background: transparentize($darkest, 0.5)
   position: absolute
   top: 0
   left: 0
