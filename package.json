@@ -1,23 +1,22 @@
 {
-  "name": "color-desk",
-  "version": "1.1.8",
-  "description": "Color Desk is a color palette collector made for humans and is HSL driven.",
+  "name": "color-deck",
+  "version": "1.2.0",
+  "description": "Color Deck is a color palette collector made for humans and is HSL driven.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass -w build/sass/ -o build/css/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/obscuredetour/color-desk.git"
+    "url": "git+https://github.com/obscuredetour/color-deck.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/obscuredetour/color-desk/issues"
+    "url": "https://github.com/obscuredetour/color-dcsk/issues"
   },
-  "homepage": "https://github.com/obscuredetour/color-desk#readme",
+  "homepage": "https://github.com/obscuredetour/color-deck#readme",
   "dependencies": {
     "node-sass": "^4.11.0"
   }
