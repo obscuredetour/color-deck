@@ -3,6 +3,48 @@
 @import '_reuseables'
 @import '_input'
 
+//--------- header -------//
+
+.header
+  width: 100%
+  min-height: 5rem
+  background: $darker
+  display: flex
+  align-items: center
+.header-content
+  width: 50rem
+  margin: 0 auto
+  padding: 0 1rem
+  display: flex
+  align-items: center
+  position: relative
+.header-logo
+  max-width: 50px
+.header-title
+  margin: 0 0 0 1rem
+  font-size: 24px
+  font-weight: 500
+  color: $text-color-bright
+.header-github
+  position: absolute
+  right: 1rem
+  display: flex
+  align-items: center
+.header-github-link
+  opacity: 0.75
+  margin-right: 12px
+  transition: opacity 0.2s ease-in-out
+  img
+    max-width: 32px
+  &:hover
+    opacity: 1
+
+//--------- footer -------//
+.footer
+  width: 100%
+  section
+    max-width: 50rem
+    margin: 0 auto
 //--------- page -------//
 main
   margin: 2rem auto 0 auto
@@ -245,52 +287,66 @@ input.l-input, input.s-input, input.h-input
   color: $text-color-bright
 
 .user-colors
-  margin-top: -2rem
+  margin-top: -1rem
+  padding-bottom: 2rem
   display: flex
   flex-wrap: wrap
   justify-content: center
-  > div
-    position: relative
-    display: flex
-    justify-content: center
-    flex-direction: column
-    min-width: 150px
-    height: 150px
-    background: $dark
-    border-radius: 8px
-    margin: 1rem 0.5rem 0 0
-    padding: 0 1rem
-    &:hover p
-      opacity: 1
-    h4, h5
-      margin-bottom: 0
-      color: $alabaster
-    p
-      margin-bottom: 0
-      color: $alto
-      opacity: 0
-      transition: opacity 0.2s ease-in-out
+  position: relative
+.saved-color
+  position: relative
+  display: flex
+  justify-content: center
+  flex-direction: column
+  min-width: 150px
+  height: 150px
+  background: $dark
+  border-radius: 8px
+  margin: 1rem 0.5rem 0 0
+  padding: 0 1rem
+  &:hover p
+    opacity: 1
+  h4, h5
+    margin-bottom: 0
+    color: $alabaster
+  p
+    margin-bottom: 0
+    color: $alto
+    opacity: 0
+    transition: opacity 0.2s ease-in-out
+.save-some-colors
+  background: transparent
+  opacity: 0.15
+  display: block
+  p
+    font-size: 2rem
+    letter-spacing: .1px
+    font-weight: 500
+    margin: 2rem
+  &.d-none
+    display: none
+
 
 .saved-color
   position: relative
 input.saved-color-name
-  opacity: 0
   background: transparentize($darkest, 0.5)
+  font-size: 15px
+  opacity: 0
   position: absolute
   top: 0
   left: 0
   width: 100%
   margin: 0
-  height: 2.5rem
+  max-height: 2.25rem
   border: 0
-  border-bottom: 2px solid transparentize($gray, 0.5)
+  border-bottom: 2px solid transparent
   border-bottom-left-radius: 0
   border-bottom-right-radius: 0
-  transition: all 0.2s ease-in-out
+  transition: all 0.4s ease-in-out
   &:hover, &:active, &:focus
     opacity: 1
-  &:active, &:focus
-    border-color: white
+    border-color: $mercury
 .saved-color-copy
   width: 100%
   position: absolute

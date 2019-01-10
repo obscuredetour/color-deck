@@ -7,6 +7,10 @@ There are quite a few color tools out there. However, none focus on HSL. It is a
 
 ### Changelog
 
+**1.2.1**
+- Cleaned up heading, footer, & color sections
+- Added a header
+
 **1.2.0**
 - Colors can be saved (not persistent, yet)
 - Name adjustment

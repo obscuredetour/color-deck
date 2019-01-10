@@ -74,22 +74,22 @@ p {
     margin-top: 0; }
 
 h1, h2, h3, h4, h5, h6 {
+  max-width: 40rem;
   color: #e0e0e0;
   font-family: "Cabin", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-  font-weight: 700;
-  margin-left: auto;
-  margin-right: auto; }
+  font-weight: 700; }
 
 h1 {
   font-size: 2rem;
   margin-top: 2rem;
-  color: #f7f7f7; }
+  margin-bottom: 1rem;
+  color: #f7f7f7;
+  line-height: 1.1; }
 
 h2 {
   font-size: 1.6rem;
   margin-top: 1.35rem;
-  margin-bottom: 1.35rem;
-  letter-spacing: 0.1px; }
+  margin-bottom: 1.35rem; }
 
 h3 {
   font-size: 1.3rem;
@@ -313,6 +313,51 @@ textarea:focus {
   font-size: 16px;
   color: rgba(224, 224, 224, 0.75);
   font-style: italic; }
+
+.header {
+  width: 100%;
+  min-height: 5rem;
+  background: #3b3b3b;
+  display: flex;
+  align-items: center; }
+
+.header-content {
+  width: 50rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  position: relative; }
+
+.header-logo {
+  max-width: 50px; }
+
+.header-title {
+  margin: 0 0 0 1rem;
+  font-size: 24px;
+  font-weight: 500;
+  color: #f7f7f7; }
+
+.header-github {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  align-items: center; }
+
+.header-github-link {
+  opacity: 0.75;
+  margin-right: 12px;
+  transition: opacity 0.2s ease-in-out; }
+  .header-github-link img {
+    max-width: 32px; }
+  .header-github-link:hover {
+    opacity: 1; }
+
+.footer {
+  width: 100%; }
+  .footer section {
+    max-width: 50rem;
+    margin: 0 auto; }
 
 main {
   margin: 2rem auto 0 auto; }
@@ -551,53 +596,68 @@ input.l-input, input.s-input, input.h-input {
   color: #f7f7f7; }
 
 .user-colors {
-  margin-top: -2rem;
+  margin-top: -1rem;
+  padding-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
-  .user-colors > div {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    min-width: 150px;
-    height: 150px;
-    background: #525252;
-    border-radius: 8px;
-    margin: 1rem 0.5rem 0 0;
-    padding: 0 1rem; }
-    .user-colors > div:hover p {
-      opacity: 1; }
-    .user-colors > div h4, .user-colors > div h5 {
-      margin-bottom: 0;
-      color: #f7f7f7; }
-    .user-colors > div p {
-      margin-bottom: 0;
-      color: #cfcfcf;
-      opacity: 0;
-      transition: opacity 0.2s ease-in-out; }
+  justify-content: center;
+  position: relative; }
+
+.saved-color {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 150px;
+  height: 150px;
+  background: #525252;
+  border-radius: 8px;
+  margin: 1rem 0.5rem 0 0;
+  padding: 0 1rem; }
+  .saved-color:hover p {
+    opacity: 1; }
+  .saved-color h4, .saved-color h5 {
+    margin-bottom: 0;
+    color: #f7f7f7; }
+  .saved-color p {
+    margin-bottom: 0;
+    color: #cfcfcf;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out; }
+
+.save-some-colors {
+  background: transparent;
+  opacity: 0.15;
+  display: block; }
+  .save-some-colors p {
+    font-size: 2rem;
+    letter-spacing: .1px;
+    font-weight: 500;
+    margin: 2rem; }
+  .save-some-colors.d-none {
+    display: none; }
 
 .saved-color {
   position: relative; }
 
 input.saved-color-name {
-  opacity: 0;
   background: rgba(33, 33, 33, 0.5);
+  font-size: 15px;
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   margin: 0;
-  height: 2.5rem;
+  max-height: 2.25rem;
   border: 0;
-  border-bottom: 2px solid rgba(176, 176, 176, 0.5);
+  border-bottom: 2px solid transparent;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  transition: all 0.2s ease-in-out; }
+  transition: all 0.4s ease-in-out; }
   input.saved-color-name:hover, input.saved-color-name:active, input.saved-color-name:focus {
-    opacity: 1; }
-  input.saved-color-name:active, input.saved-color-name:focus {
-    border-color: white; }
+    opacity: 1;
+    border-color: #e0e0e0; }
 
 .saved-color-copy {
   width: 100%;

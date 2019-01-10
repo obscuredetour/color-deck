@@ -21,6 +21,7 @@ const elements = {
   lValue: document.querySelector(".l-value"),
   lSlider: document.querySelector(".l-slider"),
   userColors: document.querySelector(".user-colors"),
+  saveSomeColors: document.querySelector(".save-some-colors"),
   savedColorContainer: document.querySelectorAll(".saved-color"),
   saveColorButton: document.querySelector(".save-color-button"),
   savedColorValue: document.querySelector(".saved-color-value"),
@@ -188,20 +189,20 @@ colorPicker.on("color:change", function(color, changes) {
   };
 
   const colorInputChange = (color) => {
-    newColor = colorInput.value;
+    newColor = colorInput.value.replace('%', '').replace('%', '');
 
-    if (newColor.includes('h')) {
-      //hsl
-      colorPicker.color.hslString = newColor;
-      elements.colorInput.value = newColor;
+    if (newColor.includes('r')) {
+      //rgb
+      colorPicker.color.rgbString = newColor;
 
     } else if (newColor.length >= 3 && newColor.length <= 7) {
       //hex
       newColor.includes('#') ? colorPicker.color.hexString = newColor : colorPicker.color.hexString = '#' + newColor; 
       colorInput.value = newColor;
     } else {
-      //rgb
-      colorPicker.color.rgbString = newColor;
+      //hsl
+      colorPicker.color.hslString = newColor;
+      elements.colorInput.value = newColor;
     }
   }
 
@@ -239,9 +240,24 @@ rgbCopyButton.addEventListener('click', () => {
   showTooltip(el = rgbTooltip);
 });
 
+// Save Color Controller
+class Colors {
+  constructor(name, color) {
+    this.name = name;
+    this.color = color;
+  }
+};
 
-///// SAVE COLOR Controller
+let colors = [];
+createColors = (color) => {
+  colors.push(color);
+  // console.log(colors);
+};
+
+///// SAVE UI Controller
 const saveColor = async () => {
+  elements.saveSomeColors.classList.add('d-none');
+
   // Get saved color
   let currentColor = elements.hexCopyValue.innerHTML,
     hex = currentColor,
@@ -250,9 +266,12 @@ const saveColor = async () => {
   // Create new saved
   let savedColor = new Colors(currentColor, currentColor);
   createColors(savedColor);
-
   // log newly created object to console
   console.log(savedColor);
+  // let colorsCopy = [...colors];
+  // colors.push(...colorsCopy);
+  // console.log(colors);
+  // need to 
 
   // Create & Update UI
   const markup = `
@@ -277,18 +296,10 @@ const saveColor = async () => {
   let savedColorHexButtons = new ClipboardJS(elements.savedColorCopyHex);
   let savedColorRgbButtons = new ClipboardJS(elements.savedColorCopyRgb);
 
-};
-class Colors {
-  constructor(name, color) {
-    this.name = name;
-    this.color = color;
-  }
-};
-
-let colors = [];
-createColors = (color) => {
-  colors.push(color);
-  console.log(colors);
+  // if no colors
+  // if (elements.savedColorContainer.length = 0) {
+    
+  // };
 };
 
 // Handling button clicks
