@@ -50,6 +50,8 @@ main
   margin: 2rem auto 0 auto
   article, section
     padding: 1rem
+  section
+    padding: 1rem
     max-width: 50rem
     margin: 0 auto
 @media screen and (min-width: 569px)
@@ -93,18 +95,8 @@ main
     margin-left: -2rem
   .color-values
     margin-top: 0
-// .color-current
-//   align-items: center
-//   padding: 0
-//   margin-bottom: 1rem
-// @media screen and (min-width: 769px)
-//   .color-current
-//     margin: 2rem 0 0
 
-.save-color-button, .hsl-copy-button, .hex-copy-button,.rgb-copy-button
-  display: flex
-  align-items: center
-  justify-content: center
+.save-color-button, .hsl-copy-button, .hex-copy-button,.rgb-copy-button, .sm-save-button
   position: absolute
   right: 0
   top: 0
@@ -113,24 +105,10 @@ main
   width: 50px
   height: 100%
   transition: all 0.2s ease-in-out
-  color: $alto
-  background: $titan
-  border-radius: 30px
   border-top-left-radius: 0
   border-bottom-left-radius: 0
-  span
-    display: flex
-    align-items: center
-    justify-content: center
-    svg
-      width: 16px
-    svg path
-      fill: $alto
-  &:hover
-    color: $alto
-    background: $accent
-    span svg path
-      fill: $alto
+  svg:not(.plus-icon)
+    width: 16px
 
 .save-color-button
   height: 40px
@@ -140,9 +118,6 @@ main
   border-radius: 8px
   border-top-left-radius: 0
   border-top-right-radius: 0
-  span svg
-    width: 28px
-    height: 28px
 
 .color-controls
   max-width: 45rem
@@ -238,7 +213,7 @@ input.l-input, input.s-input, input.h-input
   justify-content: space-evenly
   align-items: flex-start
   margin: 1rem 0 0
-.hsl-copy, .hex-copy, .rgb-copy
+.hsl-copy, .hex-copy, .rgb-copy, .swatch-sm
   width: 248px
   position: relative
   display: flex
@@ -286,6 +261,27 @@ input.l-input, input.s-input, input.h-input
   font-size: 15px
   color: $text-color-bright
 
+.user-color-control
+  display: flex
+  align-items: center
+  justify-content: space-between
+  & div:first-of-type
+    display: flex
+.swatch-sm
+  max-width: 150px
+  margin: 0 1rem
+  min-height: 41.5px
+  display: flex
+  justify-content: flex-end
+  align-items: stretch
+.sm-save-button
+  right: -1px
+.sm-save-button, .clear-button
+  margin: 0
+.clear-button
+  height: 41.5px
+  width: 41.5px
+
 .user-colors
   margin-top: -1rem
   padding-bottom: 2rem
@@ -326,9 +322,11 @@ input.l-input, input.s-input, input.h-input
   &.d-none
     display: none
 
-
 .saved-color
   position: relative
+  transition: all 0.2s ease-in-out
+  &:hover .saved-color-remove
+    opacity: 1
 input.saved-color-name
   background: transparentize($darkest, 0.5)
   font-size: 15px
@@ -372,3 +370,13 @@ input.saved-color-name
 .saved-color-copy__rgb
   border-radius: 0
   border-bottom-right-radius: 8px
+.saved-color-remove
+  background: transparentize($darkest, 0.5)
+  position: absolute
+  right: 0
+  margin: 0
+  padding-right: 0.25rem
+  border-top-right-radius: 0
+  border-bottom-right-radius: 0
+  opacity: 0
+  transition: all 0.2s ease-in-out

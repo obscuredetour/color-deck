@@ -1,0 +1,96 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+### Add
+- Implement persistent saving of colors
+
+## [1.2.2] - 2019-01-10
+### Changed
+- Cleaned up and restructured (README)[README.md]
+
+### Added
+- Created How to use section (README)[README.md]
+- This file. New CHANGELOG.md added to project
+- Created a smaller secondary color swatch pill with save color button further down the fold
+  - This is beneficial for using the lower half the app only (e.g. HSL sliders and save color buttons to create a palette)
+- New clear colors button to remove all saved colors
+- New individual remove color buttons for each saved color
+
+## [1.2.1] - 2019-01-10
+### Changed
+- Cleaned up heading, footer, & color sections
+
+### Added
+- New page header with logo, name, github logo, & stars.
+
+## [1.2.0] - 2019-01-09
+### Changed
+- Name adjustment
+
+### Added
+- Implemented color temp save and UI update (not persistent, yet)
+
+## [1.1.9] - 2019-01-08
+### Added
+- Click to copy tooltips
+- Color input from any format implemented
+- Initial saved color function implemented
+
+## [1.1.8] - 2019-01-07
+### Changed
+- Restructed HTML
+
+### Added
+- Began implementing saving component
+
+## [1.1.7] - 2019-01-07
+### Changed
+- Rewrote a few methods
+
+### Added
+- Implemented click to copy buttons for each color value
+
+## [1.1.6] - 2019-01-06
+### Added
+- Began rewrite of methods
+
+## [1.1.5] - 2019-01-06
+### Added
+- Whole inputs implemented
+
+## [1.1.4] - 2019-01-05
+### Changed
+- HSL inputs finished!
+
+## [1.1.3] - 2019-01-05
+### Changed
+- HSL sliders finished
+- Random start color, thanks [stackoverflow](https://stackoverflow.com/questions/1484506/random-color-generator)
+
+## [1.1.3] - 2019-01-05
+### Added
+- Color value (HSL) sliders implemented
+
+## [1.1.2] - 2019-01-05
+### Added
+- Color value (HSL) sliders implemented
+
+## [1.1.1] - 2019-01-05
+### Added
+- Basic color values added to UI
+- Saturation slider implemented!
+
+## [1.1.0] - 2019-01-04
+### Added
+- Workbox PWA implemented (installable)
+- Manifest created
+- favicon/app icon
+- font cached
+
+## [1.0.1] - 2019-01-04
+### Added
+- Basic project files (html, sass, css, js)
+- Color wheel implemented
+- Readme created
+- Goals created

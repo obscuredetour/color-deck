@@ -2,7 +2,7 @@
   "name": "color-deck",
   "version": "1.2.1",
   "description": "Color Deck is a color palette collector made for humans and is HSL driven.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "sass": "node-sass -w build/sass/ -o build/css/"
   },
@@ -12,7 +12,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/obscuredetour/color-dcsk/issues"
   },

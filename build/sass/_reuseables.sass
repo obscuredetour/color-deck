@@ -43,22 +43,34 @@
         margin-right: 0
 
 button, .button
-  background: $accent
-  color: $light-gray
+  display: flex
+  align-items: center
+  justify-content: center
+  color: $alto
+  background: $titan
   font-weight: 500
   border: 0
-  border-radius: 20px
+  border-radius: 30px
   font-size: 1rem
   margin: 0 0.15rem
   padding: 0.3rem 0.75rem
   cursor: pointer
   transition: all 0.2s ease-in-out
+  span
+    display: flex
+    align-items: center
+    justify-content: center
+  svg path
+    fill: $alto
   &:hover
-    background: $accent-light
-    color: $darkest
-.demphasis
-  color: $heather
-.emphasis, .title
+    color: $alto
+    background: $accent
+  & .plus-icon
+    width: 28px
+    height: 28px
+    &.clear
+      transform: rotate(45deg)
+.title
   font-weight: bold
   color: $text-color-bright
   margin: 1rem 0

@@ -1,73 +1,72 @@
+<p align="left">
+  <a href="https://colordeck.netlify.com/">
+    <img width=512px src="build/images/color-deck-logo-full.png">
+  </a>
+</p>
+
 # Color Deck
 Color Deck is a color palette collector made for humans. Which makes this all about HSL!
 Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
 
+## Table of Contents
+
+1. [Why](#why)
+2. [Goals](#goals)
+4. [How to use](#how-to-use)
+5. [Contributing](#contributing)
+6. [License](#license)
+
 ## Why
 There are quite a few color tools out there. However, none focus on HSL. It is arguably the easiest method for humans to view relationships between colors. Many color tools also arbitrarily decide how many colors should be in a palette or series. I set to fix these issues with Color Deck.
-
-### Changelog
-
-**1.2.1**
-- Cleaned up heading, footer, & color sections
-- Added a header
-
-**1.2.0**
-- Colors can be saved (not persistent, yet)
-- Name adjustment
-
-**1.1.8**
-- Color input from any format implemented
-- Click to copy tooltips
-- Initial saved color function implemented
-
-**1.1.7**
-- Rewrote a few methods
-- Implemented click to copy buttons for each color value
-
-**1.1.6**
-- Began rewrite of methods
-
-**1.1.5**
-- Whole inputs implemented
-
-**1.1.4**
-- HSL inputs finished!
-
-**1.1.3**
-- HSL sliders finished
-- Random start color, thanks [stackoverflow](https://stackoverflow.com/questions/1484506/random-color-generator)
-
-**1.1.1**
-- Basic color values added to UI
-- Saturation slider implemented!
-
-**1.1.0**
-- Workbox PWA implemented (installable)
-- Manifest created
-- favicon/app icon
-- font cached
 
 ## Goals
 
 - [x] Implement Color wheel picker
 - [x] Implement HSL controls
 - [x] Offline use - PWA
-- [x] Save series of colors in palettes
+- [x] Save series of colors
 - [x] Click to copy (text) of various color formats
+- [ ] Persistent saving (after refresh/close)
 - [ ] Implement color groups within palettes
 
-<!-- ### Customizable
+## How to use
 
-- Breakpoint variable - default at 800px.
-- Sticky navigation bar available
+[Go here](https://colordeck.netlify.com/) to use the app.
 
-### How to use
-- Demo it on [GitHub](https://obscuredetour.github.io/simply-nav/)
-- Play with it on [Codepen](https://codepen.io/obscuredetour/full/XxNWLY/)
+### Installation
 
+For desktop installation this requires [https://www.chromium.org/](https://www.chromium.org/) or [Google Chrome](https://www.google.com/chrome)
+1. Visit [Color Deck](https://colordeck.netlify.com/)
+2. Click the 3 dot icon to activate the menu and select *Install Color Deck*
 
-Clone or download the repo to build a static website. Or alternatively insert the respective files into your project detailed below.
+For mobile installation (Android)
+1. Visit [Color Deck](https://colordeck.netlify.com/) using Google Chrome or Firefox
+2. Tap the *Add to Home Screen* message that pops up
+3. Launch the Color Deck app icon from the home screen or app drawer
 
-`standalone_ver.html` has all necessary code within. Alternatively `nav.js` & `nav.css` files and a note of how the respective markup is structured within the `index.html` file and you're set.
+For mobile installation (iOS)
+1. Visit [Color Deck](https://colordeck.netlify.com/) using Safari
+2. Go to the share menu and tap the *Add to home screen* option
+3. Launch the Color Deck app icon from the home screen
 
-Sass files provide for best customizability. -->
+**[Back to top](#table-of-contents)**
+
+## Contributing
+
+Open an issue first to discuss potential changes/additions.
+
+**[Back to top](#table-of-contents)**
+
+## License
+
+#### (The MIT License)
+
+Copyright (c) 2019 Jeffrey Summers
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+**[Back to top](#table-of-contents)**

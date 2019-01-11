@@ -24,8 +24,11 @@ const elements = {
   saveSomeColors: document.querySelector(".save-some-colors"),
   savedColorContainer: document.querySelectorAll(".saved-color"),
   saveColorButton: document.querySelector(".save-color-button"),
+  smSaveColorButton: document.querySelector(".sm-save-button"),
+  clearAllColorsButton: document.querySelector(".clear-button"),
   savedColorValue: document.querySelector(".saved-color-value"),
   savedColorName: document.querySelector(".saved-color-name"),
+  savedColorRemove: document.querySelectorAll(".saved-color-remove"),
   savedColorCopyHsl: document.querySelectorAll(".saved-color-copy__hsl"),
   savedColorCopyHex: document.querySelectorAll(".saved-color-copy__hex"),
   savedColorCopyRgb: document.querySelectorAll(".saved-color-copy__rgb")
@@ -55,7 +58,7 @@ const colorPicker = new iro.ColorPicker("#color-wheel", {
   anticlockwise: true,
   // Dynamic CSS guide: https://iro.js.org/guide.html#Dynamic-CSS
   css: {
-    "#swatch, .slider, .s-controls__slider, .l-controls__slider": {
+    "#swatch, .swatch-sm, .slider, .s-controls__slider, .l-controls__slider": {
       "background-color": "$color"
     }
   }
@@ -275,7 +278,7 @@ const saveColor = async () => {
 
   // Create & Update UI
   const markup = `
-    <div class="saved-color" style="background-color: ${currentColor}">
+    <div class="saved-color" data-color="${currentColor}" style="background-color: ${currentColor}">
       <input type="text" class="saved-color-name" placeholder="color name" data-color="${currentColor}">
       <!-- <p><span class="saved-color-value">${currentColor}</span></p> -->
       <div class="saved-color-copy">
@@ -283,11 +286,17 @@ const saveColor = async () => {
         <button class="saved-color-copy__hex" data-clipboard-text="${hex}">HEX</button>
         <button class="saved-color-copy__rgb" data-clipboard-text="${rgb}">RGB</button>
       </div>
+      <button class="saved-color-remove">
+        <span>
+          <svg class="plus-icon clear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"></path></svg>
+        </span>
+      </button>
     </div>
   `;
 
   elements.userColors.insertAdjacentHTML('beforeend', markup);
-  
+
+  // need to reassign elements again
   elements.savedColorCopyHsl = document.querySelectorAll(".saved-color-copy__hsl");
   elements.savedColorCopyHex = document.querySelectorAll(".saved-color-copy__hex");
   elements.savedColorCopyRgb = document.querySelectorAll(".saved-color-copy__rgb");
@@ -296,12 +305,39 @@ const saveColor = async () => {
   let savedColorHexButtons = new ClipboardJS(elements.savedColorCopyHex);
   let savedColorRgbButtons = new ClipboardJS(elements.savedColorCopyRgb);
 
-  // if no colors
-  // if (elements.savedColorContainer.length = 0) {
+  elements.savedColorContainer = document.querySelectorAll(".saved-color");
+  elements.savedColorRemove = document.querySelectorAll(".saved-color-remove");
+
+  
+  removeColor = (event) => {
+    let clicked;
+    clicked = Array.from(elements.savedColorRemove).indexOf(event.target);
+    elements.savedColorRemove[clicked].parentElement.remove();
     
-  // };
+    console.log(elements.savedColorRemove.length);
+
+    // if (elements.savedColorRemove.length = 0) { elements.saveSomeColors.classList.remove('d-none') };
+  };
+  elements.savedColorRemove.forEach(el => {
+    el.addEventListener('click', removeColor);
+  });
 };
+
+const removeAllColors = () => {
+  const markup = `
+  <div class="save-some-colors" aria-hidden="true">
+    <p>Save some colors!</p>
+  </div>
+  `;
+
+  if (elements.userColors.lastElementChild != elements.saveSomeColors) {
+    elements.userColors.innerHTML = markup;
+  }
+
+  elements.saveSomeColors = document.querySelector(".save-some-colors");
+}
 
 // Handling button clicks
 elements.saveColorButton.addEventListener('click', saveColor);
-// elements.savedColorName.addEventListener('click', updateColorName);
+elements.smSaveColorButton.addEventListener('click', saveColor);
+elements.clearAllColorsButton.addEventListener('click', removeAllColors);

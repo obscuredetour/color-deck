@@ -168,24 +168,35 @@ hr {
         margin-right: 0; } }
 
 button, .button {
-  background: #4e64b7;
-  color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cfcfcf;
+  background: #616161;
   font-weight: 500;
   border: 0;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size: 1rem;
   margin: 0 0.15rem;
   padding: 0.3rem 0.75rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out; }
+  button span, .button span {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  button svg path, .button svg path {
+    fill: #cfcfcf; }
   button:hover, .button:hover {
-    background: #7b93db;
-    color: #212121; }
+    color: #cfcfcf;
+    background: #4e64b7; }
+  button .plus-icon, .button .plus-icon {
+    width: 28px;
+    height: 28px; }
+    button .plus-icon.clear, .button .plus-icon.clear {
+      transform: rotate(45deg); }
 
-.demphasis {
-  color: #9e9e9e; }
-
-.emphasis, .title {
+.title {
   font-weight: bold;
   color: #f7f7f7;
   margin: 1rem 0; }
@@ -362,6 +373,8 @@ textarea:focus {
 main {
   margin: 2rem auto 0 auto; }
   main article, main section {
+    padding: 1rem; }
+  main section {
     padding: 1rem;
     max-width: 50rem;
     margin: 0 auto; }
@@ -409,10 +422,7 @@ main {
   .color-values {
     margin-top: 0; } }
 
-.save-color-button, .hsl-copy-button, .hex-copy-button, .rgb-copy-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.save-color-button, .hsl-copy-button, .hex-copy-button, .rgb-copy-button, .sm-save-button {
   position: absolute;
   right: 0;
   top: 0;
@@ -421,24 +431,10 @@ main {
   width: 50px;
   height: 100%;
   transition: all 0.2s ease-in-out;
-  color: #cfcfcf;
-  background: #616161;
-  border-radius: 30px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
-  .save-color-button span, .hsl-copy-button span, .hex-copy-button span, .rgb-copy-button span {
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .save-color-button span svg, .hsl-copy-button span svg, .hex-copy-button span svg, .rgb-copy-button span svg {
-      width: 16px; }
-    .save-color-button span svg path, .hsl-copy-button span svg path, .hex-copy-button span svg path, .rgb-copy-button span svg path {
-      fill: #cfcfcf; }
-  .save-color-button:hover, .hsl-copy-button:hover, .hex-copy-button:hover, .rgb-copy-button:hover {
-    color: #cfcfcf;
-    background: #4e64b7; }
-    .save-color-button:hover span svg path, .hsl-copy-button:hover span svg path, .hex-copy-button:hover span svg path, .rgb-copy-button:hover span svg path {
-      fill: #cfcfcf; }
+  .save-color-button svg:not(.plus-icon), .hsl-copy-button svg:not(.plus-icon), .hex-copy-button svg:not(.plus-icon), .rgb-copy-button svg:not(.plus-icon), .sm-save-button svg:not(.plus-icon) {
+    width: 16px; }
 
 .save-color-button {
   height: 40px;
@@ -448,9 +444,6 @@ main {
   border-radius: 8px;
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
-  .save-color-button span svg {
-    width: 28px;
-    height: 28px; }
 
 .color-controls {
   max-width: 45rem;
@@ -546,7 +539,7 @@ input.l-input, input.s-input, input.h-input {
   align-items: flex-start;
   margin: 1rem 0 0; }
 
-.hsl-copy, .hex-copy, .rgb-copy {
+.hsl-copy, .hex-copy, .rgb-copy, .swatch-sm {
   width: 248px;
   position: relative;
   display: flex;
@@ -555,12 +548,12 @@ input.l-input, input.s-input, input.h-input {
   border-radius: 30px;
   margin-top: 1rem;
   padding: 8px 0 8px 1rem; }
-  .hsl-copy h4, .hsl-copy h5, .hex-copy h4, .hex-copy h5, .rgb-copy h4, .rgb-copy h5 {
+  .hsl-copy h4, .hsl-copy h5, .hex-copy h4, .hex-copy h5, .rgb-copy h4, .rgb-copy h5, .swatch-sm h4, .swatch-sm h5 {
     color: #f7f7f7; }
-  .hsl-copy p, .hex-copy p, .rgb-copy p {
+  .hsl-copy p, .hex-copy p, .rgb-copy p, .swatch-sm p {
     margin: 0;
     color: #cfcfcf; }
-  .hsl-copy:first-of-type, .hex-copy:first-of-type, .rgb-copy:first-of-type {
+  .hsl-copy:first-of-type, .hex-copy:first-of-type, .rgb-copy:first-of-type, .swatch-sm:first-of-type {
     margin-top: 0; }
 
 .tooltip {
@@ -594,6 +587,31 @@ input.l-input, input.s-input, input.h-input {
   padding-right: 10px;
   font-size: 15px;
   color: #f7f7f7; }
+
+.user-color-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .user-color-control div:first-of-type {
+    display: flex; }
+
+.swatch-sm {
+  max-width: 150px;
+  margin: 0 1rem;
+  min-height: 41.5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch; }
+
+.sm-save-button {
+  right: -1px; }
+
+.sm-save-button, .clear-button {
+  margin: 0; }
+
+.clear-button {
+  height: 41.5px;
+  width: 41.5px; }
 
 .user-colors {
   margin-top: -1rem;
@@ -638,7 +656,10 @@ input.l-input, input.s-input, input.h-input {
     display: none; }
 
 .saved-color {
-  position: relative; }
+  position: relative;
+  transition: all 0.2s ease-in-out; }
+  .saved-color:hover .saved-color-remove {
+    opacity: 1; }
 
 input.saved-color-name {
   background: rgba(33, 33, 33, 0.5);
@@ -688,3 +709,14 @@ input.saved-color-name {
 .saved-color-copy__rgb {
   border-radius: 0;
   border-bottom-right-radius: 8px; }
+
+.saved-color-remove {
+  background: rgba(33, 33, 33, 0.5);
+  position: absolute;
+  right: 0;
+  margin: 0;
+  padding-right: 0.25rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  opacity: 0;
+  transition: all 0.2s ease-in-out; }
