@@ -4,7 +4,6 @@
 @import '_input'
 
 //--------- header -------//
-
 .header
   width: 100%
   min-height: 5rem
@@ -19,7 +18,7 @@
   align-items: center
   position: relative
 .header-link, .header-link:visited
-  padding: 0.5rem 1rem
+  padding: 0.5rem 1rem 0.6rem
   color: $alto
   transition: all 0.2s ease-in-out
   border-radius: 30px
@@ -60,21 +59,29 @@
     opacity: 1
 
 //--------- footer -------//
+.footer, .footer section
+  display: flex
+  justify-content: center
+  align-items: flex-end
 .footer
   width: 100%
   position: absolute
   bottom: 0
-  height: 10rem
-  section
-    max-width: 50rem
-    margin: 0 auto
+  left: 0
+  right: 0
+  min-height: 6rem
+.made-by
+  max-width: 50rem
+  margin: 0 auto 1rem
+  font-size: 0.825rem
+  color: $darkish
+  text-align: center
 //--------- page -------//
 main
   min-height: 100vh
   overflow: hidden
   position: relative
   margin: 0 auto
-  padding-bottom: 10rem
   article, section
     padding: 1rem
   section

@@ -1,5 +1,5 @@
 <p align="left">
-  <a href="https://colordeck.netlify.com/">
+  <a href="https://color.obscuredetour.com/">
     <img width=512px src="build/images/color-deck-logo-full.png">
   </a>
 </p>
@@ -32,21 +32,21 @@ There are quite a few color tools out there. However, none focus on HSL. It is a
 
 ## How to use
 
-[Go here](https://colordeck.netlify.com/) to use the app. For desktop & mobile app installation, see [installation](#installation) below.
+[Go here](https://color.obscuredetour.com/) to use the app. For desktop & mobile app installation, see [installation](#installation) below.
 
 ## Installation
 
 **For desktop installation (Windows, Linux, Chrome OS)**
-1. Visit [Color Deck](https://colordeck.netlify.com/) using [Chromium](https://www.chromium.org/) or [Google Chrome](https://www.google.com/chrome) - see [this](https://developers.google.com/web/progressive-web-apps/desktop) for version info.
+1. Visit [Color Deck](https://color.obscuredetour.com/) using [Chromium](https://www.chromium.org/) or [Google Chrome](https://www.google.com/chrome) - see [this](https://developers.google.com/web/progressive-web-apps/desktop) for version info.
 2. Click the 3 dot icon to activate the menu and select *Install Color Deck*
 
 **For mobile installation (Android)**
-1. Visit [Color Deck](https://colordeck.netlify.com/) using Google Chrome or Firefox
+1. Visit [Color Deck](https://color.obscuredetour.com/) using Google Chrome or Firefox
 2. Tap the *Add to Home Screen* message that pops up
 3. Launch the Color Deck app icon from the home screen or app drawer
 
 **For mobile installation (iOS)**
-1. Visit [Color Deck](https://colordeck.netlify.com/) using Safari
+1. Visit [Color Deck](https://color.obscuredetour.com/) using Safari
 2. Go to the share menu and tap the *Add to home screen* option
 3. Launch the Color Deck app icon from the home screen
 

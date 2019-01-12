@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.2.4] - 2019-01-11
+### Changed
+- Footer altered css snafu.
+- Updated links to reflect new domain.
+
 ## [1.2.3] - 2019-01-11
 ### Changed
 - Fixed the remove (single) color event listener and function. Causing bugs in Chrome.
@@ -12,6 +17,11 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Created About and How to use pages with descriptions and instructions.
+- Fluid typography on `html, body`
+  - `
+      @media (max-width: 960px)
+        font-size: calc(14px + .4vw);
+    `
 
 ## [1.2.2] - 2019-01-10
 ### Changed

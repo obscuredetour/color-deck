@@ -34,7 +34,8 @@ body {
   -osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  position: relative; }
+  position: relative;
+  padding-bottom: 6rem; }
 
 html, body {
   min-width: 320px;
@@ -174,13 +175,6 @@ button, .button {
   color: #f7f7f7;
   margin: 1rem 0; }
 
-.made-by,
-.made-by:first-of-type {
-  margin: 7rem auto 1rem;
-  font-size: 14px;
-  color: #7d7d7d;
-  text-align: center; }
-
 input[type="range"] {
   margin: 0; }
 
@@ -314,7 +308,7 @@ textarea:focus {
   position: relative; }
 
 .header-link, .header-link:visited {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0.6rem;
   color: #cfcfcf;
   transition: all 0.2s ease-in-out;
   border-radius: 30px; }
@@ -360,21 +354,31 @@ textarea:focus {
   .header-github-link:hover {
     opacity: 1; }
 
+.footer, .footer section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; }
+
 .footer {
   width: 100%;
   position: absolute;
   bottom: 0;
-  height: 10rem; }
-  .footer section {
-    max-width: 50rem;
-    margin: 0 auto; }
+  left: 0;
+  right: 0;
+  min-height: 6rem; }
+
+.made-by {
+  max-width: 50rem;
+  margin: 0 auto 1rem;
+  font-size: 0.825rem;
+  color: #7d7d7d;
+  text-align: center; }
 
 main {
   min-height: 100vh;
   overflow: hidden;
   position: relative;
-  margin: 0 auto;
-  padding-bottom: 10rem; }
+  margin: 0 auto; }
   main article, main section {
     padding: 1rem; }
   main section {
