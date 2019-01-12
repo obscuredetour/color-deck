@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.2.5] - 2019-01-11
+### Changed
+- Readme and about page updates.
+
+### Added
+- Added a thanks section on the about page
+
 ## [1.2.4] - 2019-01-11
 ### Changed
 - Footer altered css snafu.

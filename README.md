@@ -15,6 +15,7 @@ Color Deck is a HSL driven color palette collector [progressive web app](https:/
 4. [Installation](#installation)
 5. [Screenshots](#screenshots)
 6. [Contributing](#contributing)
+6. [Thanks to others](#thanks-to-others)
 7. [License](#license)
 
 ## Why
@@ -59,6 +60,18 @@ There are quite a few color tools out there. However, none focus on HSL. It is a
 ## Contributing
 
 Open an issue first to discuss potential changes/additions.
+
+**[Back to top](#table-of-contents)**
+
+## Thanks to others
+
+Would like to thank [James Daniel](https://github.com/jaames) for his Color Picker [iro.js](https://iro.js.org/). This project would have been a lot more difficult had I not found [iro.js](https://iro.js.org/) and been witness to his great documentation.
+
+[Zen Rocha](https://github.com/zenorocha) for creating [clipboard.js](https://clipboardjs.com/) and making my *'click to copy'* feature so much easier.
+
+[Lea Verou's](http://lea.verou.me/) color tool [contrast-ratio.com](https://contrast-ratio.com) is in use all the time and helped inspire the desire to copy color values in various formats with ease. (So you can paste them in here!)
+
+The guys over at [Refactoring UI](https://refactoringui.com/) deserve a mention for their love of HSL and the Color chapter in their [book](https://refactoringui.com/book/). Funny and informative, but ultimately, it helped foster my distaste for color pickers that allow you to save *just* 5 colors at a time.
 
 **[Back to top](#table-of-contents)**
 
