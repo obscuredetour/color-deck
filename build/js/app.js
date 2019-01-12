@@ -307,19 +307,13 @@ const saveColor = async () => {
 
   elements.savedColorContainer = document.querySelectorAll(".saved-color");
   elements.savedColorRemove = document.querySelectorAll(".saved-color-remove");
-
-  
-  removeColor = (event) => {
-    let clicked;
-    clicked = Array.from(elements.savedColorRemove).indexOf(event.target);
-    elements.savedColorRemove[clicked].parentElement.remove();
-    
-    console.log(elements.savedColorRemove.length);
-
-    // if (elements.savedColorRemove.length = 0) { elements.saveSomeColors.classList.remove('d-none') };
-  };
+  // Remove color on click
   elements.savedColorRemove.forEach(el => {
-    el.addEventListener('click', removeColor);
+
+    el.addEventListener('click', () => {
+      return el.parentNode.remove();
+    });
+    
   });
 };
 

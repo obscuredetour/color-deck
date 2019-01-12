@@ -35,8 +35,10 @@ body
 html, body
   min-width: 320px
   font-size: 17px
+  @media (max-width: 960px)
+    font-size: calc(14px + .4vw);
 
-body, input, select, textarea 
+body, input, select, textarea, button
   font-family: $font-sans
   color: $text-color
   font-weight: 400
@@ -66,43 +68,29 @@ p
     margin-top: 0
 h1, h2, h3, h4, h5, h6
   max-width: 40rem
+  margin-bottom: 1rem
   color: $text-color
   font-family: $font-sans
   font-weight: 700
 h1
-  font-size: 2rem
+  font-size: 1.6rem
   margin-top: 2rem
-  margin-bottom: 1rem
   color: $text-color-bright
   line-height: 1.1
 h2
-  font-size: 1.6rem
-  margin-top: 1.35rem
-  margin-bottom: 1.35rem
+  font-size: 1.35rem
+  margin-top: 1.5rem
 h3
-  font-size: 1.3rem
-  margin-top: 1rem
-  margin-bottom: 1.25rem
-h4, h5, h6
-  font-size: 1.1rem
-  margin-bottom: 1rem
-  font-weight: 500
+  font-size: 1.25rem
+  margin-top: 1.5rem
 h4
-  color: $gray
-  font-size: 1.15rem
+  font-size: 1rem
+h4, h5, h6
+  font-weight: 600
   
-ul
-  margin: 0 0 1rem 0
-  padding-left: 0.75rem
+ul, ol
+  margin: 0 0 1.5rem 0
+  padding-left: 1.5rem
   li
     padding-left: 0.25rem
     margin-bottom: 0.25rem
-
-hr
-  border: 0
-  border-bottom: solid 2px transparentize($gray, 0.75)
-  margin: 2rem auto 1rem auto
-  width: 100%
-  &.major
-    margin: 3rem auto
-    border-bottom: solid 3px transparentize($accent-light, 0.5)

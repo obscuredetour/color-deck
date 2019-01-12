@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.2.3] - 2019-01-11
+### Changed
+- Fixed the remove (single) color event listener and function. Causing bugs in Chrome.
+- Font to Open Sans. It is just so damn easy to read especially with a mix of letters, numbers, & symbols.
+
+### Added
+- Created About and How to use pages with descriptions and instructions.
+
 ## [1.2.2] - 2019-01-10
 ### Changed
 - Cleaned up and restructured (README)[README.md]

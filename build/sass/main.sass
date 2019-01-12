@@ -14,25 +14,45 @@
 .header-content
   width: 50rem
   margin: 0 auto
-  padding: 0 1rem
+  padding: 0 0.5rem
   display: flex
   align-items: center
   position: relative
+.header-link, .header-link:visited
+  padding: 0.5rem 1rem
+  color: $alto
+  transition: all 0.2s ease-in-out
+  border-radius: 30px
+  &:last-of-type
+    margin-left: 1rem
+  &:hover, &:active, &:focus
+    color: $alabaster
+    background-color: $dark
+  &.active
+    color: $alabaster
+    background-color: $dark
+.header-brand-link
+  display: flex
+  align-items: center
+  margin-right: 1rem
 .header-logo
-  max-width: 50px
+  max-width: 40px
 .header-title
-  margin: 0 0 0 1rem
-  font-size: 24px
-  font-weight: 500
+  display: none
+  margin: 0 0 0 8px
+  font-size: 1.41rem
+  font-weight: 600
   color: $text-color-bright
 .header-github
   position: absolute
-  right: 1rem
+  right: 0.5rem
   display: flex
   align-items: center
+.header-github-star
+  display: none
 .header-github-link
+  padding: 0
   opacity: 0.75
-  margin-right: 12px
   transition: opacity 0.2s ease-in-out
   img
     max-width: 32px
@@ -42,12 +62,19 @@
 //--------- footer -------//
 .footer
   width: 100%
+  position: absolute
+  bottom: 0
+  height: 10rem
   section
     max-width: 50rem
     margin: 0 auto
 //--------- page -------//
 main
-  margin: 2rem auto 0 auto
+  min-height: 100vh
+  overflow: hidden
+  position: relative
+  margin: 0 auto
+  padding-bottom: 10rem
   article, section
     padding: 1rem
   section
@@ -55,6 +82,22 @@ main
     max-width: 50rem
     margin: 0 auto
 @media screen and (min-width: 569px)
+  .header-content
+    padding: 0 1rem
+  .header-logo
+    max-width: 50px
+  .header-title
+    display: block
+  .header-brand-link
+    margin-right: 1rem
+  .header-link
+    margin-left: 1.5rem
+  .header-github
+    right: 1rem
+  .header-github-link
+    margin-right: 12px
+  .header-github-star
+    display: block
   main
     margin-top: 1rem
 
@@ -66,6 +109,7 @@ main
   justify-content: center
   justify-content: space-evenly
   flex-wrap: wrap
+  margin-bottom: 1rem
 .color-wheel
   margin-bottom: -2rem
 @media screen and (min-width: 569px)
@@ -155,7 +199,7 @@ input.l-input, input.s-input, input.h-input
 .h-value, .s-value, .l-value
   margin-left: 0.5rem
   color: $alto
-  font-weight: 500
+  font-weight: 600
   font-size: 1rem
 
 .l-controls__slider, .s-controls__slider
@@ -258,13 +302,14 @@ input.l-input, input.s-input, input.h-input
     visibility: visible
 .tooltip-text
   padding-right: 10px
-  font-size: 15px
+  font-size: 0.885rem
   color: $text-color-bright
 
 .user-color-control
   display: flex
   align-items: center
   justify-content: space-between
+  flex-wrap: wrap
   & div:first-of-type
     display: flex
 .swatch-sm
@@ -314,11 +359,14 @@ input.l-input, input.s-input, input.h-input
   background: transparent
   opacity: 0.15
   display: block
+  margin: 0 auto
+  text-align: center
   p
     font-size: 2rem
     letter-spacing: .1px
-    font-weight: 500
+    font-weight: 600
     margin: 2rem
+    line-height: 1.1
   &.d-none
     display: none
 
@@ -329,7 +377,7 @@ input.l-input, input.s-input, input.h-input
     opacity: 1
 input.saved-color-name
   background: transparentize($darkest, 0.5)
-  font-size: 15px
+  font-size: 0.885rem
   opacity: 0
   position: absolute
   top: 0
@@ -361,7 +409,7 @@ input.saved-color-name
     &:hover, &:active, &:focus
       background: transparentize($darkest, 0.2)
 .saved-color-copy__hsl, .saved-color-copy__hex, .saved-color-copy__rgb
-  font-size: 15px
+  font-size: 0.885rem
 .saved-color-copy__hsl
   border-radius: 0
   border-bottom-left-radius: 8px

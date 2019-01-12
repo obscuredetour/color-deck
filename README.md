@@ -5,19 +5,20 @@
 </p>
 
 # Color Deck
-Color Deck is a color palette collector made for humans. Which makes this all about HSL!
-Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
+Color Deck is a HSL driven color palette collector [progressive web app](https://developers.google.com/web/progressive-web-apps/) made for humans. Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
 
 ## Table of Contents
 
 1. [Why](#why)
 2. [Goals](#goals)
-4. [How to use](#how-to-use)
-5. [Contributing](#contributing)
-6. [License](#license)
+3. [How to use](#how-to-use)
+4. [Installation](#installation)
+5. [Screenshots](#screenshots)
+6. [Contributing](#contributing)
+7. [License](#license)
 
 ## Why
-There are quite a few color tools out there. However, none focus on HSL. It is arguably the easiest method for humans to view relationships between colors. Many color tools also arbitrarily decide how many colors should be in a palette or series. I set to fix these issues with Color Deck.
+There are quite a few color tools out there. However, none focus on HSL. It is arguably the easiest method for humans to view relationships between colors. Many color tools also arbitrarily decide how many colors should be in a palette or series. Color Deck sets out to correct these issues.
 
 ## Goals
 
@@ -31,23 +32,27 @@ There are quite a few color tools out there. However, none focus on HSL. It is a
 
 ## How to use
 
-[Go here](https://colordeck.netlify.com/) to use the app.
+[Go here](https://colordeck.netlify.com/) to use the app. For desktop & mobile app installation, see [installation](#installation) below.
 
-### Installation
+## Installation
 
-For desktop installation this requires [https://www.chromium.org/](https://www.chromium.org/) or [Google Chrome](https://www.google.com/chrome)
-1. Visit [Color Deck](https://colordeck.netlify.com/)
+**For desktop installation (Windows, Linux, Chrome OS)**
+1. Visit [Color Deck](https://colordeck.netlify.com/) using [Chromium](https://www.chromium.org/) or [Google Chrome](https://www.google.com/chrome) - see [this](https://developers.google.com/web/progressive-web-apps/desktop) for version info.
 2. Click the 3 dot icon to activate the menu and select *Install Color Deck*
 
-For mobile installation (Android)
+**For mobile installation (Android)**
 1. Visit [Color Deck](https://colordeck.netlify.com/) using Google Chrome or Firefox
 2. Tap the *Add to Home Screen* message that pops up
 3. Launch the Color Deck app icon from the home screen or app drawer
 
-For mobile installation (iOS)
+**For mobile installation (iOS)**
 1. Visit [Color Deck](https://colordeck.netlify.com/) using Safari
 2. Go to the share menu and tap the *Add to home screen* option
 3. Launch the Color Deck app icon from the home screen
+
+## Screenshots
+![Screenshot - v1.2.2, no colors](build/images/ss-1-2-2_nocolors.png)
+![Screenshot - v1.2.2, with colors](build/images/ss-1-2-2_colors.png)
 
 **[Back to top](#table-of-contents)**
 
