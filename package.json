@@ -1,6 +1,6 @@
 {
   "name": "color-deck",
-  "version": "1.2.1",
+  "version": "1.2.6",
   "description": "Color Deck is a color palette collector made for humans and is HSL driven.",
   "main": "app.js",
   "scripts": {

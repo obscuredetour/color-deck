@@ -354,10 +354,14 @@ textarea:focus {
   .header-github-link:hover {
     opacity: 1; }
 
-.footer, .footer section {
+.footer, .footer .inner {
   display: flex;
   justify-content: center;
   align-items: flex-end; }
+
+.footer .inner {
+  max-width: 50rem;
+  margin: 0 auto; }
 
 .footer {
   width: 100%;
@@ -379,7 +383,7 @@ main {
   overflow: hidden;
   position: relative;
   margin: 0 auto; }
-  main article, main section {
+  main .inner, main section {
     padding: 1rem; }
   main section {
     padding: 1rem;
@@ -617,8 +621,9 @@ input.l-input, input.s-input, input.h-input {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap; }
-  .user-color-control div:first-of-type {
-    display: flex; }
+
+.user-options {
+  display: flex; }
 
 .swatch-sm {
   max-width: 150px;
@@ -748,3 +753,50 @@ input.saved-color-name {
   border-bottom-right-radius: 0;
   opacity: 0;
   transition: all 0.2s ease-in-out; }
+
+@media print {
+  body, .header {
+    background: #fff;
+    font-size: 12pt; }
+  body {
+    padding: 0; }
+  main {
+    min-height: unset; }
+  .header-link, .header-github, .inner, .color-wrapper, .user-color-control, .sm-save-button, .clear-button, .save-some-colors, .saved-color-copy, .footer {
+    display: none !important; }
+  .header-content {
+    justify-content: center; }
+  .header-brand-link:before {
+    content: "Created by ";
+    color: #7d7d7d;
+    margin-right: 8px; }
+  .header-brand-link:after {
+    content: attr(href);
+    top: 3rem;
+    position: absolute;
+    display: block;
+    font-size: 10pt; }
+  .header-logo {
+    max-width: 32px; }
+  .header-title {
+    display: block;
+    color: #525252;
+    position: relative; }
+  .user-colors {
+    margin-top: 2rem; }
+  .saved-color {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    height: 75px;
+    margin-bottom: 3rem; }
+    .saved-color[data-color-name]:before, .saved-color[data-color]:after {
+      position: absolute;
+      color: #525252;
+      left: 3px; }
+    .saved-color[data-color-name]:before {
+      content: attr(data-color-name);
+      top: -1.5rem; }
+    .saved-color[data-color]:after {
+      content: attr(data-color);
+      bottom: -1.5rem;
+      font-weight: bold; } }

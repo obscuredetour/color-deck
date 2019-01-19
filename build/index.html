@@ -25,7 +25,7 @@
 <body>
   <header class="header">
     <div class="header-content">
-      <a class="header-brand-link" href="index.html">
+      <a class="header-brand-link" href="https://color.obscuredetour.com">
         <img class="header-logo" src="images/icons/icon-192x192.png" alt="Color Deck logo">
         <span class="header-title">Color Deck</span>
       </a>
@@ -43,18 +43,20 @@
   </header>
   <main>
     <section>
-      <article>
+      <div class="inner">
         <h1>Color Deck is a HSL driven color palette collector made for humans.</h1>
-        <p">Color Deck is a <a target="_blank" href="https://developers.google.com/web/progressive-web-apps/">progressive web app</a>, installable on desktop and mobile devices.</p>
-      </article>
+        <p>
+          Color Deck is a <a target="_blank" href="https://developers.google.com/web/progressive-web-apps/">progressive web app</a>, installable on desktop and mobile devices.
+        </p>
+      </div>
     </section>
-    <section>
+    <section class="color-wrapper">
       <div class="color">
         <div id="color-wheel" class="color-wheel"></div>
         <div class="color-current">
           <div class="color-form">
-            <label class="title" for="colorInput"><h5>Enter a color</h5></label>
-            <input type="text" name="colorInput" class="color-input">
+            <label class="title" for="colorInput">Enter a color</label>
+            <input id="colorInput" type="text" name="colorInput" class="color-input">
           </div>
           <div id="swatch">
             <button class="save-color-button" data-color="">
@@ -119,7 +121,7 @@
           <input type="text" name="hue" class="h-input">
           <div class="h-controls">
             <label class="title" for="h-slider">Hue <span class="h-value"></span></label>
-            <input name="h-slider" type="range" min="0" max="360" value="50" class="slider h-slider" >
+            <input id="h-slider" name="h-slider" type="range" min="0" max="360" value="50" class="slider h-slider" >
           </div>
         </div>
         <div class="s-controls__wrapper">
@@ -127,7 +129,7 @@
           <div class="s-controls">
             <label class="title" for="s-slider">Saturation <span class="s-value"></span></label>
             <div class="s-controls__slider">
-              <input name="s-slider" type="range" min="0" max="100" value="50" class="slider s-slider">
+              <input id="s-slider" name="s-slider" type="range" min="0" max="100" value="50" class="slider s-slider">
             </div>
           </div>
         </div>
@@ -136,7 +138,7 @@
           <div class="l-controls">
             <label class="title" for="l-slider">Lightness <span class="l-value"></span></label>
             <div class="l-controls__slider">
-              <input name="l-slider" type="range" min="0" max="100" value="50" class="slider l-slider">
+              <input id="l-slider" name="l-slider" type="range" min="0" max="100" value="50" class="slider l-slider">
             </div>
           </div>
         </div>
@@ -144,11 +146,11 @@
     </section>
     
     <section class="mt-1 user-color-control">
-      <article class="mt-1">
+      <div class="mt-1 inner">
         <h2>Colors</h2>
           <p class="mt-1">Persistent saved colors coming soon!</p>
-      </article>
-      <div>
+      </div>
+      <div class="user-options">
         <div class="swatch-sm">
           <button class="sm-save-button">
             <span>

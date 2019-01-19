@@ -1,6 +1,16 @@
 <p align="left">
   <a href="https://color.obscuredetour.com/">
-    <img width=512px src="build/images/color-deck-logo-full.png">
+    <img width=580 src="build/images/color-deck-logo-full.svg">
+  </a>
+  <br>
+  <a href="https://github.com/obscuredetour/color-deck/">
+    <img alt="Maintained?" src="https://img.shields.io/maintenance/yes/2019.svg?colorB=%234e64b7">
+  </a>
+  <a href="https://github.com/obscuredetour/color-deck/commits/master">
+    <img alt="Last commit" src="https://img.shields.io/github/last-commit/obscuredetour/color-deck.svg?colorB=%234e64b7">
+  </a>
+  <a href="https://github.com/obscuredetour/color-deck/tags">
+    <img alt="Tag" src="https://img.shields.io/github/tag/obscuredetour/color-deck.svg?colorB=%234e64b7&label=version">
   </a>
 </p>
 

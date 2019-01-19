@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.2.6] - 2019-01-18
+### Changed
+- Removed `article` designation from html, changed to `<div class="inner">`
+- Updated logo
+
+### Added
+- **New print style.** Removes entire page except saved colors and logo. Saved color names and hex values are printed above and below each color respectively.
+
 ## [1.2.5] - 2019-01-11
 ### Changed
 - Readme and about page updates.

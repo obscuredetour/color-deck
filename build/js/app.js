@@ -27,7 +27,7 @@ const elements = {
   smSaveColorButton: document.querySelector(".sm-save-button"),
   clearAllColorsButton: document.querySelector(".clear-button"),
   savedColorValue: document.querySelector(".saved-color-value"),
-  savedColorName: document.querySelector(".saved-color-name"),
+  savedColorName: document.querySelectorAll(".saved-color-name"),
   savedColorRemove: document.querySelectorAll(".saved-color-remove"),
   savedColorCopyHsl: document.querySelectorAll(".saved-color-copy__hsl"),
   savedColorCopyHex: document.querySelectorAll(".saved-color-copy__hex"),
@@ -278,7 +278,7 @@ const saveColor = async () => {
 
   // Create & Update UI
   const markup = `
-    <div class="saved-color" data-color="${currentColor}" style="background-color: ${currentColor}">
+    <div class="saved-color" data-color="${currentColor}" data-color-name="" style="background-color: ${currentColor}">
       <input type="text" class="saved-color-name" placeholder="color name" data-color="${currentColor}">
       <!-- <p><span class="saved-color-value">${currentColor}</span></p> -->
       <div class="saved-color-copy">
@@ -300,6 +300,7 @@ const saveColor = async () => {
   elements.savedColorCopyHsl = document.querySelectorAll(".saved-color-copy__hsl");
   elements.savedColorCopyHex = document.querySelectorAll(".saved-color-copy__hex");
   elements.savedColorCopyRgb = document.querySelectorAll(".saved-color-copy__rgb");
+  elements.savedColorName = document.querySelectorAll(".saved-color-name");
 
   let savedColorHslButtons = new ClipboardJS(elements.savedColorCopyHsl);
   let savedColorHexButtons = new ClipboardJS(elements.savedColorCopyHex);
@@ -312,6 +313,14 @@ const saveColor = async () => {
 
     el.addEventListener('click', () => {
       return el.parentNode.remove();
+    });
+    
+  });
+
+  // update color name of element
+  elements.savedColorName.forEach(el => {
+    el.addEventListener('change', () => {
+      el.parentNode.dataset.colorName = el.value;
     });
     
   });
