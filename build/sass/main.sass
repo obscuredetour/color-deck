@@ -443,37 +443,35 @@ input.saved-color-name
 @media print
   body, .header
     background: #fff
-    font-size: 12pt
+    font-size: 11pt
   body
     padding: 0
+  .header
+    padding-left: 1rem
   main
     min-height: unset
   .header-link, .header-github, .inner, .color-wrapper, .user-color-control, .sm-save-button, .clear-button, .save-some-colors, .saved-color-copy,  .footer
     display: none !important
-  .header-content
-    justify-content: center
-  .header-brand-link:before
-    content: "Created by "
-    color: $darkish
-    margin-right: 8px
   .header-brand-link:after
-    content: attr(href)
-    top: 3rem
+    color: $dark
+    font-size: 9pt
+    content: "Created by Color Deck \2014 \00a0 "attr(data-url)""
     position: absolute
-    display: block
-    font-size: 10pt
+    bottom: -2rem
   .header-logo
     max-width: 32px
   .header-title
     display: block
-    color: $dark
     position: relative
+    color: $dark
   .user-colors
-    margin-top: 2rem
+    margin-top: 1rem
+    justify-content: flex-start
   .saved-color
     -webkit-print-color-adjust: exact
     color-adjust: exact
     height: 75px
+    min-width: 125px
     margin-bottom: 3rem
     &[data-color-name]:before, &[data-color]:after
       position: absolute
@@ -482,7 +480,7 @@ input.saved-color-name
     &[data-color-name]:before
       content: attr(data-color-name)
       top: -1.5rem
+      font-size: 10pt
     &[data-color]:after
       content: attr(data-color)
       bottom: -1.5rem
-      font-weight: bold

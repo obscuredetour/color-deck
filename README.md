@@ -15,35 +15,25 @@
 </p>
 
 # Color Deck
-Color Deck is a HSL driven color palette collector [progressive web app](https://developers.google.com/web/progressive-web-apps/) made for humans. Learn more why [HSL is great](https://github.com/imathis/hsl-picker/).
+Color Deck is a HSL driven color palette collector [progressive web app](https://developers.google.com/web/progressive-web-apps/) made for humans.
+
+There are quite a few color tools out there. However, none focus on HSL. It is arguably the easiest method for humans to view relationships between colors. Many color tools also arbitrarily decide how many colors should be in a palette or series. Color Deck sets out to correct these issues. Learn why [HSL is great](https://github.com/imathis/hsl-picker/).
 
 ## Table of Contents
 
-1. [Why](#why)
-2. [Goals](#goals)
-3. [How to use](#how-to-use)
-4. [Installation](#installation)
-5. [Screenshots](#screenshots)
-6. [Contributing](#contributing)
-6. [Thanks to others](#thanks-to-others)
+1. [How to use](#how-to-use)
+2. [Installation](#installation)
+3. [Preview](#Preview)
+4. [Contributing](#contributing)
+5. [Thanks to others](#thanks-to-others)
+6. [Goals](#goals)
 7. [License](#license)
-
-## Why
-There are quite a few color tools out there. However, none focus on HSL. It is arguably the easiest method for humans to view relationships between colors. Many color tools also arbitrarily decide how many colors should be in a palette or series. Color Deck sets out to correct these issues.
-
-## Goals
-
-- [x] Implement Color wheel picker
-- [x] Implement HSL controls
-- [x] Offline use - PWA
-- [x] Save series of colors
-- [x] Click to copy (text) of various color formats
-- [ ] Persistent saving (after refresh/close)
-- [ ] Implement color groups within palettes
 
 ## How to use
 
-[Go here](https://color.obscuredetour.com/) to use the app. For desktop & mobile app installation, see [installation](#installation) below.
+Go to [color.obscuredetour.com](https://color.obscuredetour.com/) to use the app. For desktop & mobile app installation, see [installation](#installation) below.
+
+**New [Print feature](#print-feature)** Try printing saved colors!
 
 ## Installation
 
@@ -61,9 +51,11 @@ There are quite a few color tools out there. However, none focus on HSL. It is a
 2. Go to the share menu and tap the *Add to home screen* option
 3. Launch the Color Deck app icon from the home screen
 
-## Screenshots
+## Preview
 ![Screenshot - v1.2.2, no colors](build/images/ss-1-2-2_nocolors.png)
 ![Screenshot - v1.2.2, with colors](build/images/ss-1-2-2_colors.png)
+### Print Feature
+![Print feature](build/images/print-feature.gif)
 
 **[Back to top](#table-of-contents)**
 
@@ -82,6 +74,18 @@ Would like to thank [James Daniel](https://github.com/jaames) for his Color Pick
 [Lea Verou's](http://lea.verou.me/) color tool [contrast-ratio.com](https://contrast-ratio.com) is in use all the time and helped inspire the desire to copy color values in various formats with ease. (So you can paste them in here!)
 
 The guys over at [Refactoring UI](https://refactoringui.com/) deserve a mention for their love of HSL and the Color chapter in their [book](https://refactoringui.com/book/). Funny and informative, but ultimately, it helped foster my distaste for color pickers that allow you to save *just* 5 colors at a time.
+
+**[Back to top](#table-of-contents)**
+
+## Goals
+
+- [x] Implement Color wheel picker
+- [x] Implement HSL controls
+- [x] Offline use - PWA
+- [x] Save series of colors
+- [x] Click to copy (text) of various color formats
+- [ ] Persistent saving (after refresh/close)
+- [ ] Implement color groups within palettes
 
 **[Back to top](#table-of-contents)**
 

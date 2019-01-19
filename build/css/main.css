@@ -1,3 +1,4 @@
+@charset "UTF-8";
 ::selection {
   background: #4e64b7;
   color: white; }
@@ -757,37 +758,35 @@ input.saved-color-name {
 @media print {
   body, .header {
     background: #fff;
-    font-size: 12pt; }
+    font-size: 11pt; }
   body {
     padding: 0; }
+  .header {
+    padding-left: 1rem; }
   main {
     min-height: unset; }
   .header-link, .header-github, .inner, .color-wrapper, .user-color-control, .sm-save-button, .clear-button, .save-some-colors, .saved-color-copy, .footer {
     display: none !important; }
-  .header-content {
-    justify-content: center; }
-  .header-brand-link:before {
-    content: "Created by ";
-    color: #7d7d7d;
-    margin-right: 8px; }
   .header-brand-link:after {
-    content: attr(href);
-    top: 3rem;
+    color: #525252;
+    font-size: 9pt;
+    content: "Created by Color Deck — " attr(data-url) "";
     position: absolute;
-    display: block;
-    font-size: 10pt; }
+    bottom: -2rem; }
   .header-logo {
     max-width: 32px; }
   .header-title {
     display: block;
-    color: #525252;
-    position: relative; }
+    position: relative;
+    color: #525252; }
   .user-colors {
-    margin-top: 2rem; }
+    margin-top: 1rem;
+    justify-content: flex-start; }
   .saved-color {
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
     height: 75px;
+    min-width: 125px;
     margin-bottom: 3rem; }
     .saved-color[data-color-name]:before, .saved-color[data-color]:after {
       position: absolute;
@@ -795,8 +794,8 @@ input.saved-color-name {
       left: 3px; }
     .saved-color[data-color-name]:before {
       content: attr(data-color-name);
-      top: -1.5rem; }
+      top: -1.5rem;
+      font-size: 10pt; }
     .saved-color[data-color]:after {
       content: attr(data-color);
-      bottom: -1.5rem;
-      font-weight: bold; } }
+      bottom: -1.5rem; } }

@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.2.7] - 2019-01-19
+### Changed
+- Print styling is now left aligned, consolidated header.
+- Changed user colors heading sub text
+
 ## [1.2.6] - 2019-01-18
 ### Changed
 - Removed `article` designation from html, changed to `<div class="inner">`
