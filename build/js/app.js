@@ -210,9 +210,9 @@ colorPicker.on("color:change", function(color, changes) {
   }
 
   // Handling color control changes
-  elements.hSlider.addEventListener('change', sliderUIUpdate);
-  elements.sSlider.addEventListener('change', sliderUIUpdate);
-  elements.lSlider.addEventListener('change', sliderUIUpdate);
+  elements.hSlider.addEventListener('input', sliderUIUpdate);
+  elements.sSlider.addEventListener('input', sliderUIUpdate);
+  elements.lSlider.addEventListener('input', sliderUIUpdate);
   elements.hInput.addEventListener('change', mainHslInputChange);
   elements.sInput.addEventListener('change', mainHslInputChange);
   elements.lInput.addEventListener('change', mainHslInputChange);

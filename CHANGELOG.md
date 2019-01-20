@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.2.8] - 2019-01-19
+### Changed
+- HSL range slider values now update immediately.
+
 ## [1.2.7] - 2019-01-19
 ### Changed
 - Print styling is now left aligned, consolidated header.
