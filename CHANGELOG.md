@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.2.9] - 2019-01-19
+### Changed
+- `app.js` rewrite.
+- Homepage heading How to use page
+- How to use page
+- Heights of `swatch`, `.color-value`
+- Color Wheel in center @ 736px width or more
+
+### Added
+- CSS grid to `.color` @ 736px width or more
+- Print feature to How to use page
+
 ## [1.2.8] - 2019-01-19
 ### Changed
 - HSL range slider values now update immediately.
@@ -12,7 +24,7 @@ All notable changes to this project will be documented in this file.
 ## [1.2.7] - 2019-01-19
 ### Changed
 - Print styling is now left aligned, consolidated header.
-- Changed user colors heading sub text
+- User colors heading sub text
 
 ## [1.2.6] - 2019-01-18
 ### Changed

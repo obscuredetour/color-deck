@@ -88,7 +88,6 @@ main
   .inner, section
     padding: 1rem
   section
-    padding: 1rem
     max-width: 50rem
     margin: 0 auto
 @media screen and (min-width: 569px)
@@ -108,11 +107,6 @@ main
     margin-right: 12px
   .header-github-star
     display: block
-  main
-    margin-top: 1rem
-
-// @media screen and (min-width: 769px)
-//   @supports (display: grid)
 
 .color
   display: flex
@@ -120,33 +114,47 @@ main
   justify-content: space-evenly
   flex-wrap: wrap
   margin-bottom: 1rem
+.iro__slider
+  display: none
 .color-wheel
   margin-bottom: -2rem
+.color-current
+  margin-left: -1rem
 @media screen and (min-width: 569px)
   .color
     margin-left: -2.5rem
-@media screen and (min-width: 769px)
+    margin-bottom: 0
+@media screen and (min-width: 736px)
   .color
     margin-bottom: -1rem
-// hide iro default slider
-.iro__slider
-  display: none
+    margin-left: 2.5rem
+  .color-current
+    margin-left: 0
+  @supports (display: grid)
+    .color
+      margin: 0 auto
+      padding: 0 1rem
+      display: grid
+      justify-items: center
+      grid-template-columns: 200px 1fr 248px
+      grid-template-areas: "swatch color-wheel values"
+.color-current
+  margin-top: 1rem
+  display: flex
+  flex-direction: column
 #swatch
-  width: 200px
-  height: 140px
+  width: 180px
+  height: 120px
   border-radius: 8px
   position: relative
-
-.color-form
-  .title
-    margin-top: 0
-  input
-    margin-bottom: 1rem
-    max-width: 200px
+  grid-area: swatch
+.color-wheel
+  grid-area: color-wheel
+.color-form input
+  margin-top: 1rem
+  max-width: 180px
 
 @media screen and (min-width: 536px)
-  .color-current
-    margin-left: -2rem
   .color-values
     margin-top: 0
 
@@ -172,23 +180,65 @@ main
   border-radius: 8px
   border-top-left-radius: 0
   border-top-right-radius: 0
+.color-values
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  margin: 1rem 0 0
+  grid-area: values
+.hsl-copy, .hex-copy, .rgb-copy, .swatch-sm
+  width: 248px
+  min-height: 50px
+  position: relative
+  display: flex
+  align-items: center
+  background: $darker
+  border-radius: 30px
+  margin-top: 1.25rem
+  padding: 8px 0 8px 1rem
+  h4, h5
+    color: $alabaster
+  p
+    margin: 0
+    color: $alto
+  &:first-of-type
+    margin-top: 0
 
-.color-controls
-  max-width: 45rem
-  margin: 0 auto
-
-////////////////////// OLD
-
-#iro-wrapper
-  margin: -1rem auto -2rem
-@media screen and (min-width: 769px)
-  .color-container
-    margin: 0 auto
-  #iro-wrapper
-    margin-left: -2rem
+.tooltip
+  display: flex
+  justify-content: center
+  align-items: center
+  position: absolute
+  right: 55px
+  background: $accent
+  border-radius: 20px
+  padding: 0.25rem 0.5rem
+  max-width: 75px
+  height: 30px
+  opacity: 0
+  z-index: 2
+  transition: opacity 0.3s ease-in-out
+  &:after
+    content: ''
+    display: block
+    margin-right: -22px
+    border-width: 8px
+    border-style: solid
+    border-color: transparent transparent transparent $accent
+    transition: opacity 0.3s ease-in-out
+  &.visible
+    transition: opacity 0.3s ease-in-out
+    opacity: 1
+    visibility: visible
+.tooltip-text
+  padding-right: 10px
+  font-size: 0.885rem
+  color: $text-color-bright
 
 //color controls
 .color-controls
+  max-width: 45rem
+  margin: 0 auto
   display: flex
   flex-direction: column
   flex: 1
@@ -260,60 +310,6 @@ input.l-input, input.s-input, input.h-input
   background: linear-gradient(to right, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1))
   background: -webkit-linear-gradient(to right, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1))
   background: -moz-linear-gradient(to right, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1))
-
-.color-values
-  display: flex
-  flex-direction: column
-  justify-content: space-evenly
-  align-items: flex-start
-  margin: 1rem 0 0
-.hsl-copy, .hex-copy, .rgb-copy, .swatch-sm
-  width: 248px
-  position: relative
-  display: flex
-  align-items: center
-  background: $darker
-  border-radius: 30px
-  margin-top: 1rem
-  padding: 8px 0 8px 1rem
-  h4, h5
-    color: $alabaster
-  p
-    margin: 0
-    color: $alto
-  &:first-of-type
-    margin-top: 0
-
-.tooltip
-  display: flex
-  justify-content: center
-  align-items: center
-  position: absolute
-  right: 55px
-  background: $accent
-  border-radius: 20px
-  padding: 0.25rem 0.5rem
-  max-width: 75px
-  height: 30px
-  opacity: 0
-  z-index: 2
-  transition: opacity 0.3s ease-in-out
-  &:after
-    content: ''
-    display: block
-    margin-right: -22px
-    border-width: 8px
-    border-style: solid
-    border-color: transparent transparent transparent $accent
-    transition: opacity 0.3s ease-in-out
-  &.visible
-    transition: opacity 0.3s ease-in-out
-    opacity: 1
-    visibility: visible
-.tooltip-text
-  padding-right: 10px
-  font-size: 0.885rem
-  color: $text-color-bright
 
 .user-color-control
   display: flex

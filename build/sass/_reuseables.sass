@@ -28,6 +28,43 @@
       flex-direction: column
       > *
         margin-right: 0
+        
+//images
+.image
+  border: 0
+  padding: 0
+  margin: 0 auto
+  text-align: center
+  display: inline-block
+  position: relative
+  & img
+    display: block
+    border-radius: 3px
+  &.left, &.right
+    max-width: 35%
+    & img
+      width: 100%
+      border-radius: 3px
+  &.left
+    float: left
+    padding: 0 1rem 0.5rem 0
+    top: 0.25rem
+  &.right
+    float: right
+    padding: 0 0 0.5rem 1rem
+    top: 0.25rem
+  &.scale
+    display: block
+    max-width: 60%
+    margin-bottom: 1rem
+    height: auto
+  &.fit
+    display: block
+    margin: 0 0 1.5rem 0
+    width: 100%
+    & img
+      width: 100%
+      border-radius: 2px
 
 button, .button
   display: flex
