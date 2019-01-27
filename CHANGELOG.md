@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.2.9] - 2019-01-27
+### Changed
+- Few rem optimizations - h2, inputs.
+
 ## [1.2.9] - 2019-01-19
 ### Changed
 - `app.js` rewrite.
