@@ -46,6 +46,9 @@ const UIController = (() => {
     }
     return color;
   };
+  // getStartColor();
+  // let randomColor = getStartColor();  
+  // console.log(randomColor);
 
   const showTooltip = async (el) => {
     // pass in tooltip element
@@ -61,11 +64,9 @@ const UIController = (() => {
   let colorWheel = new iro.ColorPicker("#color-wheel", {
     width: 300,
     height: 300,
-    color: getStartColor(),
+    color: '#ff0',
     markerRadius: 8,
     padding: 4,
-    sliderMargin: 24,
-    sliderHeight: 36,
     borderWidth: 3,
     borderColor: "#1d1d1d",
     anticlockwise: true,

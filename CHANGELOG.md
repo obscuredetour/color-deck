@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Add
+- **iro.js v4 beta**
 - Implement persistent saving of colors
 
 ## [1.2.9] - 2019-01-27
