@@ -24,26 +24,26 @@
 
 <body>
 
-  <div class="page-wrapper">
-    <header class="header-wrapper">
-      <div class="header-content">
-        <a class="brand" data-url="color.obscuredetour.com" href="index.html">
-          <img class="logo" src="images/icons/icon-192x192.png" alt="Color Deck logo">
-          <span class="title">Color Deck</span>
+  <header class="header-wrapper">
+    <div class="header-content">
+      <a class="brand" data-url="color.obscuredetour.com" href="index.html">
+        <img class="logo" src="images/icons/icon-192x192.png" alt="Color Deck logo">
+        <span class="title">Color Deck</span>
+      </a>
+      <a class="link" href="about.html">About</a>
+      <a class="link" href="how-to-use.html">How to use</a>
+      <div class="github">
+        <a class="link" target="_blank" href="https://github.com/obscuredetour/color-deck">
+          <img src="images/GitHub-Mark-Light-64px.png" alt="GitHub logo">
         </a>
-        <a class="link" href="about.html">About</a>
-        <a class="link" href="how-to-use.html">How to use</a>
-        <div class="github">
-          <a class="link" target="_blank" href="https://github.com/obscuredetour/color-deck">
-            <img src="images/GitHub-Mark-Light-64px.png" alt="GitHub logo">
-          </a>
-          <span class="star">
-            <a class="github-button" href="https://github.com/obscuredetour/color-deck" dataicon="octicon-star"
-              data-show-count="true" aria-p="Star obscuredetour/color-deck on GitHub">Star</a>
-          </span>
-        </div>
+        <span class="star">
+          <a class="github-button" href="https://github.com/obscuredetour/color-deck" dataicon="octicon-star"
+            data-show-count="true" aria-p="Star obscuredetour/color-deck on GitHub">Star</a>
+        </span>
       </div>
-    </header>
+    </div>
+  </header>
+  <div class="page-wrapper">
     <section class="inner heading-main">
       <!-- <p>Create color schemes with a HSL&ndash;powered color UI.</p> -->
       <h1 class="heading">Create color schemes with a HSL&ndash;powered color UI.
@@ -54,11 +54,7 @@
       </h1>
     </section>
     <section class="inner heading-blurb">
-      <p>Color palettes for humans.
-        <small>
-          <a href="https://github.com/obscuredetour/color-desk/blob/master/LICENSE">MIT license</a>
-        </small>
-      </p>
+      <p>Color palettes for humans.</p>
     </section>
     <section class="inner color-current">
       <p class="_title">Swatch</p>
@@ -74,51 +70,54 @@
       <div class="color-form">
         <input id="colorInput" type="text" name="colorInput" class="color-input">
       </div>
-      <div class="color-values">
-        <div class="copy-block">
-          <p>
-            <span class="hsl-copy-text"></span>
-          </p>
-          <button class="button-default -copy -hsl" data-clipboard-text="">
-            <span class="graphic">
-              <svg class="icon" viewBox="0 0 20 20" width="16" height="16">
-                <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z" />
-              </svg>
-            </span>
-          </button>
-          <div class="tooltip hsl-tip" aria-hidden="true">
-            <span class="tooltip-text">Copied!</span>
-          </div>
+    </section>
+
+
+    <section class="color-values inner">
+      <p class="_title">Values</p>
+      <div class="copy-block">
+        <p>
+          <span class="hsl-copy-text"></span>
+        </p>
+        <button class="button-default -copy -hsl" data-clipboard-text="">
+          <span class="graphic">
+            <svg class="icon" viewBox="0 0 20 20" width="16" height="16">
+              <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z" />
+            </svg>
+          </span>
+        </button>
+        <div class="tooltip hsl-tip" aria-hidden="true">
+          <span class="tooltip-text">Copied!</span>
         </div>
-        <div class="copy-block">
-          <p>
-            <span class="hex-copy-text"></span>
-          </p>
-          <button class="button-default -copy -hex" data-clipboard-text="">
-            <span class="graphic">
-              <svg class="icon" viewBox="0 0 20 20" width="16" height="16">
-                <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z" />
-              </svg>
-            </span>
-          </button>
-          <div class="tooltip hex-tip" aria-hidden="true">
-            <span class="tooltip-text">Copied!</span>
-          </div>
+      </div>
+      <div class="copy-block">
+        <p>
+          <span class="hex-copy-text"></span>
+        </p>
+        <button class="button-default -copy -hex" data-clipboard-text="">
+          <span class="graphic">
+            <svg class="icon" viewBox="0 0 20 20" width="16" height="16">
+              <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z" />
+            </svg>
+          </span>
+        </button>
+        <div class="tooltip hex-tip" aria-hidden="true">
+          <span class="tooltip-text">Copied!</span>
         </div>
-        <div class="copy-block">
-          <p>
-            <span class="rgb-copy-text"></span>
-          </p>
-          <button class="button-default -copy -rgb" data-clipboard-text="">
-            <span class="graphic">
-              <svg class="icon" viewBox="0 0 20 20" width="16" height="16">
-                <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z" />
-              </svg>
-            </span>
-          </button>
-          <div class="tooltip rgb-tip" aria-hidden="true">
-            <span class="tooltip-text">Copied!</span>
-          </div>
+      </div>
+      <div class="copy-block">
+        <p>
+          <span class="rgb-copy-text"></span>
+        </p>
+        <button class="button-default -copy -rgb" data-clipboard-text="">
+          <span class="graphic">
+            <svg class="icon" viewBox="0 0 20 20" width="16" height="16">
+              <path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z" />
+            </svg>
+          </span>
+        </button>
+        <div class="tooltip rgb-tip" aria-hidden="true">
+          <span class="tooltip-text">Copied!</span>
         </div>
       </div>
     </section>
@@ -154,7 +153,9 @@
           </div>
         </div>
       </div>
-      <div class="custom-colors inner">
+    </section>
+    <section class="custom-colors inner">
+      <div class="controls">
         <div class="_mt1 inner">
           <h2>Colors</h2>
           <p class="_mt1">Try printing your color palette.</p>
@@ -216,8 +217,8 @@
     </footer>
   </div> -->
 
-  <script async src="js/app.js"></script>
-  <script async defer src="js/github-buttons.js"></script>
+    <script async src="js/app.js"></script>
+    <script async defer src="js/github-buttons.js"></script>
 </body>
 
 

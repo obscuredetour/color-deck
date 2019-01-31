@@ -3,7 +3,9 @@ $font-sans: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI'
 // background colors & a few shades of grays
 $jet: hsl(0, 0%, 13%);
 $space: hsl(0, 0%, 15%);
+$dust: hsl(0, 0%, 19%);
 $raven: hsl(0, 0%, 23%);
+$stone: hsl(0, 0%, 27%);
 $mine: hsl(0, 0%, 32%);
 $asher: hsl(0, 0%, 38%);
 $boulder: hsl(0, 0%, 49%);
@@ -15,19 +17,19 @@ $alabaster: hsl(0, 0%, 97%);
 $light-gray: $pearl;
 
 // text & accent colors
-$text-color: $pearl;
-$text-color-bright: $alabaster;
+// $text-color: $pearl;
+// $text-color-bright: $alabaster;
 
-$link-color: hsl(224, 67%, 76%);
+// $link-color: hsl(224, 67%, 76%);
 $cornflower: hsl(224, 67%, 76%);
-$link-color-hover: hsl(221, 78%, 86%);
+// $link-color-hover: hsl(221, 78%, 86%);
 $periwinkle: hsl(221, 78%, 86%);
 
-$accent-dark: hsl(234, 62%, 26%);
+// $accent-dark: hsl(234, 62%, 26%);
 $midnight: hsl(234, 62%, 26%);
 
-$accent: hsl(227, 42%, 51%);
+// $accent: hsl(227, 42%, 51%);
 $indigo: hsl(227, 42%, 51%);
 
-$accent-light: hsl(225, 57%, 67%);
+// $accent-light: hsl(225, 57%, 67%);
 $sky: hsl(225, 57%, 67%);

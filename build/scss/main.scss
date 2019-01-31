@@ -22,36 +22,50 @@
   @media screen and (min-width: 645px) {
     height: 100%;
     display: grid;
-    grid-template-columns: 250px 1fr;
-    grid-template-rows: 4.5rem 75px auto auto auto;
+    justify-items: stretch;
+    align-items: start;
+    grid-template-columns: 250px minmax(min-content, 980px);
+    grid-template-rows: auto minmax(min-content, 300px) auto auto;
   }
 }
 
 .heading-blurb {
   display: none;
   @media screen and (min-width: 645px) {
-    display: block;
-    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: stretch;
+    grid-area: 1 / 1 / 2 / 2;
     background: $jet;
+    border-right: 1px solid $raven
   }
 }
 .heading-main {
-  grid-area: 2 / 2 / 3 / -1;
-  margin: 1rem 1rem 0;
+  grid-area: 1 / 2 / 2 / -1;
+  margin: 0 0 0 1rem;
+  border-right: 1px solid $raven;
+  > .heading {
+    padding: 1rem;
+  }
 }
 .color-current {
-  grid-area: 3 / 1 / -1 / 2;
+  grid-area: 2 / 1 / -1 / 2;
   @media screen and (min-width: 645px) {
     background: $jet;
   }
 }
 
+.excess-grid {
+  grid-area: 4 / 2 / -1 / -1;
+  border-right: 1px solid $raven;
+}
 .color-main {
-  grid-area: 3 / 2 / 4 / -1;
+  grid-area: 2 / 2 / 3 / -1;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
-  padding: 2rem 2rem 0 !important;
+  padding: 1rem 2rem 2.5rem !important;
+  border-right: 1px solid $raven;
   > .colors {
     margin-top: -1rem;
     padding-bottom: 2rem;
@@ -81,6 +95,7 @@
   flex-direction: column;
   @media screen and (min-width: 645px) {
     min-height: 100vh;
+    border-right: 1px solid $raven
   }
 }
 .swatch {
@@ -137,14 +152,19 @@
 }
 
 .custom-colors {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  grid-area: 3 / 2 / -1 / -1;
+  align-self: start;
+  border-right: 1px solid $raven;
   width: 100%;
-  max-width: 56rem;
-  margin: 1rem 0;
-> .options { display: flex }
+  height: 100%;
+  margin: 0;
+  > .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    > .options { display: flex }
+  }
 }
 .swatch-sm {
   @include copy;

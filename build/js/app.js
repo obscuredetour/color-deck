@@ -108,7 +108,8 @@ const UIController = (() => {
         elements.sInput.value = saturation;
         elements.lValue.textContent = lightness + '%';
         elements.lInput.value = lightness;
-        elements.colorInput.placeholder = hex;
+        // elements.colorInput.placeholder = hex;
+        elements.colorInput.value = hex;
       });
 
     },
@@ -139,8 +140,8 @@ const UIController = (() => {
         }
 
         if (changes) {
-          elements.colorInput.placeholder = color.hexString;
-          // elements.colorInput.value = color.hexString;
+          // elements.colorInput.placeholder = color.hexString;
+          elements.colorInput.value = color.hexString;
         }
 
         ///////// SLIDERS ////////////

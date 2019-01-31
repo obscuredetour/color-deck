@@ -105,3 +105,16 @@ ul {
     padding-left: 0.25rem;
     margin-bottom: 0.25rem; }
 }
+hr {
+  border: 0;
+  border-bottom: solid 2px transparentize($gray, 0.85);
+  margin: 2rem auto 1rem auto;
+  width: 100%;
+  &.-minor {
+    margin: 0.5rem -0.5rem;
+    width: calc(100% + 1rem);
+    border-color: $raven }
+  &.major {
+    margin: 3rem auto;
+    border-bottom: solid 4px transparentize($sky, 0.5) }
+}

@@ -1,9 +1,16 @@
 .color-values {
-  // grid-area: 4 / 1 / 5 / 2;
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
   align-items: flex-start;
+  justify-content: space-evenly;
   margin: 0;
+  @media screen and (min-width: 645px) {
+    grid-area: 2 / 1 / -1 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 14rem;
+  }
 }
 @mixin copy {
   width: 100%;
@@ -11,9 +18,9 @@
   position: relative;
   display: flex;
   align-items: center;
-  background: $raven;
+  background: $dust;
+  margin-top: 1rem;
   border-radius: 30px;
-  margin-top: 1.25rem;
   padding: 8px 0 8px 1rem;
   &:first-of-type { margin-top: 0 }
   > h4, h5 { color: $alabaster }
@@ -32,7 +39,7 @@
   align-items: center;
   position: absolute;
   right: 55px;
-  background: $accent;
+  background: $indigo;
   border-radius: 20px;
   padding: 0.25rem 0.5rem;
   max-width: 75px;
@@ -46,7 +53,7 @@
     margin-right: -22px;
     border-width: 8px;
     border-style: solid;
-    border-color: transparent transparent transparent $accent;
+    border-color: transparent transparent transparent $indigo;
     transition: opacity 0.3s ease-in-out; 
   }
   &.visible {
@@ -59,5 +66,5 @@
 .tooltip-text {
   padding-right: 10px;
   font-size: 0.885rem;
-  color: $text-color-bright
+  color: $alabaster
 }
