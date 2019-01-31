@@ -1,0 +1,53 @@
+.button-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $alto;
+  background: $asher;
+  font-weight: 600;
+  border: 0;
+  border-radius: 30px;
+  font-size: 1rem;
+  margin: 0 0.15rem;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: $alto;
+    background: $indigo;
+  }
+  &.-copy {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  &.-save {
+    height: 40px;
+    width: 100%;
+    top: unset;
+    bottom: 0;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  > .graphic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > .icon {
+      width: 16px;
+      & .-plus {
+        width: 28px;
+        height: 28px;
+        &.-clear { transform: rotate(45deg) }
+      }
+      > path { fill: $alto; }
+    }
+  }
+}

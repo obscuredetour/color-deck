@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.4.0-alpha] - 2019-01-30
+### Changed
+- RSCSS rewrite includes UI restructure, CSS grid, sass -> scss, style tweaks.
+
 ## [1.3.0] - 2019-01-28
 ### Changed
 - `iro.js` updated to version 3.5.5, hotfix for HSL strings. Pasting an HSL string into the color input no longer results in an error.

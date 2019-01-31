@@ -1,0 +1,26 @@
+//--------- reuseables -------//
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  > * {
+    flex: 1 1 100%;
+    margin: 0 0 1rem 0;
+    &:last-child{ margin-bottom: 0 }
+  }
+  &.alt { flex-direction: row; }
+}
+
+@media screen and (min-width: 769px){
+  .flex-container {
+    flex-direction: row;
+    > * {
+      margin-right: 1rem;
+      margin-bottom: 0;
+      &:last-child{ margin-right: 0 }
+    }
+    &.alt {
+      flex-direction: column;
+      > * { margin-right: 0; }
+    }
+  }
+}

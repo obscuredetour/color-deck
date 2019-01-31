@@ -1,0 +1,74 @@
+//--------- header -------//
+.header-wrapper {
+  width: 100%;
+  min-height: 5rem;
+  background: $jet;
+  display: flex;
+  align-items: center;
+  grid-area: 1 / 1 / 2 / -1;
+}
+
+.header-content {
+  width: 100%;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  > .brand {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    > .logo { max-width: 40px }
+    > .title {
+      display: none;
+      margin: 0 0 0 8px;
+      font-size: 1.41rem;
+      font-weight: 600;
+      color: $alabaster;
+    }
+  }
+  > .link, .link:visited {
+    padding: 0.5rem 1rem 0.6rem;
+    color: $alto;
+    transition: all 0.2s ease-in-out;
+    border-radius: 30px;
+    &:last-of-type { margin-left: 1rem }
+    &:hover, &:active, &:focus {
+      color: $alabaster;
+      background-color: $mine;
+    }
+    &.-active {
+      color: $alabaster;
+      background-color: $mine;
+    }
+  }
+  @media screen and (min-width: 569px) {
+    padding: 0 1rem;
+    > .brand {
+      margin-right: 1rem;
+      > .logo { max-width: 50px }
+      > .title { display: block }
+    }
+    > .link { margin-left: 1.5rem }
+  }
+}
+
+.github {
+  position: absolute;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  > .star { display: none }
+  > .link {
+    padding: 0;
+    opacity: 0.75;
+    transition: opacity 0.2s ease-in-out;
+    > img { max-width: 32px }
+    &:hover { opacity: 1 }
+  }
+  @media screen and (min-width: 569px) {
+    right: 1rem;
+    > .star { display: block }
+    > .link { margin-right: 12px }
+  }
+}

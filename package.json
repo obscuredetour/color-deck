@@ -4,7 +4,9 @@
   "description": "Color Deck is a color palette collector made for humans.",
   "main": "app.js",
   "scripts": {
-    "sass": "node-sass -w build/sass/ -o build/css/"
+    "scss": "node-sass -w build/scss/ -o build/css/",
+    "serve": "browser-sync start --startPath 'build' --port 3003  --server --files '**/*.css, **/*.html, **/*.js'",
+    "go": "npm run scss | npm run serve"
   },
   "repository": {
     "type": "git",

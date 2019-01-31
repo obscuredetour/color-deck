@@ -8,9 +8,9 @@ const UIController = (() => {
     hslCopyValue: document.querySelector(".hsl-copy-text"),
     hexCopyValue: document.querySelector(".hex-copy-text"),
     rgbCopyValue: document.querySelector(".rgb-copy-text"),
-    hslCopyButton: document.querySelector(".hsl-copy-button"),
-    hexCopyButton: document.querySelector(".hex-copy-button"),
-    rgbCopyButton: document.querySelector(".rgb-copy-button"),
+    hslCopyButton: document.querySelector(".button-default.-copy.-hsl"),
+    hexCopyButton: document.querySelector(".button-default.-copy.-hex"),
+    rgbCopyButton: document.querySelector(".button-default.-copy.-rgb"),
     hslTooltip: document.querySelector(".hsl-tip"),
     hexTooltip: document.querySelector(".hex-tip"),
     rgbTooltip: document.querySelector(".rgb-tip"),
@@ -59,8 +59,8 @@ const UIController = (() => {
 
   // Create and Display Color Wheel
   let colorWheel = new iro.ColorPicker("#color-wheel", {
-    width: 300,
-    height: 300,
+    width: 285,
+    height: 285,
     color: getStartColor(),
     markerRadius: 8,
     padding: 4,

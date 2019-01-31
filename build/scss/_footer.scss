@@ -1,0 +1,24 @@
+//--------- footer -------//
+.footer-wrapper {
+  grid-area: 4 / 2 / -1 / -1;
+  grid-area: 4 / 1 / -1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 6rem;
+  > .inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    max-width: 50rem;
+    margin: 0 auto;
+    > .madeby {
+      max-width: 50rem;
+      margin: 0 auto 1rem;
+      font-size: 0.825rem;
+      color: $boulder;
+      text-align: center;
+    }
+  }
+}
