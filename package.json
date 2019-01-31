@@ -1,6 +1,6 @@
 {
   "name": "color-deck",
-  "version": "1.2.9",
+  "version": "1.4.0-a2",
   "description": "Color Deck is a color palette collector made for humans.",
   "main": "app.js",
   "scripts": {

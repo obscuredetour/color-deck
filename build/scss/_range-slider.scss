@@ -1,0 +1,44 @@
+
+
+
+// The slider itself
+.slider {
+  -webkit-appearance: none; // Override default CSS styles
+  appearance: none;
+  height: 25px;
+  width: 100%; // Full-width
+  border-radius: 25px;
+  background: #d3d3d3; // Grey background
+  outline: none; // Remove outline
+  -webkit-transition: .2s; // 0.2 seconds transition on hover
+  transition: all .2s;
+}
+
+
+@mixin thumb-style {
+  appearance: none;
+  border-radius: 25px;
+  width: 25px; // Set a specific slider handle width
+  height: 25px; // Slider handle height
+  background: white; // Green background
+  border: 1px solid white;
+  cursor: pointer; // Cursor on hover
+  box-shadow: 0 10px 20px hsla(0,0%,0%,.35), 0 3px 6px hsla(0,0%,0%,.20);
+}
+
+.slider::-webkit-slider-thumb {
+  @include thumb-style;
+  -webkit-appearance: none;
+}
+.slider::-moz-range-thumb {
+  @include thumb-style;
+}
+.s-slider { background: linear-gradient(to right, rgba(135, 135, 135, 1), rgba(135, 135, 135, 0.8), rgba(135, 135, 135, 0.6), rgba(135, 135, 135, 0), rgba(135, 135, 135, 0), rgba(135, 135, 135, 0), rgba(135, 135, 135, 0)) }
+
+.l-slider { background: linear-gradient(to right, hsla(0, 0%, 0%, 1), hsla(0, 0%, 20%, 0.8), hsla(0, 0%, 40%, 0), hsla(0, 0%, 50%, 0), hsla(0, 0%, 60%, 0), hsla(0, 0%, 80%, 0.8), hsla(0, 0%, 100%, 1)) }
+
+.h-slider {
+  background: linear-gradient(to right, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1));
+  background: -webkit-linear-gradient(to right, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1));
+  background: -moz-linear-gradient(to right, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1))
+}

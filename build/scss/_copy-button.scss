@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   color: $alto;
-  background: $asher;
+  background: $mine;
   font-weight: 600;
   border: 0;
   border-radius: 30px;
@@ -26,28 +26,33 @@
     height: 100%;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    &.-sm {
+      right: -1px;
+    }
   }
   &.-save {
-    height: 40px;
-    width: 100%;
-    top: unset;
+    height: 100%;
+    width: 2rem;
     bottom: 0;
-    border-radius: 6px;
     border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
   }
+  &.-clear { padding: 0.5rem }
   > .graphic {
     display: flex;
     align-items: center;
     justify-content: center;
-    > .icon {
-      width: 16px;
-      & .-plus {
-        width: 28px;
-        height: 28px;
-        &.-clear { transform: rotate(45deg) }
-      }
-      > path { fill: $alto; }
+  }
+}
+.graphic {
+  > .icon {
+    width: 16px;
+    & path { fill: $alto; }
+    &.-plus {
+      width: 28px;
+      height: 28px;
+      &.-clear { transform: rotate(45deg) }
     }
   }
 }

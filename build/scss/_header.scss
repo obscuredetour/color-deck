@@ -10,7 +10,7 @@
 
 .header-content {
   width: 100%;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   position: relative;
@@ -43,7 +43,7 @@
     }
   }
   @media screen and (min-width: 569px) {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     > .brand {
       margin-right: 1rem;
       > .logo { max-width: 50px }

@@ -5,7 +5,12 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
-## [1.4.0-alpha] - 2019-01-30
+## [1.4.0-a2] - 2019-01-30
+### Changed
+- UI restructure complete.
+- Convert remaining components and JS elements for rewrite.
+
+## [1.4.0-a1] - 2019-01-30
 ### Changed
 - RSCSS rewrite includes UI restructure, CSS grid, sass -> scss, style tweaks.
 

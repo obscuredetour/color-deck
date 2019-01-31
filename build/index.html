@@ -17,7 +17,7 @@
   <script src="js/iro.min.js"></script>
   <script src="js/clipboard.min.js"></script>
 
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/xicon">
   <title>Color Deck - A color palette collector</title>
 
 </head>
@@ -38,7 +38,7 @@
             <img src="images/GitHub-Mark-Light-64px.png" alt="GitHub logo">
           </a>
           <span class="star">
-            <a class="github-button" href="https://github.com/obscuredetour/color-deck" data-icon="octicon-star"
+            <a class="github-button" href="https://github.com/obscuredetour/color-deck" dataicon="octicon-star"
               data-show-count="true" aria-p="Star obscuredetour/color-deck on GitHub">Star</a>
           </span>
         </div>
@@ -46,26 +46,29 @@
     </header>
     <section class="inner heading-main">
       <!-- <p>Create color schemes with a HSL&ndash;powered color UI.</p> -->
-      <p>Create color schemes with a HSL&ndash;powered color UI.
+      <h1 class="heading">Create color schemes with a HSL&ndash;powered color UI.
         <small>A <a target="_blank" href="https://developers.google.com/web/progressive-web-apps/">progressive web app</a>&mdash;
           installable on desktop and mobile devices.
           <a href="how-to-use.html">Learn how.</a>
         </small>
-      </p>
+      </h1>
     </section>
     <section class="inner heading-blurb">
-      <p>Color palettes for humans.</p>
+      <p>Color palettes for humans.
+        <small>
+          <a href="https://github.com/obscuredetour/color-desk/blob/master/LICENSE">MIT license</a>
+        </small>
+      </p>
     </section>
     <section class="inner color-current">
       <p class="_title">Swatch</p>
       <div id="swatch" class="swatch">
-        <button class="save-color-button" data-color="">
-          <span>
-            <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <button class="button-default -copy -save" data-color="">
+          <span class="graphic">
+            <svg class="-plus icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
               <path fill-rule="evenodd" d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"></path>
             </svg>
           </span>
-          Save
         </button>
       </div>
       <div class="color-form">
@@ -120,8 +123,6 @@
       </div>
     </section>
 
-
-
     <section class="inner color-main">
       <div class="color-wheel" id="color-wheel"></div>
       <div class="color-controls">
@@ -129,7 +130,9 @@
           <input type="text" name="hue" class="h-input">
           <div class="h-controls">
             <p class="_title" for="h-slider">Hue <span class="h-value"></span></p>
-            <input id="h-slider" name="h-slider" type="range" min="0" max="360" value="50" class="slider h-slider">
+            <div class="h-controls__slider">
+              <input id="h-slider" name="h-slider" type="range" min="0" max="360" value="50" class="slider h-slider">
+            </div>
           </div>
         </div>
         <div class="s-controls__wrapper">
@@ -151,16 +154,67 @@
           </div>
         </div>
       </div>
+      <div class="custom-colors inner">
+        <div class="_mt1 inner">
+          <h2>Colors</h2>
+          <p class="_mt1">Try printing your color palette.</p>
+        </div>
+        <div class="options">
+          <div class="swatch-sm">
+            <button class="button-default -copy -sm">
+              <span class="graphic">
+                <svg class="icon -plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill-rule="evenodd" d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <button class="button-default -clear">
+            <span class="graphic">
+              <svg class="-plus icon -clear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill-rule="evenodd" d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="colors">
+        <!-- <div class="saved-color">
+          <input type="text" class="saved-color-name" placeholder="color name">
+          <p><span class="saved-color-value"></span></p>
+          <div class="saved-color-copy">
+            <button class="saved-color-copy__hsl">HSL</button>
+            <button class="saved-color-copy__hex">HEX</button>
+            <button class="saved-color-copy__rgb">RGB</button>
+          </div>
+          <button class="saved-color-remove">
+            <span>
+              <svg class="plusicon clear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill-rule="evenodd" d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"></path>
+              </svg>
+            </span>
+          </button>
+        </div> -->
+        <!-- <div class="save-some-colors" aria-hidden="true">
+          <p>Save some colors!</p>
+        </div> -->
+      </div>
     </section>
 
 
-    <footer class="footer-wrapper">
+    <!-- <footer class="footer-wrapper">
       <section class="inner">
-        <p class="madeby">Made with ❤️ by <a href="https://www.obscuredetour.com">obscure detour</a> under an <a href="https://github.com/obscuredetour/color-desk/blob/master/LICENSE">MIT
-            license</a>.</p>
+        <p class="madeby">
+          <img alt="github version" src="https://img.shields.io/github/tag-date/obscuredetour/color-deck.svg?colorB=%234e64b7&label=Version&style=flat">
+          <a href="https://github.com/obscuredetour/color-desk/blob/master/LICENSE">
+            <img alt="undefined" src="https://img.shields.io/github/license/obscuredetour/color-deck.svg?colorB=rgb%2878%2C%20100%2C%20183%29&style=flat">
+          </a>
+          <br><br>
+          Made by <a href="https://www.obscuredetour.com">obscure detour</a> with ❤.
+        </p>
       </section>
     </footer>
-  </div>
+  </div> -->
 
   <script async src="js/app.js"></script>
   <script async defer src="js/github-buttons.js"></script>

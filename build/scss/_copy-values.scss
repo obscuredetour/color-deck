@@ -1,29 +1,31 @@
 .color-values {
-  grid-area: 4 / 1 / 5 / 2;
-  background: $jet;
+  // grid-area: 4 / 1 / 5 / 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 0;
-  > .copy-block {
-    width: 248px;
-    min-height: 50px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    background: $space;
-    border-radius: 30px;
-    margin-top: 1.25rem;
-    padding: 8px 0 8px 1rem;
-    &:first-of-type { margin-top: 0 }
-    > h4, h5 { color: $alabaster }
-    > p {
-      margin: 0;
-      color: $alto;
-    }
+}
+@mixin copy {
+  width: 100%;
+  min-height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: $raven;
+  border-radius: 30px;
+  margin-top: 1.25rem;
+  padding: 8px 0 8px 1rem;
+  &:first-of-type { margin-top: 0 }
+  > h4, h5 { color: $alabaster }
+  > p {
+    margin: 0;
+    color: $alto;
+    font-size: 15px;
   }
 }
-
+.copy-block {
+  @include copy;
+}
 .tooltip {
   display: flex;
   justify-content: center;
