@@ -1,7 +1,7 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.0.0/workbox-sw.js');
 
 // custom adjustments
-console.log('App & Service Worker is running.');
+console.log('Service Worker is running.');
 
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
 workbox.routing.registerRoute(
@@ -30,19 +30,39 @@ workbox.routing.registerRoute(
 
 workbox.precaching.precacheAndRoute([
   {
+    "url": "about.html",
+    "revision": "c7367f796222132d5256cb4e87d5c5c7"
+  },
+  {
     "url": "css/main.css",
-    "revision": "a05d65b3f7cdf18311ab24a08f344d0a"
+    "revision": "d71c9d18ac66472c2329088217c1efec"
+  },
+  {
+    "url": "how-to-use.html",
+    "revision": "d2e21d953a51e9c84d29da251efe8843"
   },
   {
     "url": "index.html",
-    "revision": "0e99ec242ed04e771d25fc42f233b7aa"
+    "revision": "38c24c061da69cd9826bdc902a32306e"
   },
   {
     "url": "js/app.js",
-    "revision": "15fefc9b08a62422fefa50a580f2a208"
+    "revision": "8f8734b3eecdde6257e572f4ebe64a10"
+  },
+  {
+    "url": "js/clipboard.min.js",
+    "revision": "f06c52bfddb458ad87349acf9fac06c5"
+  },
+  {
+    "url": "js/github-buttons.js",
+    "revision": "ade2f6764be01faa8b90d28976b3377f"
   },
   {
     "url": "js/iro.min.js",
-    "revision": "911098ff029402385f3c95c826533903"
+    "revision": "f8ce197d22414b5cc828727d0a48c83e"
+  },
+  {
+    "url": "og.index.html",
+    "revision": "f8fb77ef6b9d8f1c96e03ba47643685c"
   }
 ]);

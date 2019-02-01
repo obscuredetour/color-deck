@@ -347,7 +347,7 @@ const controller = ((UICtrl) => {
       if ('serviceWorker' in navigator) {
         // Use the window load event to keep the page load performant
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js');
+          navigator.serviceWorker.register('./sw.js');
         });
       }
       console.log('App has started.');

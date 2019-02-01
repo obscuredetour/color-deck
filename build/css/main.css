@@ -649,3 +649,24 @@ input[type="text"]:focus {
     top: 0;
     z-index: 1;
     border-radius: 0 30px 30px 0; }
+
+.user-colors {
+  padding-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative; }
+  .user-colors > .save-some-colors {
+    background: transparent;
+    opacity: 0.15;
+    display: block;
+    margin: 0 auto;
+    text-align: center; }
+    .user-colors > .save-some-colors > p {
+      font-size: 2rem;
+      letter-spacing: .1px;
+      font-weight: 600;
+      margin: 2rem;
+      line-height: 1.1; }
+    .user-colors > .save-some-colors.d-none {
+      display: none; }
