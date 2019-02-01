@@ -56,15 +56,11 @@
   }
 }
 
-.excess-grid {
-  grid-area: 4 / 2 / -1 / -1;
-  border-right: 1px solid $raven;
-}
 .color-main {
   grid-area: 2 / 2 / 3 / -1;
   display: flex;
   flex-wrap: wrap;
-  padding: 1rem 2rem 2.5rem !important;
+  padding: 1rem 2rem 0 !important;
   border-right: 1px solid $raven;
   > .colors {
     margin-top: -1rem;
@@ -81,13 +77,12 @@
   display: none;
 }
 .color-wheel {
-  margin: 1rem auto -2rem auto;
+  margin: -2rem auto;
   @media screen and (min-width: 569px) {
     margin-bottom: -4rem;
   }
   @media screen and (min-width: 960px) {
-    margin-left: -2rem;
-    margin-right: 0;
+    margin: 1rem 0 0 -2rem;
   }
 }
 .color-current {
@@ -112,7 +107,6 @@
 }
 
 .color-controls {
-  max-width: 40rem;
   min-width: 20rem;
   display: flex;
   flex-direction: column;
@@ -167,12 +161,28 @@
   }
 }
 .swatch-sm {
-  @include copy;
+  // @include copy;
   min-width: 150px;
   margin: 0 1rem 0 0;
   min-height: 41.5px;
+  border-radius: 6px 30px 30px 6px;
   display: flex;
   justify-content: flex-end;
   align-items: stretch;
   position: relative;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  z-index: 0;
+  &:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: 25px;
+    background-color: $stone;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    border-radius: 0 30px 30px 0;
+  }
 }

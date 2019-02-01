@@ -72,8 +72,7 @@
       </div>
     </section>
 
-
-    <section class="color-values inner">
+    <aside class="color-values inner">
       <p class="_title">Values</p>
       <div class="copy-block">
         <p>
@@ -120,7 +119,12 @@
           <span class="tooltip-text">Copied!</span>
         </div>
       </div>
-    </section>
+      <p>
+        <small>
+          Copy any color value with the press of a button!
+        </small>
+      </p>
+    </aside>
 
     <section class="inner color-main">
       <div class="color-wheel" id="color-wheel"></div>
@@ -179,7 +183,7 @@
           </button>
         </div>
       </div>
-      <div class="colors">
+      <div class="user-colors">
         <!-- <div class="saved-color">
           <input type="text" class="saved-color-name" placeholder="color name">
           <p><span class="saved-color-value"></span></p>
@@ -196,9 +200,9 @@
             </span>
           </button>
         </div> -->
-        <!-- <div class="save-some-colors" aria-hidden="true">
+        <div class="save-some-colors" aria-hidden="true">
           <p>Save some colors!</p>
-        </div> -->
+        </div>
       </div>
     </section>
 
@@ -218,7 +222,16 @@
   </div> -->
 
     <script async src="js/app.js"></script>
-    <script async defer src="js/github-buttons.js"></script>
+    <!-- <script async defer src="js/github-buttons.js"></script> -->
+    <!-- <script>
+    // Check that service workers are registered
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script> -->
 </body>
 
 
