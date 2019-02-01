@@ -31,10 +31,10 @@ const UIController = (() => {
     clearAllColorsButton: document.querySelector(".button-default.-clear"),
     savedColorValue: document.querySelector(".saved-color-value"),
     savedColorName: document.querySelectorAll(".saved-color-name"),
-    savedColorRemove: document.querySelectorAll(".saved-color-remove"),
-    savedColorCopyHsl: document.querySelectorAll(".saved-color-copy__hsl"),
-    savedColorCopyHex: document.querySelectorAll(".saved-color-copy__hex"),
-    savedColorCopyRgb: document.querySelectorAll(".saved-color-copy__rgb")
+    savedColorRemove: document.querySelectorAll(".button-default.-saved.-clear"),
+    savedColorCopyHsl: document.querySelectorAll(".button-default.-saved.-hsl"),
+    savedColorCopyHex: document.querySelectorAll(".button-default.-saved.-hex"),
+    savedColorCopyRgb: document.querySelectorAll(".button-default.-saved.-rgb")
   }
 
   // App functions
@@ -257,13 +257,13 @@ const UIController = (() => {
             <input type="text" class="saved-color-name" placeholder="color name" data-color="${currentColor}">
             <!-- <p><span class="saved-color-value">${currentColor}</span></p> -->
             <div class="saved-color-copy">
-              <button class="saved-color-copy__hsl" data-clipboard-text="${hsl}">HSL</button>
-              <button class="saved-color-copy__hex" data-clipboard-text="${hex}">HEX</button>
-              <button class="saved-color-copy__rgb" data-clipboard-text="${rgb}">RGB</button>
+              <button class="button-default -saved -hsl" data-clipboard-text="${hsl}">HSL</button>
+              <button class="button-default -saved -hex" data-clipboard-text="${hex}">HEX</button>
+              <button class="button-default -saved -rgb" data-clipboard-text="${rgb}">RGB</button>
             </div>
-            <button class="saved-color-remove">
-              <span>
-                <svg class="plus-icon clear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"></path></svg>
+            <button class="button-default -saved -clear">
+              <span class="graphic">
+                <svg class="-plus icon -clear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"></path></svg>
               </span>
             </button>
           </div>
@@ -272,9 +272,9 @@ const UIController = (() => {
         elements.userColors.insertAdjacentHTML('beforeend', markup);
 
         // need to reassign elements again
-        elements.savedColorCopyHsl = document.querySelectorAll(".saved-color-copy__hsl");
-        elements.savedColorCopyHex = document.querySelectorAll(".saved-color-copy__hex");
-        elements.savedColorCopyRgb = document.querySelectorAll(".saved-color-copy__rgb");
+        elements.savedColorCopyHsl = document.querySelectorAll(".button-default.-saved.-hsl");
+        elements.savedColorCopyHex = document.querySelectorAll(".button-default.-saved.-hex");
+        elements.savedColorCopyRgb = document.querySelectorAll(".button-default.-saved.-rgb");
         elements.savedColorName = document.querySelectorAll(".saved-color-name");
 
         let savedColorHslButtons = new ClipboardJS(elements.savedColorCopyHsl);
@@ -282,7 +282,7 @@ const UIController = (() => {
         let savedColorRgbButtons = new ClipboardJS(elements.savedColorCopyRgb);
 
         elements.savedColorContainer = document.querySelectorAll(".saved-color");
-        elements.savedColorRemove = document.querySelectorAll(".saved-color-remove");
+        elements.savedColorRemove = document.querySelectorAll(".button-default.-saved.-clear");
         // Remove color on click
         elements.savedColorRemove.forEach(el => {
 

@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.4.0-a4] - 2019-01-31
+### Changed
+- UI restructure complete (for real).
+- Converted  buttons (all), saved colors, custom colors, ranged sliders, color values to components. 
+- Need to fix a few markup and specificity on a few components.
+
 ## [1.4.0-a2] - 2019-01-30
 ### Changed
 - UI restructure complete.

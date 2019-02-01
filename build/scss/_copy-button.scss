@@ -19,6 +19,7 @@
     color: $alto;
     background: $indigo;
   }
+  &.-clear { padding: 0.5rem }
   &.-copy {
     position: absolute;
     right: 0;
@@ -42,13 +43,48 @@
     border-bottom-right-radius: 6px;
     border-top-right-radius: 6px;
   }
-  &.-clear { padding: 0.5rem }
+  &.-saved {
+    padding: 8px;
+    width: 100%;
+    margin: 0;
+    color: $alto;
+    background: transparentize($jet, 0.6);
+    &:hover,
+    &:active,
+    &:focus {
+      background: transparentize($jet, 0.4)
+    }
+    &.-hsl, &.-hex, &.-rgb {
+      font-size: 0.875rem;
+      border-radius: 0;
+    }
+    &.-hsl {
+      border-radius: 0;
+      border-bottom-left-radius: 8px;
+    }
+    &.-rgb {
+      border-radius: 0;
+      border-bottom-right-radius: 8px;
+    }
+    &.-clear {
+      position: absolute;
+      right: 0;
+      width: 44px;
+      padding-right: 0.25rem;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+    }
+  }
   > .graphic {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 }
+
+//span svg
 .graphic {
   > .icon {
     width: 16px;
