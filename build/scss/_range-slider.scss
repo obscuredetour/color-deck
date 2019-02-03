@@ -1,36 +1,44 @@
-
-.h-controls__wrapper, .s-controls__wrapper, .l-controls__wrapper {
+.range-wrapper {
   margin: 1rem 0 0;
-  > .h-controls, .s-controls, .l-controls {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  > .field {
+    margin: 0 1rem 0 0;
+    width: 4rem;
+    display: block;
+    align-self: flex-end;
+  }
+  > .range-controls {
     flex: 1;
-    > .h-value, .s-value, .l-value {
-      margin-left: 0.5rem;
-      color: $alto;
-      font-weight: 600;
-      font-size: 1rem;
-    }
   }
 }
-.l-controls__slider, .s-controls__slider, .h-controls__slider {
+.range-controls {
+  > ._title > .value {
+    margin-left: 0.5rem;
+    color: $alabaster;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
+.slider-controls {
   position: relative;
   height: 25px;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 30px;
+  > .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 25px;
+    width: 100%;
+    border-radius: 25px;
+    background: #d3d3d3;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: all .2s;
+  }
 }
-
-// The slider itself
-.slider {
-  -webkit-appearance: none; // Override default CSS styles
-  appearance: none;
-  height: 25px;
-  width: 100%; // Full-width
-  border-radius: 25px;
-  background: #d3d3d3; // Grey background
-  outline: none; // Remove outline
-  -webkit-transition: .2s; // 0.2 seconds transition on hover
-  transition: all .2s;
-}
-
 
 @mixin thumb-style {
   appearance: none;
@@ -50,11 +58,12 @@
 .slider::-moz-range-thumb {
   @include thumb-style;
 }
-.s-slider { background: linear-gradient(to right, rgba(135, 135, 135, 1), rgba(135, 135, 135, 0.8), rgba(135, 135, 135, 0.6), rgba(135, 135, 135, 0), rgba(135, 135, 135, 0), rgba(135, 135, 135, 0), rgba(135, 135, 135, 0)) }
 
-.l-slider { background: linear-gradient(to right, hsla(0, 0%, 0%, 1), hsla(0, 0%, 20%, 0.8), hsla(0, 0%, 40%, 0), hsla(0, 0%, 50%, 0), hsla(0, 0%, 60%, 0), hsla(0, 0%, 80%, 0.8), hsla(0, 0%, 100%, 1)) }
+.slider.-saturation { background: linear-gradient(to right, rgba(135, 135, 135, 1), rgba(135, 135, 135, 0.8), rgba(135, 135, 135, 0.6), rgba(135, 135, 135, 0), rgba(135, 135, 135, 0), rgba(135, 135, 135, 0), rgba(135, 135, 135, 0)) }
 
-.h-slider {
+.slider.-lightness { background: linear-gradient(to right, hsla(0, 0%, 0%, 1), hsla(0, 0%, 20%, 0.8), hsla(0, 0%, 40%, 0), hsla(0, 0%, 50%, 0), hsla(0, 0%, 60%, 0), hsla(0, 0%, 80%, 0.8), hsla(0, 0%, 100%, 1)) }
+
+.slider.-hue {
   background: linear-gradient(to right, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1));
   background: -webkit-linear-gradient(to right, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1));
   background: -moz-linear-gradient(to right, hsla(0, 100%, 44%, 1),hsla(10, 100%, 44%, 1),hsla(20, 100%, 44%, 1),hsla(30, 100%, 44%, 1),hsla(40, 100%, 44%, 1),hsla(50, 100%, 44%, 1),hsla(60, 100%, 44%, 1),hsla(70, 100%, 44%, 1),hsla(80, 100%, 44%, 1),hsla(90, 100%, 44%, 1),hsla(100, 100%, 44%, 1),hsla(110, 100%, 44%, 1),hsla(120, 100%, 44%, 1),hsla(130, 100%, 44%, 1),hsla(140, 100%, 44%, 1),hsla(150, 100%, 44%, 1),hsla(160, 100%, 44%, 1),hsla(170, 100%, 44%, 1),hsla(180, 100%, 44%, 1),hsla(190, 100%, 44%, 1),hsla(200, 100%, 44%, 1),hsla(210, 100%, 44%, 1),hsla(220, 100%, 44%, 1),hsla(230, 100%, 44%, 1),hsla(240, 100%, 44%, 1),hsla(250, 100%, 44%, 1),hsla(260, 100%, 44%, 1),hsla(270, 100%, 44%, 1),hsla(280, 100%, 44%, 1),hsla(290, 100%, 44%, 1),hsla(300, 100%, 44%, 1),hsla(310, 100%, 44%, 1),hsla(320, 100%, 44%, 1),hsla(330, 100%, 44%, 1),hsla(340, 100%, 44%, 1),hsla(350, 100%, 44%, 1),hsla(360, 100%, 44%, 1))

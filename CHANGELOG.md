@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.4.0-a5] - 2019-02-02
+### Changed
+- Headings content and location tweaked.
+- Updated HTML headings in `_base` for updated font sizing.
+- Markup and CSS specificity in `_range_slider`, `_custom-colors`, `_saved-color` components updated to reflect RSCSS practices.
+- Extra helper components created in `_helpers`.
+- Helper class `_title` styling updated.
+- Updated app UI CSS Grid for future 3rd column when going beyond ~1100px in screen width.
+- Secondary pages now reflect RSCSS practices.
+
 ## [1.4.0-a4] - 2019-01-31
 ### Changed
 - UI restructure complete (for real).

@@ -24,7 +24,7 @@ const UIController = (() => {
     lValue: document.querySelector(".l-value"),
     lSlider: document.querySelector(".l-slider"),
     userColors: document.querySelector(".user-colors"),
-    saveSomeColors: document.querySelector(".save-some-colors"),
+    saveSomeColors: document.querySelector(".message"),
     savedColorContainer: document.querySelectorAll(".saved-color"),
     saveColorButton: document.querySelector(".button-default.-copy.-save"),
     smSaveColorButton: document.querySelector(".button-default.-copy.-sm"),
@@ -70,7 +70,7 @@ const UIController = (() => {
     borderColor: "#1d1d1d",
     anticlockwise: true,
     css: {
-      "#swatch, .swatch-sm, .slider, .s-controls__slider, .l-controls__slider": {
+      "#swatch, .swatch-sm, .slider, .slider-controls.-saturation, .slider-controls.-lightness": {
         "background-color": "$color"
       }
     }
@@ -238,7 +238,7 @@ const UIController = (() => {
       };
 
       const saveColor = () => {
-        elements.saveSomeColors.classList.add('d-none');
+        elements.saveSomeColors.classList.add('-d-none');
 
         // Get saved color
         let currentColor = elements.hexCopyValue.textContent,
@@ -310,16 +310,16 @@ const UIController = (() => {
 
       const removeAllColors = () => {
         const markup = `
-        <div class="save-some-colors" aria-hidden="true">
-          <p>Save some colors!</p>
-        </div>
+        <p class="message" aria-hidden="true">
+          Save some colors!
+        </p>
         `;
 
         if (elements.userColors.lastElementChild != elements.saveSomeColors) {
           elements.userColors.innerHTML = markup;
         }
 
-        elements.saveSomeColors = document.querySelector(".save-some-colors");
+        elements.saveSomeColors = document.querySelector(".message");
       };
 
       elements.clearAllColorsButton.addEventListener('click', removeAllColors);

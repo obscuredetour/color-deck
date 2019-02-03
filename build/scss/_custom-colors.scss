@@ -1,5 +1,5 @@
 .custom-colors {
-  grid-area: 3 / 2 / -1 / -1;
+  grid-area: 2 / 2 / -1 / 3;
   align-self: start;
   border-right: 1px solid $raven;
   width: 100%;
@@ -13,7 +13,6 @@
     > .options { display: flex }
   }
 }
-
 
 .swatch-sm {
   min-width: 150px;
@@ -42,25 +41,21 @@
 }
 
 .user-colors {
-  padding-bottom: 2rem;
+  padding-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  > .save-some-colors {
-    background: transparent;
+  > .message {
     opacity: 0.15;
-    display: block;
-    margin: 0 auto;
+    margin: 2rem auto 0;
     text-align: center;
-    > p {
-      font-size: 2rem;
-      letter-spacing: .1px;
-      font-weight: 600;
-      margin: 2rem;
-      line-height: 1.1;
-    }
-    &.d-none{ display: none }
-    }
+    font-size: 2rem;
+    letter-spacing: .1px;
+    font-weight: 600;
+    margin: 2rem;
+    line-height: 1.1;
+    &.-d-none{ display: none }
+  }
 }
 

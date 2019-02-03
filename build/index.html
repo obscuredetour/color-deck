@@ -43,19 +43,19 @@
       </div>
     </div>
   </header>
-  <div class="page-wrapper">
-    <section class="inner heading-main">
-      <!-- <p>Create color schemes with a HSL&ndash;powered color UI.</p> -->
-      <h1 class="heading">Create color schemes with a HSL&ndash;powered color UI.
+  <div class="page-wrapper -grid">
+    <!--<section class="inner heading-main">
+       <h1 class="heading">Create color schemes with a HSL&ndash;powered color UI.
         <small>A <a target="_blank" href="https://developers.google.com/web/progressive-web-apps/">progressive web app</a>&mdash;
           installable on desktop and mobile devices.
           <a href="how-to-use.html">Learn how.</a>
         </small>
       </h1>
-    </section>
-    <section class="inner heading-blurb">
       <p>Color palettes for humans.</p>
-    </section>
+    </section> -->
+    <!-- <section class="inner heading-blurb">
+      <p>Color palettes for humans.</p>
+    </section> -->
     <section class="inner color-current">
       <p class="_title">Swatch</p>
       <div id="swatch" class="swatch">
@@ -68,7 +68,7 @@
         </button>
       </div>
       <div class="color-form">
-        <input id="colorInput" type="text" name="colorInput" class="color-input">
+        <input id="colorInput" type="text" name="colorInput" class="color-input field">
       </div>
     </section>
 
@@ -119,40 +119,45 @@
           <span class="tooltip-text">Copied!</span>
         </div>
       </div>
-      <p>
+      <p class="_heather -small">
         <small>
-          Copy any color value with the press of a button!
+          Copy any color value with the press of a button! Doable on the current swatch above and any saved colors too.
         </small>
+      </p>
+      <p class="_title">
+        Color Deck is a 
+        <a href="about">
+          HSL driven color palette collector</a>,<br>&mdash;made for humans.
       </p>
     </aside>
 
     <section class="inner color-main">
       <div class="color-wheel" id="color-wheel"></div>
       <div class="color-controls">
-        <div class="h-controls__wrapper">
-          <input type="text" name="hue" class="h-input">
-          <div class="h-controls">
-            <p class="_title" for="h-slider">Hue <span class="h-value"></span></p>
-            <div class="h-controls__slider">
-              <input id="h-slider" name="h-slider" type="range" min="0" max="360" value="50" class="slider h-slider">
+        <div class="range-wrapper">
+          <input type="text" name="hue" class="h-input field">
+          <div class="range-controls">
+            <p class="_title">Hue <span class="h-value value"></span></p>
+            <div class="slider-controls">
+              <input id="h-slider" name="h-slider" type="range" min="0" max="360" value="50" class="slider h-slider -hue">
             </div>
           </div>
         </div>
-        <div class="s-controls__wrapper">
-          <input type="text" name="saturation" class="s-input">
-          <div class="s-controls">
-            <p class="_title" for="s-slider">Saturation <span class="s-value"></span></p>
-            <div class="s-controls__slider">
-              <input id="s-slider" name="s-slider" type="range" min="0" max="100" value="50" class="slider s-slider">
+        <div class="range-wrapper">
+          <input type="text" name="saturation" class="s-input field">
+          <div class="range-controls">
+            <p class="_title">Saturation <span class="s-value value"></span></p>
+            <div class="slider-controls -saturation">
+              <input id="s-slider" name="s-slider" type="range" min="0" max="100" value="50" class="slider s-slider -saturation">
             </div>
           </div>
         </div>
-        <div class="l-controls__wrapper">
-          <input type="text" name="lightness" class="l-input">
-          <div class="l-controls">
-            <p class="_title" for="l-slider">Lightness <span class="l-value"></span></p>
-            <div class="l-controls__slider">
-              <input id="l-slider" name="l-slider" type="range" min="0" max="100" value="50" class="slider l-slider">
+        <div class="range-wrapper">
+          <input type="text" name="lightness" class="l-input field">
+          <div class="range-controls">
+            <p class="_title">Lightness <span class="l-value value"></span></p>
+            <div class="slider-controls -lightness">
+              <input id="l-slider" name="l-slider" type="range" min="0" max="100" value="50" class="slider l-slider -lightness">
             </div>
           </div>
         </div>
@@ -162,7 +167,7 @@
       <div class="controls">
         <div class="_mt1 inner">
           <h2>Colors</h2>
-          <p class="_mt1">Try printing your color palette.</p>
+          <!-- <p class="_mt1">Try printing your color palette.</p> -->
         </div>
         <div class="options">
           <div class="swatch-sm">
@@ -200,9 +205,9 @@
             </span>
           </button>
         </div> -->
-        <div class="save-some-colors" aria-hidden="true">
-          <p>Save some colors!</p>
-        </div>
+        <p class="message" aria-hidden="true">
+          Save some colors!
+        </p>
       </div>
     </section>
 

@@ -69,7 +69,9 @@ p {
   max-width: 40rem;
   &:first-of-type {
     margin-top: 0 }
+  &.-small { line-height: 1.4 }
 }
+
 h1, h2, h3, h4, h5, h6 {
   max-width: 40rem;
   color: $pearl;
@@ -77,33 +79,31 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-right: auto }
 h1 {
-  font-size: 1.15rem;
+  font-size: 1.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   color: $alabaster;
-  > small {
-    font-weight: 500;
-    font-size: .9rem;
-  }
 }
 h2 {
-  font-size: 1.6rem;
-  margin-top: 1.35rem;
-  margin-bottom: 1.35rem;
+  font-size: 1.625rem;
+  margin-top: 1.3125rem;
+  margin-bottom: 1.3125rem;
   letter-spacing: 0.1px }
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.3125rem;
   margin-top: 1rem;
   margin-bottom: 1.25rem }
 h4, h5, h6 {
   font-size: 1.1rem;
   margin-bottom: 1rem;
   font-weight: 500 }
-h4 { color: $gray; font-size: 1.15rem; }
-ul {
+h4 { color: $gray; font-size: 1.125rem; }
+ul, ol {
   margin: 0 0 1rem 0;
-  padding-left: 0.75rem;
+  padding-left: 2rem;
   li {
     padding-left: 0.25rem;
-    margin-bottom: 0.25rem; }
+    margin-bottom: 0.5rem; }
 }
 hr {
   border: 0;
