@@ -1,0 +1,36 @@
+.color-main {
+  grid-area: 1 / 2 / 2 / 3;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 2rem 0 !important;
+  margin-bottom: 1.5rem;
+  border-right: 1px solid $raven;
+  > .color-wheel {
+    margin: -2rem auto;
+    @media screen and (min-width: 569px) {
+      margin: 0 auto -4rem auto;
+    }
+    @media screen and (min-width: 960px) {
+      margin: 1rem 0 0 -2rem;
+    }
+  }
+  @media screen and (min-width: 960px) {
+    margin-bottom: -1rem;
+  }
+  @media screen and (min-width: 1250px) {
+    min-width: 960px;
+  }
+}
+
+.iro__slider {
+  z-index: -1;
+  display: none;
+}
+
+
+.color-controls {
+  min-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;  
+}

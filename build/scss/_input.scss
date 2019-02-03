@@ -45,11 +45,11 @@ input[type="text"]:focus { background-color: $mine }
     font-weight: bold;
     color: $pearl;
     text-align: left;
+    > .subtitle {
+      font-weight: normal;
+      color: $gray;
+      font-size: 14px;
+      }
    }
-}
-
-.title > .subtitle {
-  font-weight: normal;
-  color: $gray;
-  font-size: 14px;
+   
 }

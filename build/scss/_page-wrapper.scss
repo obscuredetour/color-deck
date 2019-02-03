@@ -1,0 +1,21 @@
+.page-wrapper {
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  > .inner { padding: 1rem }
+  > .segment {
+    padding: 1rem;
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+  &.-grid {
+    @media screen and (min-width: 645px) {
+      height: 100%;
+      display: grid;
+      justify-items: stretch;
+      align-items: start;
+      grid-template-columns: 250px minmax(min-content, 960px) auto;
+      grid-template-rows: minmax(min-content, 300px) auto auto;
+    }
+  }
+}

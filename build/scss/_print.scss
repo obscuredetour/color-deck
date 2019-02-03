@@ -1,0 +1,58 @@
+@media print {
+  body, .header-wrapper {
+    background: #fff;
+    font-size: 11pt;
+  }
+  body { padding: 0 }
+  .header-wrapper {
+    border: 0;
+    padding-left: 1rem
+   }
+  .header-content {
+    padding-left: 1rem;
+    > .brand:after {
+      color: $space;
+      font-size: 9pt;
+      content: "Created by Color Deck \2014 \00a0 "attr(data-url)"";
+      position: absolute;
+      bottom: -2rem
+    }
+  > .brand > .logo { max-width: 32px }
+  > .brand > .title {
+      display: block;
+      position: relative;
+      color: $space
+    }
+  }
+  .page-wrapper { min-height: unset }
+  .custom-colors { border: 0 }
+  .link, .github, .color-current, .color-values, .color-main, .custom-colors > .controls, .message, .saved-color-copy {
+    display: none !important }
+  
+  .user-colors {
+    margin-top: 1rem;
+    justify-content: flex-start
+  }
+
+  .saved-color {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    height: 75px;
+    min-width: 125px;
+    margin-bottom: 3rem;
+    &[data-color-name]:before, &[data-color]:after{
+      position: absolute;
+      color: $space;
+      left: 3px;
+    }
+    &[data-color-name]:before{
+      content: attr(data-color-name);
+      top: -1.5rem;
+      font-size: 10pt;
+    }
+    &[data-color]:after{
+      content: attr(data-color);
+      bottom: -1.5rem;
+    }
+  }
+}

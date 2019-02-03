@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.4.0-b] - 2019-02-02
+### Changed
+- Print feature ported.
+- Rewrite using RSCSS practices complete.
+- All sections are now components.
+
 ## [1.4.0-a6] - 2019-02-02
 ### Changed
 - Mobile color wheel cutoff.

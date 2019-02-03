@@ -1,6 +1,6 @@
 $font-sans: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans','Helvetica Neue', Arial, sans-serif;
 
-// background colors & a few shades of grays
+// background colors & shades of grays
 $jet: hsl(0, 0%, 13%);
 $space: hsl(0, 0%, 15%);
 $dust: hsl(0, 0%, 19%);
@@ -14,23 +14,9 @@ $gray: hsl(0, 0%, 69%);
 $alto: hsl(0, 0%, 81%);
 $pearl: hsl(0, 0%, 88%);
 $alabaster: hsl(0, 0%, 97%);
-$light-gray: $pearl;
 
-// text & accent colors
-// $text-color: $pearl;
-// $text-color-bright: $alabaster;
-
-//accents
-// $link-color: hsl(224, 67%, 76%);
-$cornflower: hsl(224, 67%, 76%);
-// $link-color-hover: hsl(221, 78%, 86%);
-$periwinkle: hsl(221, 78%, 86%);
-
-// $accent-dark: hsl(234, 62%, 26%);
-$midnight: hsl(234, 62%, 26%);
-
-// $accent: hsl(227, 42%, 51%);
-$indigo: hsl(227, 42%, 51%);
-
-// $accent-light: hsl(225, 57%, 67%);
-$sky: hsl(225, 57%, 67%);
+// accents
+$indigo: hsl(227, 42%, 51%); //button hover
+$sky: hsl(225, 57%, 67%); //highlight
+$cornflower: hsl(224, 67%, 76%); //link
+$periwinkle: hsl(221, 78%, 86%); //link hover

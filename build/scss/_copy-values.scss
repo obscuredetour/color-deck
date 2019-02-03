@@ -22,8 +22,7 @@
   border-radius: 20px;
   padding-left: 1rem;
   &:first-of-type { margin-top: 0 }
-  > h4, h5 { color: $alabaster }
-  > p {
+  > .text {
     margin: 0;
     color: $alto;
     font-size: 15px;
@@ -58,7 +57,6 @@
     visibility: visible;
   }
 }
-
 .tooltip-text {
   padding-right: 10px;
   font-size: 0.885rem;

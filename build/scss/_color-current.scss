@@ -1,0 +1,22 @@
+.color-current {
+  grid-area: 1 / 1 / -1 / 2;
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 645px) {
+    min-height: 100vh;
+    height: 100%;
+    border-right: 1px solid $raven;
+    background: $jet;
+  }
+  > .swatch {
+    width: 100%;
+    height: 100px;
+    border-radius: 6px;
+    position: relative;
+  }
+}
+> .color-form > .field {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
