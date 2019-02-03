@@ -496,8 +496,11 @@ input[type="text"]:focus {
   grid-area: 2 / 2 / -1 / 3;
   align-self: start;
   border-right: 1px solid #3b3b3b;
+  border-top: 1px solid #3b3b3b;
   width: 100%;
   height: 100%;
+  min-height: 30rem;
+  padding-top: 1.5rem !important;
   margin: 0; }
   .custom-colors > .controls {
     display: flex;
@@ -506,6 +509,9 @@ input[type="text"]:focus {
     flex-wrap: wrap; }
     .custom-colors > .controls > .options {
       display: flex; }
+  @media screen and (min-width: 736px) {
+    .custom-colors {
+      min-height: unset; } }
 
 .swatch-sm {
   min-width: 150px;
@@ -701,7 +707,7 @@ input[type="text"]:focus {
       display: grid;
       justify-items: stretch;
       align-items: start;
-      grid-template-columns: 250px minmax(min-content, 980px) auto;
+      grid-template-columns: 250px minmax(min-content, 960px) auto;
       grid-template-rows: minmax(min-content, 300px) auto auto; } }
 
 .color-current {
@@ -715,7 +721,16 @@ input[type="text"]:focus {
   display: flex;
   flex-wrap: wrap;
   padding: 1rem 2rem 0 !important;
+  margin-bottom: 1.5rem;
   border-right: 1px solid #3b3b3b; }
+  .color-main > .color-wheel {
+    margin: -2rem auto; }
+    @media screen and (min-width: 569px) {
+      .color-main > .color-wheel {
+        margin: 0 auto -4rem auto; } }
+    @media screen and (min-width: 960px) {
+      .color-main > .color-wheel {
+        margin: 1rem 0 0 -2rem; } }
   .color-main > .colors {
     margin-top: -1rem;
     padding-bottom: 2rem;
@@ -723,22 +738,16 @@ input[type="text"]:focus {
     flex-wrap: wrap;
     justify-content: center;
     position: relative; }
+  @media screen and (min-width: 960px) {
+    .color-main {
+      margin-bottom: -1rem; } }
   @media screen and (min-width: 1250px) {
     .color-main {
-      min-width: 980px; } }
+      min-width: 960px; } }
 
 .iro__slider {
   z-index: -1;
   display: none; }
-
-.color-wheel {
-  margin: -2rem auto; }
-  @media screen and (min-width: 569px) {
-    .color-wheel {
-      margin-bottom: -4rem; } }
-  @media screen and (min-width: 960px) {
-    .color-wheel {
-      margin: 1rem 0 0 -2rem; } }
 
 .color-current {
   display: flex;

@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.4.0-a6] - 2019-02-02
+### Changed
+- Mobile color wheel cutoff.
+- Spacing between color controls and saved colors section.
+
+### Added
+- Border between color controls and saved colors section.
+- Min-height for saved colors section on mobile devices.
+
 ## [1.4.0-a5] - 2019-02-02
 ### Changed
 - Headings content and location tweaked.
