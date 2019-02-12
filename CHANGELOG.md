@@ -5,10 +5,9 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
-## [1.4.0-b2] - 2019-02-02
+## [1.4.0] - 2019-02-12
 ### Changed
-- Changed saved color size to 140px square.
-- Renamed button component file more appropriately.
+- Printing feature update.
 
 ## [1.4.0-b] - 2019-02-02
 ### Changed
