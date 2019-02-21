@@ -168,7 +168,7 @@ input[type="text"] {
   display: block;
   outline: none;
   padding: 0 0.75rem;
-  margin: 12px 0 2rem;
+  margin: 1rem 0 2rem;
   text-decoration: none;
   width: 100%;
   box-shadow: none;
@@ -417,11 +417,6 @@ input[type="text"]:focus {
     height: 100px;
     border-radius: 6px;
     position: relative; }
-
-> .color-form > .field {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  width: 100%; }
 
 .color-values {
   display: none;

@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 ### Add
 - Implement persistent saving of colors
 
+## [1.4.1] - 2019-02-20
+### Changed
+- Removed old files.
+- Updated swatch/color input spacing.
+- Removed stars.
+
 ## [1.4.0] - 2019-02-12
 ### Changed
 - Printing feature update.
