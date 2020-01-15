@@ -4,7 +4,7 @@
   </a>
   <br>
   <a href="https://github.com/obscuredetour/color-deck/">
-    <img alt="Maintained?" src="https://img.shields.io/maintenance/yes/2019.svg?colorB=%234e64b7">
+    <img alt="Maintained?" src="https://img.shields.io/maintenance/yes/2020.svg?colorB=%234e64b7">
   </a>
   <a href="https://github.com/obscuredetour/color-deck/commits/master">
     <img alt="Last commit" src="https://img.shields.io/github/last-commit/obscuredetour/color-deck.svg?colorB=%234e64b7">
